@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-08T05:38:26.531653+00:00",
+  "status": "PASS",
+  "url": "https://cqa-evidence-the-boys.onrender.com",
+  "health": {
+    "status": "ok",
+    "service": "CQA Evidence",
+    "hosted": true,
+    "revision": "7427afffb686d707ab411291d2c085cb36c205a0",
+    "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc"
+  },
+  "daily_limit": 200,
+  "configuration_change": "CQA_DEMO_DAILY_LIMIT patched to 200 through merge-only Render API; deploy live",
+  "application_code_unchanged": true,
+  "checks": {
+    "login": "PASS",
+    "seed_inputs": "3",
+    "managed_Gemini_key_present": true,
+    "managed_Groq_key_present": true,
+    "both_Free_confirmations": true,
+    "key_values_returned": false,
+    "logout": "PASS"
+  },
+  "AI_calls": 0,
+  "deploy_id": "dep-dbo0l1m417fc73ev62m0"
+}

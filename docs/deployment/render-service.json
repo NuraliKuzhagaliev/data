@@ -18,5 +18,8 @@
     "CQA_GEMINI_FREE_TIER_CONFIRMED",
     "CQA_GROQ_FREE_PLAN_CONFIRMED"
   ],
-  "secrets_in_repo": false
+  "secrets_in_repo": false,
+  "nonsecret_env_values": {
+    "CQA_DEMO_DAILY_LIMIT": "200"
+  }
 }
