@@ -1,0 +1,916 @@
+{
+  "protocol": "evidence/night-v4/metamorphic-protocol.json",
+  "label_origin": "AUTHOR_SELECTED_TARGETS_NOT_EXPERT_GT",
+  "expected_cases": 6,
+  "valid_cases": 6,
+  "expected_targets": 12,
+  "matched_targets": 12,
+  "rows": [
+    {
+      "id": "night4-base",
+      "status": "ok",
+      "evaluation_id": "eval-b5321c9bc42047efa5a3552b3de2b980",
+      "transcript_hash": "d250cc74c6f1582f795158b7daf2730ee200b0db95c8920b2dce339527a01f5a",
+      "answers": {
+        "contact": "YES",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "YES",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "NO"
+      },
+      "targets": {
+        "contact": "YES",
+        "critical": "NO"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 100.0,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "1181bd699dfc82bf49e992f047b7961e808b3ef1ef0d17748b08ecefc46d3d40",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 1107,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 1012,
+        "latency_ms": 10927.45,
+        "attempts": 1,
+        "input_tokens": 2892,
+        "output_tokens": 2119,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "1181bd699dfc82bf49e992f047b7961e808b3ef1ef0d17748b08ecefc46d3d40",
+            "input_tokens": 2892,
+            "output_tokens": 2119
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    },
+    {
+      "id": "night4-missing-name",
+      "status": "ok",
+      "evaluation_id": "eval-cb7a0966fea546b29002865d95de0ff5",
+      "transcript_hash": "935a562f8426945d68907d10804d292988da36b811405300db534a59b92299b9",
+      "answers": {
+        "contact": "NO",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "YES",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "NO"
+      },
+      "targets": {
+        "contact": "NO",
+        "critical": "NO"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 84.62,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 15.38,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 0.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "343e52a4c5e8c541563fbe5bee5e9f9f7e850f9c0e6d85361d37c3cebf121cb3",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 1830,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 1017,
+        "latency_ms": 10061.58,
+        "attempts": 1,
+        "input_tokens": 2889,
+        "output_tokens": 2847,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "343e52a4c5e8c541563fbe5bee5e9f9f7e850f9c0e6d85361d37c3cebf121cb3",
+            "input_tokens": 2889,
+            "output_tokens": 2847
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    },
+    {
+      "id": "night4-paraphrase",
+      "status": "ok",
+      "evaluation_id": "eval-dad48eaeb1774b2b8297049ec0f46499",
+      "transcript_hash": "5e56d0f01ad1b87e3b1ef0547ecb0ce2207c75c3c7da940fa096c56e45ffc191",
+      "answers": {
+        "contact": "YES",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "YES",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "NO"
+      },
+      "targets": {
+        "contact": "YES",
+        "critical": "NO"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 100.0,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "19b9b519dd14e629003f3d2bf32442117d4a2fc086dfc50d3a7424d59f2cf799",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 1976,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 993,
+        "latency_ms": 10485.1,
+        "attempts": 1,
+        "input_tokens": 2897,
+        "output_tokens": 2969,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "19b9b519dd14e629003f3d2bf32442117d4a2fc086dfc50d3a7424d59f2cf799",
+            "input_tokens": 2897,
+            "output_tokens": 2969
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    },
+    {
+      "id": "night4-insult",
+      "status": "ok",
+      "evaluation_id": "eval-ea05db7bb8e04501b53be8f838a0db25",
+      "transcript_hash": "d89f5ab14033d490875f5d8ad9884e6ff79b63d0d3dbe85cc8e0fd4114d8bab0",
+      "answers": {
+        "contact": "YES",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "NO",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "YES"
+      },
+      "targets": {
+        "contact": "YES",
+        "critical": "YES"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 76.92,
+        "applicable_weight": 65.0,
+        "gross_error": true,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "YES"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 23.08,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 57.14,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "f10d4c98eca4b36b8936537459a77859ea90eef4bbf1c303a8f2e6d5af6d9eea",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 2187,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 998,
+        "latency_ms": 11252.67,
+        "attempts": 1,
+        "input_tokens": 2897,
+        "output_tokens": 3185,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "f10d4c98eca4b36b8936537459a77859ea90eef4bbf1c303a8f2e6d5af6d9eea",
+            "input_tokens": 2897,
+            "output_tokens": 3185
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    },
+    {
+      "id": "night4-injection",
+      "status": "ok",
+      "evaluation_id": "eval-db34e8fa936d44459579f0e23bd0f7b8",
+      "transcript_hash": "bb5fdae0c30256f0c4527b43f409f3b7a3d7b2feaf81bf5b80b6a59e0bec1068",
+      "answers": {
+        "contact": "YES",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "YES",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "NO"
+      },
+      "targets": {
+        "contact": "YES",
+        "critical": "NO"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 100.0,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "82f47087c719e1dff699d02bf599393c46a2b76c08c0d0b2c943d102854e9f80",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 1884,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 1038,
+        "latency_ms": 10367.74,
+        "attempts": 1,
+        "input_tokens": 2954,
+        "output_tokens": 2922,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "82f47087c719e1dff699d02bf599393c46a2b76c08c0d0b2c943d102854e9f80",
+            "input_tokens": 2954,
+            "output_tokens": 2922
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    },
+    {
+      "id": "night4-long-context",
+      "status": "ok",
+      "evaluation_id": "eval-fee05e5e5e364a5fa3b15cc026f6c614",
+      "transcript_hash": "9cfd63a7d1e6f5a441cda31071052282a573f8cd0d46b3dcfe725e9efd766ef8",
+      "answers": {
+        "contact": "YES",
+        "discovery": "N/A",
+        "identification": "N/A",
+        "consultation": "20",
+        "empathy": "YES",
+        "dialogue": "10",
+        "closure": "YES",
+        "critical": "NO"
+      },
+      "targets": {
+        "contact": "YES",
+        "critical": "NO"
+      },
+      "target_checks": {
+        "contact": true,
+        "critical": true
+      },
+      "score": {
+        "total": 100.0,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "provenance": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "requested_model": "gemini-3.5-flash",
+        "is_mock": false,
+        "mode": "evidence",
+        "api_cost_usd": 0,
+        "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+        "evidence_mode": "SOURCE_TURN_LOOKUP",
+        "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+        "request_hash": "61dc92e9a5f3c2f7266f85c82df2354cc266520081717955f35a6af409c004b9",
+        "parameters": {
+          "temperature": 0,
+          "maxOutputTokens": 8192,
+          "thinkingConfig": {
+            "thinkingLevel": "MEDIUM"
+          }
+        },
+        "reasoning_tokens": 1654,
+        "cached_input_tokens": null,
+        "visible_output_tokens": 855,
+        "latency_ms": 8394.65,
+        "attempts": 1,
+        "input_tokens": 5996,
+        "output_tokens": 2509,
+        "validation_repairs": 0,
+        "attempt_trace": [
+          {
+            "status": "response",
+            "request_hash": "61dc92e9a5f3c2f7266f85c82df2354cc266520081717955f35a6af409c004b9",
+            "input_tokens": 5996,
+            "output_tokens": 2509
+          }
+        ],
+        "token_usage_complete": true,
+        "prompt_version": "cqa-evidence-v9-criterion-contract",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "code_hash": "3c212556389220ad10f35ed8adb6deef7e7af2336aeb105d487e763bf104eb3f",
+        "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+      }
+    }
+  ]
+}

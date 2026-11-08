@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-11-07T22:46:20.010771+00:00",
+  "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+  "prompt_version": "cqa-evidence-v9-criterion-contract",
+  "candidate": {
+    "provider": "gemini",
+    "model": "gemini-3.8-flash",
+    "mode": "evidence",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "grading_code_hash": "b01ed5e52fd3c6ec6789a2db3c288c706dc58ac4153e336d446b32c5f5004556"
+  },
+  "selection_basis": "Available confirmed free provider; Groq Qwen/120B/20B runs stopped on long quotas. v9 pilot and real UI source/recheck passed contracts; one consultation 15/20 diagnostic target mismatch retained. Selection is operational, not evidence of highest expert accuracy.",
+  "development_at_freeze": {
+    "baseline_valid_cases": 20,
+    "baseline_matched_targets": 22,
+    "baseline_evaluated_targets": 25,
+    "gemini_v9_valid_benchmark_cases": 4,
+    "gemini_v9_real_ui_evaluations": 2,
+    "other_gemini_v9_pilot": 1
+  },
+  "policy": "No changes to grading modules/prompt/model after viewing holdout; any later candidate needs fresh independent cases. Targets never reach API. Failed attempts remain in denominators."
+}

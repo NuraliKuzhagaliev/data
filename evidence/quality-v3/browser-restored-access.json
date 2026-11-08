@@ -1,0 +1,85 @@
+{
+  "evaluation_ids": [
+    "eval-11aedc6daa044c76927d5f31a6d2a3a8",
+    "eval-c13dd8db119a4499a7e8aeeda0f1c49d"
+  ],
+  "same_source": true,
+  "same_rubric": true,
+  "canonical_guidance_criteria": [
+    "contact",
+    "discovery",
+    "identification",
+    "consultation",
+    "empathy",
+    "dialogue",
+    "closure",
+    "critical"
+  ],
+  "both_originals_present": true,
+  "is_mock": [
+    false,
+    false
+  ],
+  "requested_models": [
+    "openai/gpt-oss-120b",
+    "gemini-3.5-flash"
+  ],
+  "returned_models": [
+    "openai/gpt-oss-120b",
+    "gemini-3.6-flash"
+  ],
+  "totals": [
+    51.25,
+    86.15
+  ],
+  "comparison": {
+    "status": "requires_review",
+    "source_evaluation_id": "eval-11aedc6daa044c76927d5f31a6d2a3a8",
+    "repeated_evaluation_id": "eval-c13dd8db119a4499a7e8aeeda0f1c49d",
+    "changes": [
+      {
+        "criterion_id": "discovery",
+        "before": "NO",
+        "after": "N/A"
+      },
+      {
+        "criterion_id": "consultation",
+        "before": "5",
+        "after": "20"
+      }
+    ],
+    "changed_criteria": 2,
+    "original_total": 51.25,
+    "repeated_total": 86.15,
+    "total_delta": 34.9,
+    "method": "new_request_without_prior_answers; same_source_and_rubric",
+    "human_verified": false,
+    "note": "Совпадение двух автоматических оценок не доказывает их правильность. Расхождения требуют пересмотра."
+  },
+  "latency_ms": [
+    4389.53,
+    15282.6
+  ],
+  "code_hashes": [
+    "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5"
+  ],
+  "download_id_matches": true,
+  "source_jump": "turn-t0004 class=turn operator highlight",
+  "keyboard_focus": "review-priority criterion after Tab",
+  "screenshots": [
+    "evidence/quality-v3/ui-real-disagreement.png",
+    "evidence/quality-v3/ui-real-disagreement-full.png"
+  ],
+  "accuracy_claim": null,
+  "final_render_code_hash": "86c1c3aebb76d7e01a227cbb6204b727957c25c2e2ef600b78efdf8efd4b327a",
+  "attention_counter_after": 2,
+  "review_count_after": 2,
+  "final_render_reload": true,
+  "final_screenshot": "evidence/quality-v3/ui-real-disagreement-final.png",
+  "default_viewport": {
+    "width": 455,
+    "document_scroll_width": 440,
+    "overflow": false
+  }
+}

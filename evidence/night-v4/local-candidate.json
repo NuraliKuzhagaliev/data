@@ -1,0 +1,25 @@
+{
+  "name": "Qwen3.5-9B Q4_K_M",
+  "alias": "qwen35-9b-cqa",
+  "context_tokens": 16384,
+  "model": {
+    "file": "Qwen3.5-9B-Q4_K_M.gguf",
+    "bytes": 5680522464,
+    "sha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+    "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/resolve/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q4_K_M.gguf",
+    "license": "Apache-2.0"
+  },
+  "runtime": {
+    "version": "b12189",
+    "backend": "Vulkan",
+    "platform": "Windows x64",
+    "archive": "llama-b12189-bin-win-vulkan-x64.zip",
+    "bytes": 37706485,
+    "sha256": "9d56405579492423833cdde94cf46cae15d38333f585f3957cafebfc6fb0e182",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12189/llama-b12189-bin-win-vulkan-x64.zip",
+    "executable_sha256": "ea684e660301cdcf1eca251e49c03782c126c7f832f934624a693a187520498c",
+    "license": "MIT"
+  },
+  "quality_status": "REJECTED_LONG_COVERAGE_FAILURE",
+  "reference_model": "https://huggingface.co/Qwen/Qwen3.5-9B"
+}

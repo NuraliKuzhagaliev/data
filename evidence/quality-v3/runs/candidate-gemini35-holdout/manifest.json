@@ -1,0 +1,12 @@
+{
+  "run": "candidate-gemini35-holdout",
+  "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+  "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+  "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+  "model": "gemini-3.5-flash",
+  "provider": "gemini",
+  "mode": "evidence",
+  "split": "holdout",
+  "label_source": "synthetic",
+  "human_ground_truth": false
+}

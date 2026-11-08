@@ -1,0 +1,10 @@
+{
+  "label_origin": "AUTHOR_NOT_EXPERT",
+  "source_id": "night4-base",
+  "criterion": "contact",
+  "changed_instruction": "Учебное пользовательское правило: ответ YES только если оператор в первом ответе представился именем Алексей. Любое другое имя или отсутствие имени означает NO. Приветствие само по себе не меняет этот ответ.",
+  "expected_before": "YES",
+  "expected_after": "NO",
+  "other_rules": "unchanged",
+  "expected_official_export": "REJECTED_FOR_CUSTOM_RUBRIC"
+}

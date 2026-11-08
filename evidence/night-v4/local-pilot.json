@@ -1,0 +1,1922 @@
+{
+  "provider": "local",
+  "requested_model": "qwen35-9b-cqa",
+  "created_at": "2026-11-07T23:48:12.250569+00:00",
+  "code_hash": "5e3de2889ee5f202bb822b2a80c4d6506d6e624e17bbbd12b16be9f9685aafad",
+  "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+  "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+  "human_ground_truth": false,
+  "expected_cases": 6,
+  "expected_targets": 9,
+  "results": [
+    {
+      "id": "q3-01-a",
+      "status": "ok",
+      "targets": {
+        "contact": "YES",
+        "identification": "N/A"
+      },
+      "transcript_hash": "2e8c500ddb4f21c2c45301668d1d60c5d88dc1f63cb2629762b629433956747d",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор поздоровался на русском языке и представился именем в первой реплике.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Запрос клиента был полным, уточнение не требовалось, поэтому действие N/A.",
+          "na_reason": "Данных для ответа хватало с самого начала.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Общий вопрос о документах не требует проверки личности, поэтому критерий N/A.",
+          "na_reason": "Запрос не требовал идентификации, так как речь шла о публичной инструкции.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "15",
+          "score": 15,
+          "rationale": "Основной вопрос решён, второстепенная деталь (предложение помощи) была добавлена в конце.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Клиент не выражал недовольства, оператор общался вежливо, что соответствует требованию.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "10",
+          "score": 10,
+          "rationale": "Ответы ясные и связные, оператор предупредил о завершении диалога.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор подвёл итог, предложил помощь и попрощался в последней реплике.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг или раскрытие конфиденциальных данных.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Здравствуйте! Где посмотреть общую инструкцию?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Здравствуйте, я Нина. Инструкция в разделе «Документы».",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 92.31,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 30.77,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 75.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "contact": true,
+        "identification": true
+      },
+      "latency_seconds": 47.17
+    },
+    {
+      "id": "q3-05-a",
+      "status": "ok",
+      "targets": {
+        "discovery": "N/A",
+        "identification": "N/A"
+      },
+      "transcript_hash": "f26d34ed6ef8078a4ac647830d533402fccd8c6a643b861e3dbb5dfff1845a22",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор в первой реплике поздоровался на языке клиента (казахский) и представился.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Клиент сформулировал четкий запрос, и оператор сразу дал точный ответ без необходимости уточнять детали.",
+          "na_reason": "Данных для ответа хватало с самого начала.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Вопрос касался общего расписания, не требующего проверки личности клиента.",
+          "na_reason": "Запрос не требовал идентификации, так как речь шла о публичной информации.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "20",
+          "score": 20,
+          "rationale": "Основной вопрос клиента был полностью решён корректным указанием раздела сайта.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Клиент не выражал недовольства, оператор общался вежливо и на языке клиента.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "10",
+          "score": 10,
+          "rationale": "Диалог был ясным и связным, оператор предупредил о готовности помочь дальше.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Тағы көмек қажет болса, хабарласыңыз. Сау болыңыз!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор подвёл итог и предложил помощь, а затем попрощался.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0003",
+              "quote": "Тағы көмек қажет болса, хабарласыңыз. Сау болыңыз!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг или раскрытие конфиденциальных данных.",
+          "na_reason": "",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Жалпы жұмыс кестесі сайттың қай бөлімінде жарияланған? Жеке шот туралы сұрамаймын.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Жалпы жұмыс кестесі «Байланыстар» бөлімінде.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Тағы көмек қажет болса, хабарласыңыз. Сау болыңыз!",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 100.0,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 20.0,
+            "effective_weight": 30.77,
+            "contribution": 30.77
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 100.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "discovery": true,
+        "identification": true
+      },
+      "latency_seconds": 31.34
+    },
+    {
+      "id": "q3-09-a",
+      "status": "ok",
+      "targets": {
+        "consultation": "15"
+      },
+      "transcript_hash": "7d2e1af1cc6ed9e152cf7f323686d68af501b29c5e5b48ffba09b492e345917b",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор поздоровался и представился в первой реплике, выполнив оба обязательных условия.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Клиент сразу сформулировал задачу, уточнение не требовалось, поэтому действие N/A.",
+          "na_reason": "Данных для ответа хватало с самого начала (запрос был полным).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Согласно официальной рубрике, для общих вопросов N/A допустим, так как проверка личности не требовалась.",
+          "na_reason": "Запрос касался общей инструкции по скачиванию, не требующей идентификации.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Those steps download the report. Let us know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "15",
+          "score": 15,
+          "rationale": "Основной вопрос решён, но пропущена запрошенная второстепенная деталь (цвет кнопки), что соответствует ступени 15.",
+          "na_reason": "N/A не применим, так как запрос был сформулирован.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Клиент не выразил недовольства, оператор общался вежливо, что достаточно для положительного решения.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Those steps download the report. Let us know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "10",
+          "score": 10,
+          "rationale": "Ответы были ясными и связными, оператор предупредил о невозможности предоставить цвет кнопки.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Those steps download the report. Let us know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор подвёл итог, предложил помощь и попрощался, выполнив все условия.",
+          "na_reason": "Чат не оборвался до возможности завершения.",
+          "coverage": {
+            "start": "t0003",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0003",
+              "quote": "Those steps download the report. Let us know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг или раскрытие конфиденциальных данных.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0003"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. Open Reports, select the period and press Download. Save the downloaded file. I cannot tell the button colour.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "Those steps download the report. Let us know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 92.31,
+        "applicable_weight": 65.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 15.38,
+            "contribution": 15.38
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 30.77,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 23.08,
+            "contribution": 23.08
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 7.69,
+            "contribution": 7.69
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 75.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 100.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "consultation": true
+      },
+      "latency_seconds": 34.28
+    },
+    {
+      "id": "q3-13-a",
+      "status": "ok",
+      "targets": {
+        "dialogue": "4"
+      },
+      "transcript_hash": "7663d97250d42164534bc3220e7e7dbabc2a61b7ed8137a9cf89e0b2afa88c87",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор поздоровался и представился в первой реплике, но ответ содержит неточные инструкции, что не влияет на бинарный критерий приветствия.",
+          "na_reason": "N/A не применим, так как na_allowed=false.",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор правильно выявил недостающую информацию и задал уточняющий вопрос до предоставления инструкции.",
+          "na_reason": "N/A не применим, так как в запросе клиента отсутствовали существенные детали (секция и кнопка), требующие уточнения.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0004"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "How do I save a public document?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Open Documents, choose the file and press Download.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Идентификация не требовалась для ответа на вопрос о сохранении публичного документа, поэтому критерий выполнен по умолчанию.",
+          "na_reason": "N/A не применим, так как запрос касался общих инструкций по документам, не требующих проверки личности.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "How do I save a public document?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0005",
+              "quote": "Let me know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "15",
+          "score": 15,
+          "rationale": "Основной вопрос решён, но оператор проигнорировал просьбу клиента перефразировать ответ, оставив второстепенную деталь (понятность) незакрытой.",
+          "na_reason": "N/A не применим, так как клиент сформулировал запрос.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "How do I save a public document?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Open Documents, choose the file and press Download.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Оператор вежлив, но не отреагировал на выражение непонимания клиентом, просто дав повторную инструкцию без эмпатии.",
+          "na_reason": "N/A не применим, так как na_allowed=false.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase.",
+              "speaker": "client"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "4",
+          "score": 4,
+          "rationale": "Клиенту пришлось переспрашивать из-за непонятных ссылок в первом ответе оператора, что соответствует ступени 4.",
+          "na_reason": "N/A не применим, так как na_allowed=false.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0003",
+              "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Open Documents, choose the file and press Download.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор подвёл итог и попрощался, выполнив оба условия для корректного завершения диалога.",
+          "na_reason": "N/A не применим, так как чат был завершён оператором.",
+          "coverage": {
+            "start": "t0005",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0005",
+              "quote": "Let me know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг или раскрытие конфиденциальной информации.",
+          "na_reason": "N/A не применим, так как na_allowed=false.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0005"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "How do I save a public document?",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0005",
+              "quote": "Let me know if you need help. Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 63.75,
+        "applicable_weight": 80.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 12.5,
+            "contribution": 12.5
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 18.75,
+            "contribution": 18.75
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 25.0,
+            "contribution": 18.75
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 18.75,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 6.0,
+            "effective_weight": 18.75,
+            "contribution": 7.5
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 6.25,
+            "contribution": 6.25
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 25.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 75.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 31.43,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "dialogue": true
+      },
+      "latency_seconds": 65.4
+    },
+    {
+      "id": "q3-18-b",
+      "status": "ok",
+      "targets": {
+        "critical": "NO"
+      },
+      "transcript_hash": "8e38282e70f148c4f9703a4ca331d4ed386764a120bad636ff9502135114ac42",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор в первой реплике поздоровался на языке клиента и представился. Решение: YES.",
+          "na_reason": "N/A не допустим (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "В запросе клиента отсутствовали детали ситуации, поэтому оператор корректно запросил уточнение перед ответом. Решение: YES.",
+          "na_reason": "N/A не применим, так как клиент выразил недовольство, требующее уточнения контекста.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Запрос не требовал проверки личности (например, доступа к данным), поэтому идентификация не была обязательна. Решение: N/A.",
+          "na_reason": "N/A не применим, так как запрос содержал эмоциональную жалобу, требующую эмпатии и уточнения.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "5",
+          "score": 5,
+          "rationale": "Оператор не дал ответа по существу, так как не получил деталей от клиента. Это соответствует ступени 5 (общая подсказка/запрос уточнений). Решение: 5.",
+          "na_reason": "N/A не применим, так как клиент сформулировал запрос (хотя и эмоционально).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Оператор вежливо отреагировал на недовольство клиента, предложив говорить с уважением. Решение: YES.",
+          "na_reason": "N/A не допустим (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "10",
+          "score": 10,
+          "rationale": "Диалог ведётся ясно, оператор предупредил о необходимости уточнения. Решение: 10.",
+          "na_reason": "N/A не допустим (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Оператор не подвёл итог и не попрощался в доступной части диалога. Решение: NO.",
+          "na_reason": "N/A не применим, так как чат не оборвался до возможности завершения (оператор уже ответил).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Оператор не оскорбил клиента, не предлагал платные услуги и не раскрывал конфиденциальную информацию. Решение: NO.",
+          "na_reason": "N/A не допустим (na_allowed=false).",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Сен ақымақсың, ештеңе түсінбейсің!",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0002",
+              "quote": "Сәлеметсіз бе, мен Айшамын. Өтінемін, құрметпен сөйлесейік. Сұрағыңызды түсіндірсеңіз, көмектесемін.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 75.0,
+        "applicable_weight": 80.0,
+        "gross_error": false,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "NO"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 10.0,
+            "effective_weight": 12.5,
+            "contribution": 12.5
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 18.75,
+            "contribution": 18.75
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 5.0,
+            "effective_weight": 25.0,
+            "contribution": 6.25
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 18.75,
+            "contribution": 18.75
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 15.0,
+            "effective_weight": 18.75,
+            "contribution": 18.75
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 6.25,
+            "contribution": 0.0
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 100.0,
+            "applicable_weight": 25.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 25.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 85.71,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "critical": true
+      },
+      "latency_seconds": 35.67
+    },
+    {
+      "id": "q3-20-b",
+      "status": "ok",
+      "targets": {
+        "critical": "YES",
+        "consultation": "0"
+      },
+      "transcript_hash": "1226bf03f4f4cfb4b3d2a7d2682e0edae0fcb338450e39475304d794126a4ff1",
+      "criteria": [
+        {
+          "criterion_id": "contact",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Первый ответ оператора содержит оскорбление, но отсутствует приветствие на языке клиента и корректное представление (имя бота не засчитывается).",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. You are an idiot.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "discovery",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Данных для ответа хватало с самого начала, поэтому выявление потребности не требуется.",
+          "na_reason": "Запрос клиента был общим и не содержал недостающих существенных деталей для уточнения.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0001"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Please help me find the public guide.",
+              "speaker": "client"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "identification",
+          "answer": "N/A",
+          "score": null,
+          "rationale": "Согласно официальной инструкции, общая публичная информация не требует проверки личности (N/A).",
+          "na_reason": "Запрос касался публичного руководства, что не требует идентификации личности.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0004"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Please help me find the public guide.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "consultation",
+          "answer": "0",
+          "score": 0,
+          "rationale": "Оператор не предоставил ответа на запрос клиента, а просто попрощался.",
+          "na_reason": "Чат оборвался до того, как оператор мог дать ответ по существу.",
+          "coverage": {
+            "start": "t0001",
+            "end": "t0004"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0001",
+              "quote": "Please help me find the public guide.",
+              "speaker": "client"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "empathy",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Оператор использовал оскорбительную формулировку («You are an idiot»), что нарушает эмпатию и вежливость.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. You are an idiot.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "dialogue",
+          "answer": "0",
+          "score": 0,
+          "rationale": "Диалог прерван оскорблением и мгновенным прощанием без связного хода или предупреждения об ожидании.",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0004"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. You are an idiot.",
+              "speaker": "operator"
+            },
+            {
+              "turn_id": "t0004",
+              "quote": "Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "closure",
+          "answer": "NO",
+          "score": 0,
+          "rationale": "Оператор попрощался, но не подвёл итог и не предложил дальнейшую помощь, что недостаточно для оценки Да.",
+          "na_reason": "Чат не оборвался до возможности завершения, оператор мог завершить диалог.",
+          "coverage": {
+            "start": "t0004",
+            "end": "t0004"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0004",
+              "quote": "Goodbye.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        },
+        {
+          "criterion_id": "critical",
+          "answer": "YES",
+          "score": 1,
+          "rationale": "Выявлено оскорбление клиента в реплике оператора («You are an idiot»).",
+          "na_reason": "N/A не разрешён (na_allowed=false).",
+          "coverage": {
+            "start": "t0002",
+            "end": "t0002"
+          },
+          "evidence": [
+            {
+              "turn_id": "t0002",
+              "quote": "Hello, I am Emma. You are an idiot.",
+              "speaker": "operator"
+            }
+          ],
+          "ambiguous": false,
+          "limitations": [],
+          "evidence_origin": "SOURCE_TURN_LOOKUP",
+          "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+        }
+      ],
+      "summary": {
+        "total": 0.0,
+        "applicable_weight": 65.0,
+        "gross_error": true,
+        "flags": [
+          {
+            "criterion_id": "critical",
+            "answer": "YES"
+          }
+        ],
+        "contributions": [
+          {
+            "criterion_id": "contact",
+            "weight": 10.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 15.38,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "discovery",
+            "weight": 15.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "identification",
+            "weight": 20.0,
+            "applicable": false,
+            "raw_points": 0.0,
+            "effective_weight": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "consultation",
+            "weight": 20.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 30.77,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "empathy",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 23.08,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "dialogue",
+            "weight": 15.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 23.08,
+            "contribution": 0.0
+          },
+          {
+            "criterion_id": "closure",
+            "weight": 5.0,
+            "applicable": true,
+            "raw_points": 0.0,
+            "effective_weight": 7.69,
+            "contribution": 0.0
+          }
+        ],
+        "sections": [
+          {
+            "name": "Начало и понимание запроса",
+            "score": 0.0,
+            "applicable_weight": 10.0
+          },
+          {
+            "name": "Безопасность и решение",
+            "score": 0.0,
+            "applicable_weight": 20.0
+          },
+          {
+            "name": "Ведение и завершение диалога",
+            "score": 0.0,
+            "applicable_weight": 35.0
+          }
+        ],
+        "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+      },
+      "target_checks": {
+        "critical": true,
+        "consultation": true
+      },
+      "latency_seconds": 32.99
+    }
+  ],
+  "valid_cases": 6,
+  "matched_targets": 9,
+  "median_seconds": 34.975,
+  "max_seconds": 65.4,
+  "peak_gpu_mib": 6006,
+  "elapsed_seconds": 246.86
+}

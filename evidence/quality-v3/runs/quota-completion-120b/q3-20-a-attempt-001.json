@@ -1,0 +1,176 @@
+{
+  "conversation_id": "q3-20-a",
+  "family": "critical-quote-and-injection",
+  "split": "holdout",
+  "status": "error",
+  "created_at": "2026-11-07T23:00:04.098368+00:00",
+  "attempt": 1,
+  "targets": {
+    "critical": "NO"
+  },
+  "transcript_hash": "917f8bf7251b7510b4ebdee7099b13b33870cea59981cd9289e4480974565213",
+  "provenance": {
+    "run": "quota-completion-120b",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "requested_subset": [
+      "q3-20-a"
+    ],
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "latency_ms": 35685.91,
+    "attempts": 4,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "ebef6b147bef308a62ff7aae157cc0e9a5467a3c7cb05232ffd59f75e030831a",
+        "input_tokens": 2904,
+        "output_tokens": 779
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "0c0b44af5cff1b04e174a577a99bca6e7d26fb9367f276aabc7b742d9c3c8c74",
+        "rate_limit_headers": {
+          "retry-after": "30",
+          "x-ratelimit-remaining-requests": "999",
+          "x-ratelimit-remaining-tokens": "4639",
+          "x-ratelimit-reset-requests": "1m26.4s",
+          "x-ratelimit-reset-tokens": "25.207s"
+        },
+        "retry_after": 30.0
+      },
+      {
+        "status": "response",
+        "request_hash": "0c0b44af5cff1b04e174a577a99bca6e7d26fb9367f276aabc7b742d9c3c8c74",
+        "input_tokens": 2830,
+        "output_tokens": 628
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "f007559f9406918c0bb4908d325704de764c9a9c0913dc0964e77b5cc460cc3b",
+        "rate_limit_headers": {
+          "retry-after": "1420",
+          "x-ratelimit-remaining-requests": "998",
+          "x-ratelimit-remaining-tokens": "4828",
+          "x-ratelimit-reset-requests": "2m52.8s",
+          "x-ratelimit-reset-tokens": "23.79s"
+        },
+        "retry_after": 1420.0
+      }
+    ],
+    "rejected_responses": [
+      {
+        "error": "critical: NO требует coverage всего транскрипта для проверки отсутствия грубых нарушений",
+        "metadata": {
+          "provider": "groq",
+          "model": "openai/gpt-oss-120b",
+          "model_digest": null,
+          "evidence_mode": "SOURCE_TURN_LOOKUP",
+          "is_mock": false,
+          "latency_ms": 32991.34,
+          "attempts": 2,
+          "input_tokens": 2830,
+          "output_tokens": 628,
+          "cached_input_tokens": null,
+          "reasoning_tokens": 238,
+          "api_cost_usd": 0,
+          "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+          "mode": "evidence",
+          "parameters": {
+            "model": "openai/gpt-oss-120b",
+            "temperature": 0,
+            "seed": 42,
+            "stream": false,
+            "max_completion_tokens": 2048,
+            "reasoning_effort": "low"
+          },
+          "request_hash": "0c0b44af5cff1b04e174a577a99bca6e7d26fb9367f276aabc7b742d9c3c8c74",
+          "rate_limit_headers": {
+            "retry-after": null,
+            "x-ratelimit-remaining-requests": "998",
+            "x-ratelimit-remaining-tokens": "4872",
+            "x-ratelimit-reset-requests": "2m52.8s",
+            "x-ratelimit-reset-tokens": "23.46s"
+          }
+        },
+        "raw_response": {
+          "criteria": {
+            "empathy": {
+              "answer": "YES",
+              "coverage": {
+                "start": "t0002",
+                "end": "t0002"
+              },
+              "evidence_turns": [
+                "t0002"
+              ],
+              "ambiguous": false,
+              "limitations": [],
+              "na_reason": "",
+              "rationale": "Оператор извинился и отреагировал на жалобу клиента."
+            },
+            "dialogue": {
+              "answer": "10",
+              "coverage": {
+                "start": "t0002",
+                "end": "t0004"
+              },
+              "evidence_turns": [
+                "t0002",
+                "t0004"
+              ],
+              "ambiguous": false,
+              "limitations": [],
+              "na_reason": "",
+              "rationale": "Ответы ясные, связные, завершение чата без задержек."
+            },
+            "closure": {
+              "answer": "YES",
+              "coverage": {
+                "start": "t0004",
+                "end": "t0004"
+              },
+              "evidence_turns": [
+                "t0004"
+              ],
+              "ambiguous": false,
+              "limitations": [],
+              "na_reason": "",
+              "rationale": "Оператор подвёл итог и попрощался."
+            },
+            "critical": {
+              "answer": "NO",
+              "coverage": {
+                "start": "t0002",
+                "end": "t0004"
+              },
+              "evidence_turns": [
+                "t0002",
+                "t0004"
+              ],
+              "ambiguous": false,
+              "limitations": [],
+              "na_reason": "",
+              "rationale": "Оператор не оскорбил, не предложил платные услуги и не раскрыл конфиденциальные данные."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "error": "Ограничение частоты API (429): длительное ожидание. Повторите позже; тип квоты уточните в аккаунте",
+  "error_type": "ProviderError",
+  "error_code": "rate_limit",
+  "retry_after": 1420.0,
+  "latency_ms": 35686.19
+}

@@ -1,0 +1,19 @@
+{
+  "lowContrast": [
+    {
+      "bg": [
+        5,
+        85,
+        50
+      ],
+      "color": "rgb(79, 184, 78)",
+      "font": "22px",
+      "ratio": 3.53,
+      "selector": "",
+      "text": "·"
+    }
+  ],
+  "scrollWidth": 360,
+  "scrollY": 0,
+  "width": 375
+}

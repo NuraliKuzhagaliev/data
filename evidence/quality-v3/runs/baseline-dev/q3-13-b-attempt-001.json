@@ -1,0 +1,584 @@
+{
+  "conversation_id": "q3-13-b",
+  "family": "dialogue-coherence",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T22:08:32.995384+00:00",
+  "attempt": 1,
+  "targets": {
+    "dialogue": "0"
+  },
+  "transcript_hash": "14f21d4190046b0247554ed333b05b0b4e65fb3d0c9525f270fbaa09e75cb2ae",
+  "provenance": {
+    "run": "baseline-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+    "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v8-source-boundaries",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 43046.34,
+    "attempts": 2,
+    "input_tokens": 2596,
+    "output_tokens": 825,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 4096
+    },
+    "request_hash": "9abf03ddef8503a805aa5891e2b6c5cfaa1749e6dadba9975e6ad4a1e158238d",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "985",
+      "x-ratelimit-remaining-tokens": "4460",
+      "x-ratelimit-reset-requests": "21m36s",
+      "x-ratelimit-reset-tokens": "56.64s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "9abf03ddef8503a805aa5891e2b6c5cfaa1749e6dadba9975e6ad4a1e158238d",
+        "rate_limit_headers": {
+          "retry-after": "40",
+          "x-ratelimit-remaining-requests": "986",
+          "x-ratelimit-remaining-tokens": "5141",
+          "x-ratelimit-reset-requests": "20m9.6s",
+          "x-ratelimit-reset-tokens": "51.06s"
+        },
+        "retry_after": 40.0
+      },
+      {
+        "status": "response",
+        "request_hash": "9abf03ddef8503a805aa5891e2b6c5cfaa1749e6dadba9975e6ad4a1e158238d",
+        "input_tokens": 2596,
+        "output_tokens": 825
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "criterion_id": "contact",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первом ответе.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "discovery",
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Запрос клиента был общим и понятным, уточнение не требовалось.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "identification",
+        "limitations": [],
+        "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "rationale": "Общий вопрос о сохранении документа не требует проверки личности.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": true,
+        "answer": "0",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0002"
+        },
+        "criterion_id": "consultation",
+        "limitations": [
+          "Невозможно проверить фактическую корректность инструкций без базы знаний"
+        ],
+        "na_reason": "",
+        "rationale": "Ответы оператора бессвязны и противоречивы, не дают решения по существу.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Do it, or not, before after."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0003"
+        },
+        "criterion_id": "empathy",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Клиент выразил недовольство противоречиями, оператор не отреагировал на проблему, а ответил бессвязно.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "These instructions contradict each other. What do I actually do?"
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Do it, or not, before after."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "0",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0002"
+        },
+        "criterion_id": "dialogue",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Реплики оператора бессвязны, ход диалога непонятен.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Do it, or not, before after."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0005"
+        },
+        "criterion_id": "closure",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор попрощался, но не подвёл итог и не предложил дальнейшую помощь.",
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "critical",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оскорблений, предложений платных услуг в обход компании или раскрытия конфиденциальной информации не выявлено.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "These instructions contradict each other. What do I actually do?"
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Do it, or not, before after."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Запрос клиента был общим и понятным, уточнение не требовалось.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Общий вопрос о сохранении документа не требует проверки личности.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Ответы оператора бессвязны и противоречивы, не дают решения по существу.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Do it, or not, before after.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": true,
+      "limitations": [
+        "Невозможно проверить фактическую корректность инструкций без базы знаний"
+      ],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Клиент выразил недовольство противоречиями, оператор не отреагировал на проблему, а ответил бессвязно.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "These instructions contradict each other. What do I actually do?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Do it, or not, before after.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Реплики оператора бессвязны, ход диалога непонятен.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Do it, or not, before after.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор попрощался, но не подвёл итог и не предложил дальнейшую помощь.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оскорблений, предложений платных услуг в обход компании или раскрытия конфиденциальной информации не выявлено.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Download means do not download. Close the page before opening it; open never first. Save nothing after saving.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "These instructions contradict each other. What do I actually do?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Do it, or not, before after.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 15.38,
+    "applicable_weight": 65.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 30.77,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 23.08,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 23.08,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 7.69,
+        "contribution": 0.0
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 0.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 0.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "dialogue": true
+  },
+  "latency_ms": 43046.59
+}

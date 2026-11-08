@@ -1,0 +1,124 @@
+{
+  "before": {
+    "run": "baseline-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+    "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false
+  },
+  "after": {
+    "run": "candidate-qwen-dev-restored",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false
+  },
+  "matched_sources": 20,
+  "matched_rubrics": 20,
+  "returned_models_identical": true,
+  "targets": 25,
+  "before_matched": 22,
+  "after_matched": 25,
+  "families": 10,
+  "target_improvements": 3,
+  "target_regressions": 0,
+  "changes": [
+    {
+      "case": "q3-09-a",
+      "criterion": "consultation",
+      "expected": "15",
+      "before": "20",
+      "after": "15",
+      "effect": "improved"
+    },
+    {
+      "case": "q3-09-b",
+      "criterion": "consultation",
+      "expected": "5",
+      "before": "0",
+      "after": "5",
+      "effect": "improved"
+    },
+    {
+      "case": "q3-13-a",
+      "criterion": "dialogue",
+      "expected": "4",
+      "before": "7",
+      "after": "4",
+      "effect": "improved"
+    }
+  ],
+  "by_family": {
+    "contact-first-reply": {
+      "targets": 4,
+      "before_matched": 4,
+      "after_matched": 4
+    },
+    "contact-bot-attribution": {
+      "targets": 2,
+      "before_matched": 2,
+      "after_matched": 2
+    },
+    "discovery-unnecessary-question": {
+      "targets": 4,
+      "before_matched": 4,
+      "after_matched": 4
+    },
+    "identity-client-claim": {
+      "targets": 2,
+      "before_matched": 2,
+      "after_matched": 2
+    },
+    "consultation-secondary-vs-vague": {
+      "targets": 2,
+      "before_matched": 0,
+      "after_matched": 2
+    },
+    "empathy-neutral-context": {
+      "targets": 2,
+      "before_matched": 2,
+      "after_matched": 2
+    },
+    "dialogue-coherence": {
+      "targets": 2,
+      "before_matched": 1,
+      "after_matched": 2
+    },
+    "closure-opportunity": {
+      "targets": 3,
+      "before_matched": 3,
+      "after_matched": 3
+    },
+    "critical-private-vs-company-callback": {
+      "targets": 2,
+      "before_matched": 2,
+      "after_matched": 2
+    },
+    "critical-confidential-disclosure": {
+      "targets": 2,
+      "before_matched": 2,
+      "after_matched": 2
+    }
+  },
+  "success_latency_median_seconds": {
+    "before": 42.62,
+    "after": 46.07
+  },
+  "accuracy_claim_allowed": false,
+  "limitations": [
+    "Development targets authored by project developer, not human expert Ground Truth.",
+    "Whole pipeline changed, including schema/instructions/token budget; not a pure single-component ablation.",
+    "Related variants remain within10 families;25 targets are not25 independent conversations.",
+    "No claim of statistical significance, generalization or contest ranking."
+  ]
+}

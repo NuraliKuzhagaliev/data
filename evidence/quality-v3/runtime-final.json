@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-07T23:25:21.092642+00:00",
+  "code_hash": "86c1c3aebb76d7e01a227cbb6204b727957c25c2e2ef600b78efdf8efd4b327a",
+  "runtime_code_hash": "86c1c3aebb76d7e01a227cbb6204b727957c25c2e2ef600b78efdf8efd4b327a",
+  "runtime_matches": true,
+  "dev_sha256": "fe1848473732a952bd4fd787989de1c4a7b549a64b34dc95401fa120fb32b30a",
+  "dev_unchanged": true,
+  "grading_code_hash": "0cc31db8ffd0d9c63a2cc9792c983bcc03176a507819b1bd9bbb60c02582a796",
+  "grading_matches_frozen_candidate": true,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash",
+  "observed_returned_gemini_model": "gemini-3.6-flash",
+  "key_presence": {
+    "groq": true,
+    "gemini": true
+  },
+  "free_tier_confirmations": {
+    "groq": true,
+    "gemini": true
+  },
+  "team": "THE BOYS",
+  "git_present": false,
+  "prod_present": false,
+  "scope": "Fresh runtime+static rendering+official export gate; real AI grading runs retain code44cff1736c and unchanged grading-module hash. Later changes only official-export validation and attention rendering."
+}

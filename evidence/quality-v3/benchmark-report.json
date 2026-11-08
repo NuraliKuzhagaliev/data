@@ -1,0 +1,5257 @@
+{
+  "protocol": "evidence/quality-v3/protocol.json",
+  "inventory": {
+    "expected": 40,
+    "attempted": 40,
+    "with_at_least_one_valid_output": 40,
+    "failed_only": [],
+    "never_attempted": [],
+    "composite_accuracy": null,
+    "scope": "Completeness inventory across baseline and candidate versions/providers; never a single-model accuracy estimate or selection by score."
+  },
+  "runs": [
+    {
+      "manifest": {
+        "run": "baseline-dev",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+        "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 20,
+      "error_cases": 0,
+      "not_run_cases": 0,
+      "expected_targets": 25,
+      "evaluated_targets": 25,
+      "matched_targets": 22,
+      "first_attempt_valid_cases": 20,
+      "families": 10,
+      "complete_families": 10,
+      "all_targets_matched_families": 8,
+      "latency_success_seconds": {
+        "n": 20,
+        "median": 42.62,
+        "max": 48.89
+      },
+      "known_tokens_all_attempts": 66592,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 44,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {
+        "qwen/qwen3.8-27b": 20
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 6,
+          "matched": 6
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 3,
+          "matched": 1
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 1
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 3307.46,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 7252.46,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 48891.07,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 5101.88,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "PASS",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {
+            "discovery": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 48876.57,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "PASS",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {
+            "discovery": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42033.48,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "PASS",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42408.16,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "PASS",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42940.84,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {
+            "consultation": false
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42070.85,
+          "mismatches": {
+            "consultation": {
+              "expected": "15",
+              "actual": "20"
+            }
+          }
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {
+            "consultation": false
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 43015.93,
+          "mismatches": {
+            "consultation": {
+              "expected": "5",
+              "actual": "0"
+            }
+          }
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "PASS",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42937.3,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "PASS",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 43223.06,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {
+            "dialogue": false
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42927.57,
+          "mismatches": {
+            "dialogue": {
+              "expected": "4",
+              "actual": "7"
+            }
+          }
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 43046.59,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "PASS",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {
+            "closure": true,
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 47074.56,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "PASS",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {
+            "closure": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42125.59,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 42830.61,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 40931.9,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 41589.25,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 39704.38,
+          "mismatches": {}
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-120-dev",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "cb51f5b520249d07a46addec10261303118689b6becfeb8131519700198170f8",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "openai/gpt-oss-120b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 3,
+      "error_cases": 1,
+      "not_run_cases": 16,
+      "expected_targets": 25,
+      "evaluated_targets": 5,
+      "matched_targets": 5,
+      "first_attempt_valid_cases": 3,
+      "families": 10,
+      "complete_families": 1,
+      "all_targets_matched_families": 1,
+      "latency_success_seconds": {
+        "n": 3,
+        "median": 38.47,
+        "max": 46.44
+      },
+      "known_tokens_all_attempts": 20703,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 11,
+      "requested_model": "openai/gpt-oss-120b",
+      "returned_model_versions": {
+        "openai/gpt-oss-120b": 3
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 3,
+          "matched": 3
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 3719.24,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 38469.23,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46441.6,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "ERROR",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 296.89
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-20b-dev",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "openai/gpt-oss-20b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 4,
+      "error_cases": 1,
+      "not_run_cases": 15,
+      "expected_targets": 25,
+      "evaluated_targets": 6,
+      "matched_targets": 6,
+      "first_attempt_valid_cases": 4,
+      "families": 10,
+      "complete_families": 2,
+      "all_targets_matched_families": 2,
+      "latency_success_seconds": {
+        "n": 4,
+        "median": 39.14,
+        "max": 47.75
+      },
+      "known_tokens_all_attempts": 29329,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 18,
+      "requested_model": "openai/gpt-oss-20b",
+      "returned_model_versions": {
+        "openai/gpt-oss-20b": 4
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2353.52,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 32595.7,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 47753.09,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 45693.34,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "ERROR",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 22228.68
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-gemini-dev",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.8-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 4,
+      "error_cases": 3,
+      "not_run_cases": 13,
+      "expected_targets": 25,
+      "evaluated_targets": 6,
+      "matched_targets": 6,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 2,
+      "all_targets_matched_families": 2,
+      "latency_success_seconds": {
+        "n": 4,
+        "median": 118.15,
+        "max": 143.26
+      },
+      "known_tokens_all_attempts": 21307,
+      "attempts_with_incomplete_usage": 9,
+      "http_attempts": 13,
+      "requested_model": "gemini-3.8-flash",
+      "returned_model_versions": {
+        "gemini-3.8-flash": 4
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 2,
+          "first_attempt_status": "error",
+          "error_code": null,
+          "latency_ms": 82391.2,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 2,
+          "first_attempt_status": "error",
+          "error_code": null,
+          "latency_ms": 130733.04,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 2,
+          "first_attempt_status": "error",
+          "error_code": null,
+          "latency_ms": 143260.37,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 2,
+          "first_attempt_status": "error",
+          "error_code": null,
+          "latency_ms": 105567.8,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "ERROR",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "network",
+          "latency_ms": 19.6
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "ERROR",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "network",
+          "latency_ms": 20.25
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "ERROR",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "network",
+          "latency_ms": 19.84
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-gemini-holdout",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.8-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 2,
+      "not_run_cases": 18,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 0,
+      "attempts_with_incomplete_usage": 2,
+      "http_attempts": 6,
+      "requested_model": "gemini-3.8-flash",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "ERROR",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "unavailable",
+          "latency_ms": 14878.32
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "ERROR",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "quota",
+          "latency_ms": 17916.07
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-gemini35-holdout",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.5-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 20,
+      "error_cases": 0,
+      "not_run_cases": 0,
+      "expected_targets": 21,
+      "evaluated_targets": 21,
+      "matched_targets": 21,
+      "first_attempt_valid_cases": 19,
+      "families": 10,
+      "complete_families": 10,
+      "all_targets_matched_families": 10,
+      "latency_success_seconds": {
+        "n": 20,
+        "median": 14.87,
+        "max": 21.79
+      },
+      "known_tokens_all_attempts": 120034,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 21,
+      "requested_model": "gemini-3.5-flash",
+      "returned_model_versions": {
+        "gemini-3.6-flash": 20
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 3,
+          "matched": 3
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 6,
+          "matched": 6
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 15235.69,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 12623.08,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "PASS",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {
+            "discovery": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14670.87,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "PASS",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {
+            "discovery": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 17042.38,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "PASS",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 13383.56,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "PASS",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 18473.38,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "PASS",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 12186.56,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "PASS",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14895.62,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "PASS",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14847.58,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "PASS",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 21165.91,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 12611.23,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14147.57,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "PASS",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {
+            "closure": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 11350.6,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "PASS",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {
+            "closure": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14280.59,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 15596.6,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 14242.59,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 16178.35,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 2,
+          "first_attempt_status": "error",
+          "error_code": null,
+          "latency_ms": 21785.63,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 17020.05,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {
+            "critical": true,
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 17415.05,
+          "mismatches": {}
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-qwen-dev",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "7a9367d5d2fb93b9427947963ab74e3caf1648c9da8775f948032b53814f5307",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 3,
+      "error_cases": 1,
+      "not_run_cases": 16,
+      "expected_targets": 25,
+      "evaluated_targets": 5,
+      "matched_targets": 5,
+      "first_attempt_valid_cases": 3,
+      "families": 10,
+      "complete_families": 1,
+      "all_targets_matched_families": 1,
+      "latency_success_seconds": {
+        "n": 3,
+        "median": 36.16,
+        "max": 45.06
+      },
+      "known_tokens_all_attempts": 11112,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 6,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {
+        "qwen/qwen3.8-27b": 3
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 3,
+          "matched": 3
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2406.36,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 36157.17,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 45062.18,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "ERROR",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 319.84
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "candidate-qwen-dev-restored",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false
+      },
+      "expected_cases": 20,
+      "valid_cases": 20,
+      "error_cases": 0,
+      "not_run_cases": 0,
+      "expected_targets": 25,
+      "evaluated_targets": 25,
+      "matched_targets": 25,
+      "first_attempt_valid_cases": 20,
+      "families": 10,
+      "complete_families": 10,
+      "all_targets_matched_families": 10,
+      "latency_success_seconds": {
+        "n": 20,
+        "median": 46.07,
+        "max": 52.06
+      },
+      "known_tokens_all_attempts": 74362,
+      "attempts_with_incomplete_usage": 0,
+      "http_attempts": 40,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {
+        "qwen/qwen3.8-27b": 20
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 6,
+          "matched": 6
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 3,
+          "matched": 3
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 2,
+          "matched": 2
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 4,
+          "matched": 4
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2213.99,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {
+            "contact": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2314.99,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 48395.77,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "PASS",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {
+            "contact": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46033.98,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "PASS",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {
+            "discovery": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46123.85,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "PASS",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {
+            "discovery": true,
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46101.82,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "PASS",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46012.83,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "PASS",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {
+            "identification": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2510.21,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 48087.62,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 48355.77,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "PASS",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 52055.25,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "PASS",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {
+            "empathy": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 44231.04,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46154.13,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46123.09,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "PASS",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {
+            "closure": true,
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 51085.72,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "PASS",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {
+            "closure": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 44049.87,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 46979.71,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 44940.92,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 44663.94,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "PASS",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {
+            "critical": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 43052.35,
+          "mismatches": {}
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "gemini35-pilot",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.5-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-09-a",
+          "q3-13-a"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 2,
+      "error_cases": 0,
+      "not_run_cases": 18,
+      "expected_targets": 25,
+      "evaluated_targets": 2,
+      "matched_targets": 1,
+      "first_attempt_valid_cases": 2,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 2,
+        "median": 13.69,
+        "max": 13.97
+      },
+      "known_tokens_all_attempts": 11673,
+      "attempts_with_incomplete_usage": 0,
+      "http_attempts": 2,
+      "requested_model": "gemini-3.5-flash",
+      "returned_model_versions": {
+        "gemini-3.6-flash": 2
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 1,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 1,
+          "matched": 1
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {
+            "consultation": false
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 13408.31,
+          "mismatches": {
+            "consultation": {
+              "expected": "15",
+              "actual": "20"
+            }
+          }
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "PASS",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {
+            "dialogue": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 13970.25,
+          "mismatches": {}
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "gemini37-pilot",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.7-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "development",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-09-a",
+          "q3-13-a"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 1,
+      "error_cases": 1,
+      "not_run_cases": 18,
+      "expected_targets": 25,
+      "evaluated_targets": 1,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 1,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 1,
+        "median": 104.06,
+        "max": 104.06
+      },
+      "known_tokens_all_attempts": 5495,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 2,
+      "requested_model": "gemini-3.7-flash",
+      "returned_model_versions": {
+        "gemini-3.8-flash": 1
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 1,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 4,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-01-a",
+          "family": "contact-first-reply",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-01-b",
+          "family": "contact-first-reply",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-03-a",
+          "family": "contact-bot-attribution",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-03-b",
+          "family": "contact-bot-attribution",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-a",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-05-b",
+          "family": "discovery-unnecessary-question",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "N/A",
+            "identification": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-a",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-07-b",
+          "family": "identity-client-claim",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-09-a",
+          "family": "consultation-secondary-vs-vague",
+          "status": "PASS",
+          "targets": {
+            "consultation": "15"
+          },
+          "checks": {
+            "consultation": false
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 104063.6,
+          "mismatches": {
+            "consultation": {
+              "expected": "15",
+              "actual": "20"
+            }
+          }
+        },
+        {
+          "id": "q3-09-b",
+          "family": "consultation-secondary-vs-vague",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "5"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-a",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-11-b",
+          "family": "empathy-neutral-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-13-a",
+          "family": "dialogue-coherence",
+          "status": "ERROR",
+          "targets": {
+            "dialogue": "4"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "quota",
+          "latency_ms": 623.51
+        },
+        {
+          "id": "q3-13-b",
+          "family": "dialogue-coherence",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-a",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "N/A",
+            "consultation": "N/A"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-15-b",
+          "family": "closure-opportunity",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-a",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-17-b",
+          "family": "critical-private-vs-company-callback",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-a",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-19-b",
+          "family": "critical-confidential-disclosure",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-120b",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "openai/gpt-oss-120b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-20-a"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 1,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 7141,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 4,
+      "requested_model": "openai/gpt-oss-120b",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "ERROR",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 35686.19
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-20b",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "openai/gpt-oss-20b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-18-b"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 1,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 0,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 2,
+      "requested_model": "openai/gpt-oss-20b",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "ERROR",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 1432.59
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-gemini36",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "gemini-3.6-flash",
+        "provider": "gemini",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-18-b",
+          "q3-20-a",
+          "q3-20-b"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 1,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 0,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 1,
+      "requested_model": "gemini-3.6-flash",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "ERROR",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "quota",
+          "latency_ms": 644.82
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-qwen",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-20-b"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 1,
+      "error_cases": 0,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 2,
+      "matched_targets": 2,
+      "first_attempt_valid_cases": 1,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 1,
+        "median": 2.64,
+        "max": 2.64
+      },
+      "known_tokens_all_attempts": 3717,
+      "attempts_with_incomplete_usage": 0,
+      "http_attempts": 1,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {
+        "qwen/qwen3.8-27b": 1
+      },
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 1,
+          "matched": 1
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 1,
+          "matched": 1
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "PASS",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {
+            "critical": true,
+            "consultation": true
+          },
+          "attempts": 1,
+          "first_attempt_status": "ok",
+          "error_code": null,
+          "latency_ms": 2635.48,
+          "mismatches": {}
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-qwen18",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-18-b"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 1,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 0,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 3,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "ERROR",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 59277.72
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    },
+    {
+      "manifest": {
+        "run": "quota-completion-qwen20a",
+        "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+        "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+        "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+        "model": "qwen/qwen3.8-27b",
+        "provider": "groq",
+        "mode": "evidence",
+        "split": "holdout",
+        "label_source": "synthetic",
+        "human_ground_truth": false,
+        "requested_subset": [
+          "q3-20-a"
+        ]
+      },
+      "expected_cases": 20,
+      "valid_cases": 0,
+      "error_cases": 1,
+      "not_run_cases": 19,
+      "expected_targets": 21,
+      "evaluated_targets": 0,
+      "matched_targets": 0,
+      "first_attempt_valid_cases": 0,
+      "families": 10,
+      "complete_families": 0,
+      "all_targets_matched_families": 0,
+      "latency_success_seconds": {
+        "n": 0,
+        "median": null,
+        "max": null
+      },
+      "known_tokens_all_attempts": 0,
+      "attempts_with_incomplete_usage": 1,
+      "http_attempts": 1,
+      "requested_model": "qwen/qwen3.8-27b",
+      "returned_model_versions": {},
+      "by_criterion": {
+        "contact": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "discovery": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "identification": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "consultation": {
+          "expected": 3,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "empathy": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "dialogue": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "closure": {
+          "expected": 2,
+          "evaluated": 0,
+          "matched": 0
+        },
+        "critical": {
+          "expected": 6,
+          "evaluated": 0,
+          "matched": 0
+        }
+      },
+      "cases": [
+        {
+          "id": "q3-02-a",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-02-b",
+          "family": "contact-language",
+          "status": "NOT_RUN",
+          "targets": {
+            "contact": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-a",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-04-b",
+          "family": "discovery-missing-context",
+          "status": "NOT_RUN",
+          "targets": {
+            "discovery": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-a",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-06-b",
+          "family": "identity-temporal-order",
+          "status": "NOT_RUN",
+          "targets": {
+            "identification": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-a",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "20"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-08-b",
+          "family": "consultation-essential-coverage",
+          "status": "NOT_RUN",
+          "targets": {
+            "consultation": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-a",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-10-b",
+          "family": "empathy-specific-inconvenience",
+          "status": "NOT_RUN",
+          "targets": {
+            "empathy": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-a",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "10"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-12-b",
+          "family": "dialogue-warning-about-wait",
+          "status": "NOT_RUN",
+          "targets": {
+            "dialogue": "7"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-a",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-14-b",
+          "family": "closure-farewell-alone",
+          "status": "NOT_RUN",
+          "targets": {
+            "closure": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-a",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-16-b",
+          "family": "critical-private-paid-offer",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-a",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-18-b",
+          "family": "critical-insult-speaker",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 0
+        },
+        {
+          "id": "q3-20-a",
+          "family": "critical-quote-and-injection",
+          "status": "ERROR",
+          "targets": {
+            "critical": "NO"
+          },
+          "checks": {},
+          "attempts": 1,
+          "first_attempt_status": "error",
+          "error_code": "rate_limit",
+          "latency_ms": 340.19
+        },
+        {
+          "id": "q3-20-b",
+          "family": "critical-quote-and-injection",
+          "status": "NOT_RUN",
+          "targets": {
+            "critical": "YES",
+            "consultation": "0"
+          },
+          "checks": {},
+          "attempts": 0
+        }
+      ],
+      "human_ground_truth": false,
+      "limitations": [
+        "Targets authored by project developer, not independent human Ground Truth.",
+        "Cases within one family are related; family is the comparison unit.",
+        "Matched/evaluated excludes API failures; matched/expected includes missing outputs.",
+        "Known tokens exclude missing provider usage, including some failures.",
+        "Latency on short synthetic cases cannot establish PROD deadline readiness."
+      ]
+    }
+  ]
+}

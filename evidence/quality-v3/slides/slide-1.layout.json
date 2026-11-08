@@ -1,0 +1,7 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/dp1byj","index":0,"layout":{"id":"ly/zy5o7yhk","name":"Blank"},"backgroundColor":"rgba(17,46,46,1)","position":{"left":0,"top":0,"width":1280,"height":720}},
+"elements":[
+{"id":"sh/4j2h0r2t","kind":"textbox","position":{"left":72,"top":112,"width":1120,"height":115},"text":"CQA Evidence","style":{"fontSize":78,"typeface":"Arial","color":"#A6F4CF","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/5kbi9cjy","kind":"textbox","position":{"left":76,"top":275,"width":1080,"height":170},"text":"Оценка диалогов\nс проверяемыми основаниями","style":{"fontSize":43,"typeface":"Arial","color":"#FFFFFF","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ixkzyhkn","kind":"textbox","position":{"left":78,"top":520,"width":1100,"height":58},"text":"Рубрика · исходная реплика · решение проверяющего","style":{"fontSize":24,"typeface":"Arial","color":"#A5BCB4","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/jyt07m18","kind":"textbox","position":{"left":78,"top":640,"width":1000,"height":30},"text":"THE BOYS · Freedom Broker / Data Challenge · 08.11.2026","style":{"fontSize":16,"typeface":"Arial","color":"#8EACA1","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

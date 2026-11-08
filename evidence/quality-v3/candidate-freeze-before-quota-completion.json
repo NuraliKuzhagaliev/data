@@ -1,0 +1,34 @@
+{
+  "frozen_at": "2026-11-07T22:51:26.954579+00:00",
+  "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+  "prompt_version": "cqa-evidence-v9-criterion-contract",
+  "candidate": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "mode": "evidence",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "grading_code_hash": "0cc31db8ffd0d9c63a2cc9792c983bcc03176a507819b1bd9bbb60c02582a796"
+  },
+  "selection_basis": "3.8 returned explicit per-day quota20. No successful holdout predictions existed. Change to documented free3.5 based on two development-only pilot outputs: both valid, dialogue4 target passed, consultation15 target still disagrees20. No prompt or grade rule changed.",
+  "development_at_freeze": {
+    "baseline_valid_cases": 20,
+    "baseline_matched_targets": 22,
+    "baseline_evaluated_targets": 25,
+    "gemini_v9_valid_benchmark_cases": 4,
+    "gemini_v9_real_ui_evaluations": 2,
+    "other_gemini_v9_pilot": 1
+  },
+  "policy": "No changes to grading modules/prompt/model after viewing holdout; any later candidate needs fresh independent cases. Targets never reach API. Failed attempts remain in denominators.",
+  "transport_amendment": "Parse Google RetryInfo/QuotaFailure to avoid retries of daily quota; allow documented free3.5. Preserve initial freeze and errors.",
+  "availability_fallbacks": [
+    {
+      "provider": "gemini",
+      "model": "gemini-3.7-flash",
+      "mode": "evidence",
+      "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+      "grading_code_hash": "0cc31db8ffd0d9c63a2cc9792c983bcc03176a507819b1bd9bbb60c02582a796"
+    }
+  ],
+  "fallback_policy": "Only on quota/unavailable errors; never select a model or rerun a successful output by its score. Report each model separately.",
+  "old_holdout_successes": 0
+}

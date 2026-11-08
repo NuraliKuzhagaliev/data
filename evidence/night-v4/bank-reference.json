@@ -1,0 +1,63 @@
+{
+  "backgrounds": [
+    [
+      "rgba(0, 0, 0, 0)",
+      90
+    ],
+    [
+      "rgb(245, 246, 247)",
+      1
+    ],
+    [
+      "rgb(255, 255, 255)",
+      1
+    ],
+    [
+      "rgb(248, 248, 248)",
+      1
+    ]
+  ],
+  "body": {
+    "background": "rgb(245, 246, 247)",
+    "color": "rgb(25, 25, 25)",
+    "font": "CoFoSans, sans-serif"
+  },
+  "colors": [
+    [
+      "rgb(25, 25, 25)",
+      51
+    ],
+    [
+      "rgb(92, 92, 92)",
+      41
+    ],
+    [
+      "rgb(0, 0, 0)",
+      1
+    ]
+  ],
+  "css": [
+    "https://bankffin.kz/build/assets/core-1e8e4380.css",
+    "https://bankffin.kz/build/assets/app-d9372153.css",
+    "https://bankffin.kz/build/assets/index.page-943561b0.css"
+  ],
+  "headings": [
+    {
+      "font": "CoFoSans, sans-serif",
+      "size": "40px",
+      "text": "АО «Фридом Банк Казахстан»",
+      "weight": "500"
+    }
+  ],
+  "radii": [
+    [
+      "0px",
+      89
+    ],
+    [
+      "10px",
+      4
+    ]
+  ],
+  "url": "https://bankffin.kz/ru"
+}

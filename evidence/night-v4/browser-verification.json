@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50",
+  "test_instance": "127.0.0.1:8770; isolated synthetic database",
+  "desktop": {
+    "width": 1440,
+    "document_width": 1440,
+    "overflow": false
+  },
+  "mobile": {
+    "width": 375,
+    "document_width": 360,
+    "overflow": false,
+    "dialog_width": 324
+  },
+  "keyboard": {
+    "Tab": "close button to provider select",
+    "focus_outline": "#055532 solid 2px",
+    "Escape": "dialog closed, focus returned to settings button"
+  },
+  "contrast": {
+    "normal_text_below_4_5": 0,
+    "decorative_logo_dot_ratio": 3.53,
+    "scope": "visible text scan with opaque ancestor backgrounds; manual screenshots checked; not a full accessibility certification"
+  },
+  "provider_options": [
+    "groq",
+    "gemini"
+  ],
+  "saved_key_input_empty": true,
+  "console_errors_or_warnings": [],
+  "states_verified": [
+    "empty",
+    "empty input error",
+    "six-record JSON upload",
+    "real AI progress",
+    "real AI result",
+    "exact evidence jump/highlight t0002",
+    "appeal confirm and preserved original",
+    "independent recheck",
+    "changed criterion and real result",
+    "download audit JSON and reopen eight criteria",
+    "official PROD export guard: requires 10 IDs",
+    "mobile settings",
+    "mobile filters and cards"
+  ],
+  "regression_fixed": "Rubric controls now disabled during running AI job; all three disabled observed on real custom-rule request",
+  "screenshots": [
+    "ui-empty.png",
+    "ui-input-error.png",
+    "ui-analysis-loading.png",
+    "ui-result-desktop.png",
+    "ui-mobile-375.png",
+    "ui-mobile-settings.png",
+    "ui-rubric-editor.png",
+    "ui-export-guard.png"
+  ],
+  "model_quality_evidence": "metamorphic-report.json; gui-workflow.json"
+}

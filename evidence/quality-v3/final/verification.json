@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-11-07T23:20:53.863445+00:00",
+  "checks": [
+    {
+      "name": "python_compile",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\nural\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "cqa",
+        "tools"
+      ],
+      "evidence": "evidence\\quality-v3\\final\\python_compile.log"
+    },
+    {
+      "name": "unit_http",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\nural\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "evidence": "evidence\\quality-v3\\final\\unit_http.log"
+    },
+    {
+      "name": "javascript_syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "D:\\node.js\\node.EXE",
+        "--check",
+        "web/app.js"
+      ],
+      "evidence": "evidence\\quality-v3\\final\\javascript_syntax.log"
+    },
+    {
+      "name": "bootstrap_structure_only",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\nural\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "C:\\Users\\nural\\.agents\\skills\\project-bootstrap\\scripts\\bootstrap.py",
+        "verify",
+        "--project",
+        "D:\\projects\\data challenge"
+      ],
+      "evidence": "evidence\\quality-v3\\final\\bootstrap_structure_only.log"
+    }
+  ],
+  "source_sha256": {
+    "cqa\\__init__.py": "66633fb37a6ea7a327a67bfb1654573c8b84639f3f1c4dabafce363dd10ea2d7",
+    "cqa\\__main__.py": "4091f01ec6773b1cd4f856a31a7104fb82b9bbc02eb1c3f684289c9d89072579",
+    "cqa\\domain.py": "126314172960c39bb193abb0d497f3c9ccbc494fabfe776de990a849ec250b0b",
+    "cqa\\exporting.py": "02b2ec64c95ef5c0434b0a531a483646b6f2962fdbb3b4d4cc5175746fff2700",
+    "cqa\\gemini.py": "7e7375794e4fbfea3c06156403d2af653cbe0e0de0e4ebe46d9ae8f9ee0c8c44",
+    "cqa\\metrics.py": "af1bcebe525572b751ce127d98d2332da0809f945d56a89c08e4a31c24e61c51",
+    "cqa\\prompts.py": "408b5140d94249ab71b2742ddae7103025579bba64a92261331d9662ed7169b0",
+    "cqa\\providers.py": "c55cd6c05c638194d80dc5a3022ec79ec8127346101996576ffcb423c3e9edeb",
+    "cqa\\quality.py": "eff8d170b872ba5fb2ffc27504a5e1a6d8d38817331c93e6ae6e87088584ce71",
+    "cqa\\rubric.py": "ba2aeb3b25c0843ea2b66b2f6988fa26818a87a60b784c0f73eb220cba27452c",
+    "cqa\\server.py": "b8759c080f31b40d37c0bbe21cb5b9c876c63b986ea82395df55d9d43636097f",
+    "cqa\\store.py": "4e39829b1876a2e2f5676c15c122f448a5db8795ba0fa83c1e186c3fe82c9ca8",
+    "tests\\test_audit_v2.py": "c4c572be6877847d53a9324476ea3a219d5334857590074e103a5fdbbc99b1b4",
+    "tests\\test_core.py": "04da922447a8ff885d645280aba862be0816a4810dd3f50e20c1595877b31826",
+    "tests\\test_http.py": "199104117e24568030f0d7a5e370c8d1a728888a6d15ed0f93ecef079ff64754",
+    "tests\\test_quality_v3.py": "e6e86bf4ebde33b96f35e806175261e4e545fa71d4fd9703d618b2bb515eb9ff",
+    "web\\app.js": "e1c655ffb572f6ce942aa32d6f7346a571fcebfb13a5736793b6b3e570aa87bf",
+    "web\\index.html": "fef5e7f018e21f5cf8217fed4e28b381415acd40aee9bf925788f3f6c98f75bf",
+    "web\\styles.css": "409d07c5f1fd6b28b8c73fb6fc0849bca6869fcbf3b0661fecdca72b339e3813"
+  },
+  "scope": "CODE_AND_CONTRACTS_ONLY; live AI, human accuracy and browser runs have separate evidence"
+}

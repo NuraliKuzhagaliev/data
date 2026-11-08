@@ -1,0 +1,547 @@
+{
+  "conversation_id": "q3-07-b",
+  "family": "identity-client-claim",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T23:08:47.381557+00:00",
+  "attempt": 1,
+  "targets": {
+    "identification": "NO"
+  },
+  "transcript_hash": "3bd65d35849eb188526f14c05ab505de817086f6f0cc250f0f5a958472848af3",
+  "provenance": {
+    "run": "candidate-qwen-dev-restored",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 2509.97,
+    "attempts": 1,
+    "input_tokens": 2871,
+    "output_tokens": 770,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 2048
+    },
+    "request_hash": "334564c2ab7e53218d4fb6675ab4d6dc817d0c676a0a634f38932ceb0e8007ce",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "992",
+      "x-ratelimit-remaining-tokens": "1834",
+      "x-ratelimit-reset-requests": "11m31.2s",
+      "x-ratelimit-reset-tokens": "57.599s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "334564c2ab7e53218d4fb6675ab4d6dc817d0c676a0a634f38932ceb0e8007ce",
+        "input_tokens": 2871,
+        "output_tokens": 770
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "closure",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор предложил дальнейшую помощь и попрощался в финальной реплике. Это соответствует условию завершения диалога.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Can I help with anything else? Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "ambiguous": false,
+        "answer": "20",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор предоставил запрошенный баланс счета. Основной вопрос клиента закрыт.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "contact",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В первом ответе оператора присутствуют приветствие на языке клиента и представление. Оба условия выполнены.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В диалоге отсутствуют оскорбления, предложения частных услуг или раскрытие конфиденциальных данных. Грубые ошибки не выявлены.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "I verified myself earlier. Please show my private account balance."
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Can I help with anything else? Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "ambiguous": false,
+        "answer": "10",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Ответы оператора ясные и связные, ход диалога понятен. Клиенту не пришлось переспрашивать.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Can I help with anything else? Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Клиент четко сформулировал запрос на баланс счета. Уточняющие вопросы не требовались.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "I verified myself earlier. Please show my private account balance."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор общался вежливо и корректно. Клиент не выражал недовольства, поэтому достаточно стандартной вежливости.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Can I help with anything else? Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор раскрыл данные личного счета без подтверждения проверки личности. Слова клиента не заменяют системное подтверждение.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "I verified myself earlier. Please show my private account balance."
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "В первом ответе оператора присутствуют приветствие на языке клиента и представление. Оба условия выполнены.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент четко сформулировал запрос на баланс счета. Уточняющие вопросы не требовались.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "I verified myself earlier. Please show my private account balance.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор раскрыл данные личного счета без подтверждения проверки личности. Слова клиента не заменяют системное подтверждение.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "I verified myself earlier. Please show my private account balance.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор предоставил запрошенный баланс счета. Основной вопрос клиента закрыт.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор общался вежливо и корректно. Клиент не выражал недовольства, поэтому достаточно стандартной вежливости.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Can I help with anything else? Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы оператора ясные и связные, ход диалога понятен. Клиенту не пришлось переспрашивать.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Can I help with anything else? Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил дальнейшую помощь и попрощался в финальной реплике. Это соответствует условию завершения диалога.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Can I help with anything else? Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "В диалоге отсутствуют оскорбления, предложения частных услуг или раскрытие конфиденциальных данных. Грубые ошибки не выявлены.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "I verified myself earlier. Please show my private account balance.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. I will rely on your statement without checking. Your private account balance is 123.45 fictional units.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Can I help with anything else? Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 76.47,
+    "applicable_weight": 85.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 11.76,
+        "contribution": 11.76
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 23.53,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 20.0,
+        "effective_weight": 23.53,
+        "contribution": 23.53
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 17.65,
+        "contribution": 17.65
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 17.65,
+        "contribution": 17.65
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 5.88,
+        "contribution": 5.88
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 50.0,
+        "applicable_weight": 40.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "identification": true
+  },
+  "latency_ms": 2510.21
+}

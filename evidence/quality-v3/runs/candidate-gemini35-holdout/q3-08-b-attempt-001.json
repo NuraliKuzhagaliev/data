@@ -1,0 +1,530 @@
+{
+  "conversation_id": "q3-08-b",
+  "family": "consultation-essential-coverage",
+  "split": "holdout",
+  "status": "ok",
+  "created_at": "2026-11-07T22:53:56.574928+00:00",
+  "attempt": 1,
+  "targets": {
+    "consultation": "10"
+  },
+  "transcript_hash": "249aa9e2a98eb3762e32af9e4afc688ace07da9fa8c68207babe37200d7f54a8",
+  "provenance": {
+    "run": "candidate-gemini35-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.6-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "7e980a7bc2b52eafeed66198265669e1452c0dea5d874826cfd043f59949d1e3",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 2008,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 1043,
+    "latency_ms": 14895.14,
+    "attempts": 1,
+    "input_tokens": 2970,
+    "output_tokens": 3051,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "7e980a7bc2b52eafeed66198265669e1452c0dea5d874826cfd043f59949d1e3",
+        "input_tokens": 2970,
+        "output_tokens": 3051
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "contact",
+        "coverage": {
+          "start": "t0002",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился по имени в первом сообщении.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы»."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0001"
+        },
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Исходное обращение клиента содержало всю необходимую информацию для ответа.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0001"
+        },
+        "na_reason": "Запрос не требовал идентификации, так как являлся общим вопрос о процедуре.",
+        "rationale": "Запрос клиента носил общий справочный характер и не касался персональных данных.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор ответил на один вопрос, но не предоставил ответ по подаче заявки, оставив существенный вопрос открытым.",
+        "answer": "10",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы»."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Про заявку сейчас ответить не могу."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор общался вежливо и соблюдал корректный тон во время беседы.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы»."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Клиенту пришлось повторно уточнять вопрос о заявке из-за пропуска этой части оператором в первом ответе.",
+        "answer": "4",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы»."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "А как подать заявку? Это тоже необходимо."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "closure",
+        "coverage": {
+          "start": "t0005",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор подвел итог, предложил дальнейшую помощь и попрощался.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Грубых нарушений со стороны оператора в ходе диалога не зафиксировано.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился по имени в первом сообщении.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0002",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы».",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Исходное обращение клиента содержало всю необходимую информацию для ответа.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Запрос клиента носил общий справочный характер и не касался персональных данных.",
+      "na_reason": "Запрос не требовал идентификации, так как являлся общим вопрос о процедуре.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Оператор ответил на один вопрос, но не предоставил ответ по подаче заявки, оставив существенный вопрос открытым.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Про заявку сейчас ответить не могу.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор общался вежливо и соблюдал корректный тон во время беседы.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "4",
+      "score": 4,
+      "rationale": "Клиенту пришлось повторно уточнять вопрос о заявке из-за пропуска этой части оператором в первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Нина. Список документов находится в разделе «Документы».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "А как подать заявку? Это тоже необходимо.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор подвел итог, предложил дальнейшую помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0005",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений со стороны оператора в ходе диалога не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Мне важны два вопроса: где список документов и как подать заявку? Без обоих ответов не смогу продолжить.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 70.77,
+    "applicable_weight": 65.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 30.77,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 6.0,
+        "effective_weight": 23.08,
+        "contribution": 9.23
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 50.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 74.29,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "consultation": true
+  },
+  "latency_ms": 14895.62
+}

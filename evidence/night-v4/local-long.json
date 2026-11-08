@@ -1,0 +1,14 @@
+{
+  "turns": 107,
+  "status": "error",
+  "targets": {
+    "contact": "YES",
+    "critical": "NO"
+  },
+  "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+  "error_type": "ProviderError",
+  "error": "critical: NO требует coverage всего транскрипта для проверки отсутствия грубых нарушений",
+  "seconds": 60.06,
+  "attempts": 2,
+  "failure": "critical:NO coverage 1..2 instead of 1..107 on both attempts; rejected by unchanged validator"
+}

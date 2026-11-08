@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-11-07T23:55:02.495393+00:00",
+  "conversation_id": "night4-long-context",
+  "turns": 107,
+  "targets": {
+    "contact": "YES",
+    "critical": "NO"
+  },
+  "max_seconds": 90,
+  "purpose": "Full source/position transport validation, not expert accuracy",
+  "source_sha256": "0947b66a39e937d4593b180b7512377d36c8234654c0fd98fe3d685f17e3ae2a"
+}

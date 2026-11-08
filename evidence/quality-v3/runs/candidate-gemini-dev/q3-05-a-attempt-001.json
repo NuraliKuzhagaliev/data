@@ -1,0 +1,41 @@
+{
+  "conversation_id": "q3-05-a",
+  "family": "discovery-unnecessary-question",
+  "split": "development",
+  "status": "error",
+  "created_at": "2026-11-07T22:37:35.743910+00:00",
+  "attempt": 1,
+  "targets": {
+    "discovery": "N/A",
+    "identification": "N/A"
+  },
+  "transcript_hash": "f26d34ed6ef8078a4ac647830d533402fccd8c6a643b861e3dbb5dfff1845a22",
+  "provenance": {
+    "run": "candidate-gemini-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.8-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "attempts": 1,
+    "latency_ms": 19.28,
+    "attempt_trace": [],
+    "rejected_responses": []
+  },
+  "error": "Gemini: сеть или таймаут; частичная оценка не сохранена",
+  "error_type": "ProviderError",
+  "error_code": "network",
+  "retry_after": null,
+  "latency_ms": 19.6
+}

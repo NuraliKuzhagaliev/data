@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-07T22:57:45.292296+00:00",
+  "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+  "runtime_code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+  "runtime_matches": true,
+  "dev_sha256": "fe1848473732a952bd4fd787989de1c4a7b549a64b34dc95401fa120fb32b30a",
+  "original_dev_sha256": "fe1848473732a952bd4fd787989de1c4a7b549a64b34dc95401fa120fb32b30a",
+  "dev_unchanged": true,
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "gemini_key_present": true,
+  "free_tier_confirmed": true,
+  "team": "THE BOYS",
+  "git_present": false,
+  "prod_present": false
+}

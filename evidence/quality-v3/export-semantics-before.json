@@ -1,0 +1,8 @@
+{
+  "scope": "Injected export contract fixture, not live AI",
+  "changed_instruction_accepted_before_fix": true,
+  "score_before": {
+    "final_score": 100.0,
+    "critical_flag": false
+  }
+}

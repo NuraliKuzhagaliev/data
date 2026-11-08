@@ -1,0 +1,12 @@
+{
+  "run": "candidate-120-dev",
+  "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+  "code_hash": "cb51f5b520249d07a46addec10261303118689b6becfeb8131519700198170f8",
+  "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+  "model": "openai/gpt-oss-120b",
+  "provider": "groq",
+  "mode": "evidence",
+  "split": "development",
+  "label_source": "synthetic",
+  "human_ground_truth": false
+}

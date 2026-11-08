@@ -1,0 +1,21 @@
+{
+  "page_id": "page_b18eece98e188191ab6cfed6a7489c30",
+  "artifact_ref": "artifact_external_e05ce54b-4634-4fdf-80b8-b00ac47e0b7d",
+  "state_version": 10,
+  "slide_count": 5,
+  "rendered_and_visually_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "source_of_screenshot_slide3": "Prior v2 real UI rubric-change experiment, retained; not represented as v3 new live call",
+  "access": "personal Space, no sharing changes",
+  "spoken_rehearsal": "NOT_RUN",
+  "test_count": 148,
+  "benchmark_evidence": [
+    "benchmark-report.json",
+    "paired-comparison.json"
+  ]
+}

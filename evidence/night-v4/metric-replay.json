@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "new_AI_calls": 0,
+  "inputs": "Published own synthetic attempts, including failures",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "tools/quality_report.py",
+        "--output",
+        ".local/reproduced-benchmark.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "tools/quality_compare.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "artifact": "evidence/quality-v3/benchmark-report.json",
+      "identical_reproduced_json": true
+    },
+    {
+      "artifact": "evidence/quality-v3/paired-comparison.json",
+      "identical_reproduced_json": true
+    }
+  ]
+}

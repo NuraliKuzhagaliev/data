@@ -1,0 +1,512 @@
+{
+  "conversation_id": "q3-15-a",
+  "family": "closure-opportunity",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T23:13:55.909358+00:00",
+  "attempt": 1,
+  "targets": {
+    "closure": "N/A",
+    "consultation": "N/A"
+  },
+  "transcript_hash": "9a3e286a82f43300815e05e79c166a644d29b46497a49cdb2c4ee07d56c577ff",
+  "provenance": {
+    "run": "candidate-qwen-dev-restored",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 51085.51,
+    "attempts": 2,
+    "input_tokens": 2854,
+    "output_tokens": 809,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 2048
+    },
+    "request_hash": "632065d7b009807fdb8170538a95d11fa45eebeced7bf9acacdea64f4864896f",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "985",
+      "x-ratelimit-remaining-tokens": "4195",
+      "x-ratelimit-reset-requests": "21m36s",
+      "x-ratelimit-reset-tokens": "57.059s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "632065d7b009807fdb8170538a95d11fa45eebeced7bf9acacdea64f4864896f",
+        "rate_limit_headers": {
+          "retry-after": "48",
+          "x-ratelimit-remaining-requests": "986",
+          "x-ratelimit-remaining-tokens": "4760",
+          "x-ratelimit-reset-requests": "20m9.6s",
+          "x-ratelimit-reset-tokens": "55.2s"
+        },
+        "retry_after": 48.0
+      },
+      {
+        "status": "response",
+        "request_hash": "632065d7b009807fdb8170538a95d11fa45eebeced7bf9acacdea64f4864896f",
+        "input_tokens": 2854,
+        "output_tokens": 809
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "closure",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Чат оборвался до возможности его завершить.",
+        "rationale": "Система сообщает о потере соединения до описания проблемы. Оператор не имел возможности завершить диалог.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "system",
+            "quote": "The connection was lost before the client described the issue; operator could not send another message."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Чат закончился до того, как клиент сформулировал запрос.",
+        "rationale": "Клиент не успел описать суть обращения из-за обрыва связи. Оценка консультации невозможна.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "system",
+            "quote": "The connection was lost before the client described the issue; operator could not send another message."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "contact",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В первом ответе оператор поздоровался на английском языке и представился именем. Оба условия выполнены.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. Please describe your question."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В диалоге отсутствуют оскорбления, раскрытие данных или предложения частных услуг. Грубые ошибки не выявлены.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. Please describe your question."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "ambiguous": false,
+        "answer": "10",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Ответ оператора ясен и логичен, задержка в 7 секунд в пределах нормы. Сбоев в коммуникации не зафиксировано.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. Please describe your question."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Клиент не сформулировал конкретный запрос, поэтому выявлять потребности было не нужно. Оператор корректно попросил описать вопрос.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "system",
+            "quote": "The connection was lost before the client described the issue; operator could not send another message."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор проявил вежливость в нейтральном диалоге. Недовольство клиентом не выражалось.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. Please describe your question."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "rationale": "Клиент не сформулировал запрос, требующий проверки личности. Идентификация не проводилась и не требовалась.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "system",
+            "quote": "The connection was lost before the client described the issue; operator could not send another message."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "В первом ответе оператор поздоровался на английском языке и представился именем. Оба условия выполнены.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. Please describe your question.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент не сформулировал конкретный запрос, поэтому выявлять потребности было не нужно. Оператор корректно попросил описать вопрос.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "The connection was lost before the client described the issue; operator could not send another message.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент не сформулировал запрос, требующий проверки личности. Идентификация не проводилась и не требовалась.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "The connection was lost before the client described the issue; operator could not send another message.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент не успел описать суть обращения из-за обрыва связи. Оценка консультации невозможна.",
+      "na_reason": "Чат закончился до того, как клиент сформулировал запрос.",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "The connection was lost before the client described the issue; operator could not send another message.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор проявил вежливость в нейтральном диалоге. Недовольство клиентом не выражалось.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. Please describe your question.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответ оператора ясен и логичен, задержка в 7 секунд в пределах нормы. Сбоев в коммуникации не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. Please describe your question.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Система сообщает о потере соединения до описания проблемы. Оператор не имел возможности завершить диалог.",
+      "na_reason": "Чат оборвался до возможности его завершить.",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "The connection was lost before the client described the issue; operator could not send another message.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "В диалоге отсутствуют оскорбления, раскрытие данных или предложения частных услуг. Грубые ошибки не выявлены.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. Please describe your question.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 100.0,
+    "applicable_weight": 40.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 25.0,
+        "contribution": 25.0
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 37.5,
+        "contribution": 37.5
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 37.5,
+        "contribution": 37.5
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": null,
+        "applicable_weight": 0.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 30.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "closure": true,
+    "consultation": true
+  },
+  "latency_ms": 51085.72
+}

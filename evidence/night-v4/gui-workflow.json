@@ -1,0 +1,72 @@
+{
+  "source": "Real GUI workflow; synthetic input; not expert annotation",
+  "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50",
+  "original_id": "eval-b5321c9bc42047efa5a3552b3de2b980",
+  "recheck_id": "eval-c714764be89d4d2bb2930533ec0b6a86",
+  "custom_id": "eval-f6364d2fc5164a0ba3c4492f203d4fe4",
+  "repeat_matching_criteria": 8,
+  "repeat_total_criteria": 8,
+  "repeat_score_before": 100.0,
+  "repeat_score_after": 100.0,
+  "changed_rule_before": "YES",
+  "changed_rule_after": "NO",
+  "changed_rule_only_answer_changed": true,
+  "original_answers_preserved": true,
+  "original_appeals": [
+    {
+      "id": "appeal-d8e41b56daca4fc18c3af0ecfb4699fb",
+      "evaluation_id": "eval-b5321c9bc42047efa5a3552b3de2b980",
+      "criterion_id": "contact",
+      "comment": "Проверка процесса апелляции: прошу подтвердить приветствие и имя именно в первом ответе оператора. Это учебный тест интерфейса.",
+      "status": "resolved",
+      "created_at": "2026-11-08T02:46:14.814702+00:00",
+      "disputed_answer": "YES",
+      "decision": "confirm",
+      "new_answer": "YES",
+      "reason": "Учебная проверка: в реплике #2 есть приветствие и имя, исходный ответ подтверждён.",
+      "resolved_at": "2026-11-08T02:46:20.356413+00:00",
+      "revised_decision": null
+    }
+  ],
+  "download_reopened_and_equal": true,
+  "custom_provenance": {
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "requested_model": "gemini-3.5-flash",
+    "is_mock": false,
+    "mode": "evidence",
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "f5c1540615611e9ab933ec4bab519b0100f0bd51a1c4497c6990bcaf827143f9",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 1605,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 1021,
+    "latency_ms": 10286.08,
+    "attempts": 1,
+    "input_tokens": 2809,
+    "output_tokens": 2626,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "f5c1540615611e9ab933ec4bab519b0100f0bd51a1c4497c6990bcaf827143f9",
+        "input_tokens": 2809,
+        "output_tokens": 2626
+      }
+    ],
+    "token_usage_complete": true,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50",
+    "rubric_hash": "f469f288befd352ef37e647df5014be215e64dc6b1195d81ccf39bc51739bbe1"
+  }
+}

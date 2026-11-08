@@ -1,0 +1,78 @@
+{
+  "conversation_id": "q3-18-b",
+  "family": "critical-insult-speaker",
+  "split": "holdout",
+  "status": "error",
+  "created_at": "2026-11-07T23:00:04.023314+00:00",
+  "attempt": 1,
+  "targets": {
+    "critical": "NO"
+  },
+  "transcript_hash": "8e38282e70f148c4f9703a4ca331d4ed386764a120bad636ff9502135114ac42",
+  "provenance": {
+    "run": "quota-completion-20b",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "40e1bca5b3f8afa0695de1b543898106a690b1f02a80ff5205b4e0b38cb1bb73",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "openai/gpt-oss-20b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "requested_subset": [
+      "q3-18-b"
+    ],
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "latency_ms": 1432.32,
+    "attempts": 2,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 400,
+        "request_hash": "84410b28eee5e057f77a4b9e4cd6f204e0186f38014d5281be6c48a3fd40f1f8",
+        "rate_limit_headers": {
+          "retry-after": null,
+          "x-ratelimit-remaining-requests": "999",
+          "x-ratelimit-remaining-tokens": "5133",
+          "x-ratelimit-reset-requests": "1m26.4s",
+          "x-ratelimit-reset-tokens": "21.502s"
+        },
+        "retry_after": null
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "2e0fe52461a0be5c35277e9e4cea776578866b2e95894f9ab6e608ae5113c591",
+        "rate_limit_headers": {
+          "retry-after": "1208",
+          "x-ratelimit-remaining-requests": "999",
+          "x-ratelimit-remaining-tokens": "5283",
+          "x-ratelimit-reset-requests": "1m26.4s",
+          "x-ratelimit-reset-tokens": "20.377s"
+        },
+        "retry_after": 1208.0
+      }
+    ],
+    "rejected_responses": [
+      {
+        "error": "Провайдер отклонил сгенерированный ответ как не соответствующий JSON-схеме",
+        "metadata": {
+          "request_hash": "84410b28eee5e057f77a4b9e4cd6f204e0186f38014d5281be6c48a3fd40f1f8"
+        },
+        "raw_response": {
+          "code": "json_validate_failed",
+          "type": "invalid_request_error",
+          "failed_generation": "{\"criteria\":{\"contact\":{\"coverage\":{\"start\":\"t0002\",\"end\":\"t0002\"},\"evidence_turns\":[\"t0002\"],\"na_reason\":\"\",\"rationale\":\"Operator greeted in client language and introduced himself in first reply.\",\"answer\":\"YES\",\"ambiguous\":false,\"limitations\":[]},\"discovery\":{\"coverage\":{\"start\":\"t0002\",\"end\":\"t0002\"},\"evidence_turns\":[\"t0002\"],\"na_reason\":\"\",\"rationale\":\"Initial request lacked details; operator asked for clarification before responding.\",\"answer\":\"YES\",\"ambiguous\":false,\"limitations\":[]},\"identification\":{\"coverage\":{\"start\":\"t0002\",\"end\":\"t0002\"},\"evidence_turns\":[],\"na_reason\":\"Запрос не требовал идентификации, например общий вопрос о тарифах.\",\"rationale\":\"No identification required.\",\"answer\":\"N/A\",\"ambiguous\":false,\"limitations\":[]},\"consultation\":{\"coverage\":{\"start\":\"t0002\",\"end\":\"t0002\"},\"evidence_turns\":[\"t0002\"],\"na_reason\":\"\",\"rationale\":\"Operator did not provide substantive answer; only asked for clarification.\",\"answer\":\"0\",\"ambiguous\":false,\"limitations\":[]}}}"
+        }
+      }
+    ]
+  },
+  "error": "Ограничение частоты API (429): длительное ожидание. Повторите позже; тип квоты уточните в аккаунте",
+  "error_type": "ProviderError",
+  "error_code": "rate_limit",
+  "retry_after": 1208.0,
+  "latency_ms": 1432.59
+}

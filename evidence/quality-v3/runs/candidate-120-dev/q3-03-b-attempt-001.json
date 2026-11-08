@@ -1,0 +1,50 @@
+{
+  "conversation_id": "q3-03-b",
+  "family": "contact-bot-attribution",
+  "split": "development",
+  "status": "error",
+  "created_at": "2026-11-07T22:23:59.928641+00:00",
+  "attempt": 1,
+  "targets": {
+    "contact": "NO"
+  },
+  "transcript_hash": "390a1298f659da07fb4219134bd509a3060ec46f06c9e6f9edc4a734003c07bb",
+  "provenance": {
+    "run": "candidate-120-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "cb51f5b520249d07a46addec10261303118689b6becfeb8131519700198170f8",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "latency_ms": 296.68,
+    "attempts": 1,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "b10a837bf2f7b82a60069c126865537ba6a9250e30706eadf933649b3fa6f28a",
+        "rate_limit_headers": {
+          "retry-after": "709",
+          "x-ratelimit-remaining-requests": "994",
+          "x-ratelimit-remaining-tokens": "1333",
+          "x-ratelimit-reset-requests": "8m38.4s",
+          "x-ratelimit-reset-tokens": "50.002s"
+        },
+        "retry_after": 709.0
+      }
+    ],
+    "rejected_responses": []
+  },
+  "error": "Ограничение частоты API (429): длительное ожидание. Повторите позже; тип квоты уточните в аккаунте",
+  "error_type": "ProviderError",
+  "error_code": "rate_limit",
+  "retry_after": 709.0,
+  "latency_ms": 296.89
+}

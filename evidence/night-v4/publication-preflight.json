@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/NuraliKuzhagaliev/data",
+  "branch": "main",
+  "file_count": 279,
+  "total_bytes": 5052664,
+  "scan_findings": [],
+  "scope": "Curated source, own synthetic experiments, official DEV scores; raw organizer inputs/audio/keys/signed URLs/weights/bank media excluded"
+}

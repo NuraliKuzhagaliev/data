@@ -1,0 +1,27 @@
+.local/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+evidence/materials/
+evidence/private/
+*.sqlite3*
+*.log
+
+
+# Historical/private working evidence is retained locally. Publish curated evidence only.
+.bootstrap/runs/
+brief.json
+docs/audit-v2/
+docs/research.md
+evidence/*
+!evidence/night-v4/
+!evidence/quality-v3/
+evidence/night-v4/bank-reference.png
+*.gguf
+*.exe
+*.dll
+*.zip

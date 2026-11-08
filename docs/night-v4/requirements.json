@@ -1,0 +1,505 @@
+[
+  {
+    "id": "R01",
+    "source": "Guide p1–2; user history",
+    "requirement": "Editable versioned criteria/types/scales/weights/NA",
+    "priority": "P0",
+    "implementation": "cqa/rubric.py;domain.py;store.py;web editor",
+    "verification": "Tests + real changed criterion",
+    "evidence": [
+      "evidence/night-v4/gui-workflow.json",
+      "evidence/night-v4/custom-rule-protocol.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R02",
+    "source": "Checklist p1",
+    "requirement": "8 official criteria and exact IDs",
+    "priority": "P0",
+    "implementation": "rubric.py;exporting.py",
+    "verification": "Exact-ID tests + official export",
+    "evidence": [
+      "evidence/night-v4/final/verification.json",
+      "tests/test_core.py",
+      "tests/test_http.py",
+      "tests/test_audit_v2.py",
+      "tests/test_quality_v3.py",
+      "tests/test_night_v4.py"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R03",
+    "source": "Checklist p1",
+    "requirement": "Contact: language greeting and name in first operator answer",
+    "priority": "P0",
+    "implementation": "prompts.py;domain.py",
+    "verification": "Controlled greeting/name mutations",
+    "evidence": [
+      "evidence/night-v4/metamorphic-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R04",
+    "source": "Checklist p1/3",
+    "requirement": "Discovery: clarify missing essentials; NA if sufficient initially",
+    "priority": "P0",
+    "implementation": "prompts.py",
+    "verification": "Frozen synthetic targets, no human claim",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R05",
+    "source": "Checklist p1/3",
+    "requirement": "Identity confirmation before disclosure/protected action",
+    "priority": "P0",
+    "implementation": "prompts.py;domain.py",
+    "verification": "Role/time-order cases",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R06",
+    "source": "Checklist p1/2",
+    "requirement": "Consultation0/5/10/15/20; NA only before request",
+    "priority": "P0",
+    "implementation": "rubric.py;prompts.py",
+    "verification": "Discrete scales and15/20/0/5 boundaries",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R07",
+    "source": "Checklist p1",
+    "requirement": "Empathy: specific reaction when complaint expressed",
+    "priority": "P0",
+    "implementation": "prompts.py",
+    "verification": "Neutral/complaint pairs",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R08",
+    "source": "Checklist p1/2",
+    "requirement": "Dialogue0/4/7/10; first-response3min excluded",
+    "priority": "P0",
+    "implementation": "rubric.py;prompts.py",
+    "verification": "Reask/wait/incoherence cases",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R09",
+    "source": "Checklist p1/3",
+    "requirement": "Closure: summary/help plus goodbye; conditionalNA",
+    "priority": "P0",
+    "implementation": "prompts.py",
+    "verification": "Farewell-only and interruption cases",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R10",
+    "source": "Checklist p1/3",
+    "requirement": "Critical: insult/privatepaid/confidential; separate flag",
+    "priority": "P0",
+    "implementation": "prompts.py;quality.py",
+    "verification": "Attribution, quotes, injection, total unchanged",
+    "evidence": [
+      "evidence/night-v4/metamorphic-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R11",
+    "source": "Checklist p2",
+    "requirement": "Deterministic NA redistribution and2decimal rounding",
+    "priority": "P0",
+    "implementation": "domain.aggregate Decimal",
+    "verification": "Hand-computed totals andNA tests",
+    "evidence": [
+      "evidence/night-v4/final/verification.json",
+      "tests/test_core.py",
+      "tests/test_http.py",
+      "tests/test_audit_v2.py",
+      "tests/test_quality_v3.py",
+      "tests/test_night_v4.py"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R12",
+    "source": "Guide p2–3",
+    "requirement": "RU/KZ/EN; correct operator/bot/system/client roles",
+    "priority": "P0",
+    "implementation": "domain.py;providers",
+    "verification": "Actual language cases + wrong-speaker rejection",
+    "evidence": [
+      "evidence/quality-v3/protocol.json",
+      "evidence/night-v4/local-pilot.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R13",
+    "source": "Guide p3",
+    "requirement": "Preserve externalIDs/time and full-source1-based turn numbering",
+    "priority": "P0",
+    "implementation": "domain.py;exporting.py",
+    "verification": "Import/export bounds tests",
+    "evidence": [
+      "evidence/night-v4/final/verification.json",
+      "tests/test_core.py",
+      "tests/test_http.py",
+      "tests/test_audit_v2.py",
+      "tests/test_quality_v3.py",
+      "tests/test_night_v4.py"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R14",
+    "source": "User §4/10",
+    "requirement": "Evidence exact text/role; no invented source",
+    "priority": "P0",
+    "implementation": "materialize_evidence;validate_decisions",
+    "verification": "Invalid reference, duplicateJSON, quote tests",
+    "evidence": [
+      "evidence/night-v4/browser-verification.json",
+      "evidence/night-v4/local-long.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R15",
+    "source": "User §4/10",
+    "requirement": "Transcript instructions cannot override grading rules",
+    "priority": "P0",
+    "implementation": "prompts.py;schema",
+    "verification": "Real injection pairs",
+    "evidence": [
+      "evidence/night-v4/metamorphic-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R16",
+    "source": "Guide p2",
+    "requirement": "Appeal/comment/review without deleting original",
+    "priority": "P0",
+    "implementation": "store.py;server.py;UI",
+    "verification": "Real UI appeal + immutable-source test",
+    "evidence": [
+      "evidence/night-v4/gui-workflow.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R17",
+    "source": "Appendix p1–3",
+    "requirement": "Official DEV65/PROD10 exact set andresults paths",
+    "priority": "P0",
+    "implementation": "exporting.py;CLI",
+    "verification": "65DEV check; PROD count fixture",
+    "evidence": [
+      "docs/submission.md",
+      "docs/evaluation.md",
+      "evidence/night-v4/preservation.json"
+    ],
+    "status": "BLOCKED",
+    "remaining": "Real PROD10 and/or independent human GT not supplied; contracts and DEV checked"
+  },
+  {
+    "id": "R18",
+    "source": "Appendix p3",
+    "requirement": "Error is explicit status,error,emptycriteria,nullscore",
+    "priority": "P0",
+    "implementation": "providers;server;CLI",
+    "verification": "Unavailable/invalid/truncation tests",
+    "evidence": [
+      "evidence/night-v4/final/verification.json",
+      "tests/test_core.py",
+      "tests/test_http.py",
+      "tests/test_audit_v2.py",
+      "tests/test_quality_v3.py",
+      "tests/test_night_v4.py"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R19",
+    "source": "User §5",
+    "requirement": "Reproducible metrics preserve missing/error denominators",
+    "priority": "P0",
+    "implementation": "evaluate.py;quality_report.py",
+    "verification": "Harness regression and versioned reports",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json",
+      "evidence/quality-v3/paired-comparison.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R20",
+    "source": "User §5",
+    "requirement": "No leakage between related cases; no tuning on holdout",
+    "priority": "P0",
+    "implementation": "frozen protocols andsource snapshots",
+    "verification": "Manifest/source/hash verification",
+    "evidence": [
+      "evidence/quality-v3/protocol.json",
+      "evidence/quality-v3/candidate-freeze.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R21",
+    "source": "User §5",
+    "requirement": "Human accuracy only on independent expert labels",
+    "priority": "P0",
+    "implementation": "diagnostics.human checks",
+    "verification": "Human GT unavailable",
+    "evidence": [
+      "docs/submission.md",
+      "docs/evaluation.md",
+      "evidence/night-v4/preservation.json"
+    ],
+    "status": "BLOCKED",
+    "remaining": "Real PROD10 and/or independent human GT not supplied; contracts and DEV checked"
+  },
+  {
+    "id": "R22",
+    "source": "User history",
+    "requirement": "At least30 own examples actually processed",
+    "priority": "P0",
+    "implementation": "quality-v3 protocol40",
+    "verification": "v3 inventory40/40; new metamorphic cases",
+    "evidence": [
+      "evidence/quality-v3/benchmark-report.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R23",
+    "source": "User §6",
+    "requirement": "Useful innovations backed by actual evidence",
+    "priority": "P0",
+    "implementation": "typed rubric;impact map;blind recheck",
+    "verification": "UI differences andcontract tests",
+    "evidence": [
+      "evidence/quality-v3/browser-restored-access.json",
+      "evidence/night-v4/gui-workflow.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R24",
+    "source": "User §7",
+    "requirement": "Local trial max45min; hardware/license/resource/time measured",
+    "priority": "P0",
+    "implementation": "night-v4 local protocol",
+    "verification": "Pilot andsame-source cloud comparison",
+    "evidence": [
+      "evidence/night-v4/local-decision.json",
+      "evidence/night-v4/local-pilot.json",
+      "evidence/night-v4/cloud-pilot.json",
+      "evidence/night-v4/local-long.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R25",
+    "source": "User §7",
+    "requirement": "Cloud remains functional; no broken local option inUI",
+    "priority": "P0",
+    "implementation": "provider availability andsettings",
+    "verification": "Local unavailable/accepted UI checks",
+    "evidence": [
+      "evidence/night-v4/browser-verification.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R26",
+    "source": "User §8",
+    "requirement": "Freedom Bank style based on current official reference",
+    "priority": "P0",
+    "implementation": "web/styles.css andindex.html",
+    "verification": "bank-reference.json andscreenshots",
+    "evidence": [
+      "evidence/night-v4/bank-reference.json",
+      "docs/night-v4/design.md"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R27",
+    "source": "User §8",
+    "requirement": "Keep CQA identity; no implication of officialbank service",
+    "priority": "P0",
+    "implementation": "UI independent-project notice",
+    "verification": "Visual review",
+    "evidence": [
+      "evidence/night-v4/ui-result-desktop.png"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R28",
+    "source": "User §8/10",
+    "requirement": "Desktop/mobile,keyboard,contrast andallcorestates",
+    "priority": "P0",
+    "implementation": "web layout/dialog/status",
+    "verification": "Browser measured overflow/focus/contrast",
+    "evidence": [
+      "evidence/night-v4/browser-verification.json",
+      "evidence/night-v4/ui-mobile-375.png"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R29",
+    "source": "User §10",
+    "requirement": "New/changed/paraphrased transcripts affect only intended rules",
+    "priority": "P0",
+    "implementation": "night metamorphic cases",
+    "verification": "Real model outputs andfrozen targets",
+    "evidence": [
+      "evidence/night-v4/metamorphic-report.json",
+      "evidence/night-v4/gui-workflow.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R30",
+    "source": "User §10",
+    "requirement": "Invalid/empty/longinputs andprovider failures",
+    "priority": "P0",
+    "implementation": "domain.py;server.py;tests",
+    "verification": "Negative contract tests andUIerrors",
+    "evidence": [
+      "evidence/night-v4/clean-launch.json",
+      "evidence/night-v4/browser-verification.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R31",
+    "source": "User §11",
+    "requirement": "Clean launch +.env.example withoutsecrets",
+    "priority": "P0",
+    "implementation": "configuration;README;isolatedclone",
+    "verification": "Fresh-data startup andHTTPhealth",
+    "evidence": [
+      "evidence/night-v4/clean-launch.json",
+      ".env.example"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R32",
+    "source": "User §12",
+    "requirement": "Ordinarypush toauthorizedrepo; noforce/historyrewrite",
+    "priority": "P0",
+    "implementation": "origin=NuraliKuzhagaliev/data",
+    "verification": "RemoteSHA/readback/CI",
+    "evidence": [
+      "evidence/night-v4/publication-preflight.json"
+    ],
+    "status": "NOT_RUN",
+    "remaining": "Await normal push, remote readback and CI"
+  },
+  {
+    "id": "R33",
+    "source": "User §12",
+    "requirement": "Exclude credentials/rawtranscripts/signedURLs/weights",
+    "priority": "P0",
+    "implementation": "gitignore andexplicit publication manifest",
+    "verification": "Content/privacy/secret scan + stagedtree",
+    "evidence": [
+      "evidence/night-v4/publication-preflight.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R34",
+    "source": "Guide p4",
+    "requirement": "Demo max5min; separate spoken vs technical verification",
+    "priority": "P0",
+    "implementation": "demo guide andexisting5slides",
+    "verification": "Technical UI trace; spoken rehearsal unavailable",
+    "evidence": [
+      "docs/demo.md",
+      "evidence/night-v4/browser-verification.json"
+    ],
+    "status": "NOT_RUN",
+    "remaining": "Technical flow checked; complete spoken rehearsal not performed"
+  },
+  {
+    "id": "R35",
+    "source": "Guide p4/Appendix p1",
+    "requirement": "Control last hour includesprocessing andpush",
+    "priority": "P0",
+    "implementation": "submission instructions",
+    "verification": "RealPROD unavailable; static readinessonly",
+    "evidence": [
+      "docs/submission.md",
+      "docs/evaluation.md",
+      "evidence/night-v4/preservation.json"
+    ],
+    "status": "BLOCKED",
+    "remaining": "Real PROD10 and/or independent human GT not supplied; contracts and DEV checked"
+  },
+  {
+    "id": "R36",
+    "source": "User §1/9",
+    "requirement": "Preserve userchanges,settings,failures andcurrentcontext",
+    "priority": "P0",
+    "implementation": "baseline andstate.json;AGENTS preserved",
+    "verification": "SHA andimmutable histories",
+    "evidence": [
+      "evidence/night-v4/preservation.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R37",
+    "source": "User §3/12",
+    "requirement": "CheckGitHub access beforefinalphase",
+    "priority": "P0",
+    "implementation": "GitHub connector metadata;ls-remote",
+    "verification": "Emptyrepo/admin/push verified",
+    "evidence": [
+      "evidence/night-v4/baseline.json"
+    ],
+    "status": "PASS"
+  },
+  {
+    "id": "R38",
+    "source": "User §6/13",
+    "requirement": "No winner/best-market/100%unqualifiedclaims",
+    "priority": "P0",
+    "implementation": "reports andREADME",
+    "verification": "Claim/evidence review",
+    "evidence": [
+      "README.md",
+      "docs/evaluation.md"
+    ],
+    "status": "PASS"
+  }
+]

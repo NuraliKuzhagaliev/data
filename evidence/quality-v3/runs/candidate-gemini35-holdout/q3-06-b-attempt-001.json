@@ -1,0 +1,550 @@
+{
+  "conversation_id": "q3-06-b",
+  "family": "identity-temporal-order",
+  "split": "holdout",
+  "status": "ok",
+  "created_at": "2026-11-07T22:53:13.911328+00:00",
+  "attempt": 1,
+  "targets": {
+    "identification": "NO"
+  },
+  "transcript_hash": "c5c2ead8317d905640cae168ec1fbd4c76b361a47958cf8216330e60af32b468",
+  "provenance": {
+    "run": "candidate-gemini35-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.6-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "5f385bca93185feb28c45da1615becede57ae7f5efa3cc9894ddcd8cc2f01bcd",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 2750,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 978,
+    "latency_ms": 18472.81,
+    "attempts": 1,
+    "input_tokens": 2943,
+    "output_tokens": 3728,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "5f385bca93185feb28c45da1615becede57ae7f5efa3cc9894ddcd8cc2f01bcd",
+        "input_tokens": 2943,
+        "output_tokens": 3728
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "contact",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первой реплике.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Перед изменением нужна проверка личности."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Оператор не уточнил новый номер телефона перед исполнением запроса.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Поменяйте номер телефона в моём брокерском счёте."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Номер телефона в вашем счёте изменён."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Оператор выполнил защищённое действие до подтверждения проверки личности системой.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Номер телефона в вашем счёте изменён."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "system",
+            "quote": "Проверка личности успешно завершена."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Ключевое действие выполнено некорректно и преждевременно.",
+        "answer": "0",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Номер телефона в вашем счёте изменён."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор общался корректно и вежливо.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Перед изменением нужна проверка личности."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Допущен заметный сбой в хронологическом порядке ответов.",
+        "answer": "7",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Номер телефона в вашем счёте изменён."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "system",
+            "quote": "Проверка личности успешно завершена."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "closure",
+        "coverage": {
+          "start": "t0004",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предложил помощь и попрощался.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Грубых нарушений не зафиксировано.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Поменяйте номер телефона в моём брокерском счёте."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первой реплике.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Перед изменением нужна проверка личности.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор не уточнил новый номер телефона перед исполнением запроса.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Поменяйте номер телефона в моём брокерском счёте.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Номер телефона в вашем счёте изменён.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор выполнил защищённое действие до подтверждения проверки личности системой.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Номер телефона в вашем счёте изменён.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Проверка личности успешно завершена.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Ключевое действие выполнено некорректно и преждевременно.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Номер телефона в вашем счёте изменён.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор общался корректно и вежливо.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Перед изменением нужна проверка личности.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "7",
+      "score": 7,
+      "rationale": "Допущен заметный сбой в хронологическом порядке ответов.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Номер телефона в вашем счёте изменён.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Проверка личности успешно завершена.",
+          "speaker": "system"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0004",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Поменяйте номер телефона в моём брокерском счёте.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Номер обновлён. Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 40.5,
+    "applicable_weight": 100.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 10.0,
+        "contribution": 10.0
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 15.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 20.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 20.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 15.0,
+        "contribution": 15.0
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 10.5,
+        "effective_weight": 15.0,
+        "contribution": 10.5
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 5.0,
+        "contribution": 5.0
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 40.0,
+        "applicable_weight": 25.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 0.0,
+        "applicable_weight": 40.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 87.14,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "identification": true
+  },
+  "latency_ms": 18473.38
+}

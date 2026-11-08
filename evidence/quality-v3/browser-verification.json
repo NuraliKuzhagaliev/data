@@ -1,0 +1,49 @@
+{
+  "evaluation_ids": [
+    "eval-a6db22bf45724bcf99092a588f4a462c",
+    "eval-50ca1d35f6af40329f73f5ccfe58042b"
+  ],
+  "provider": "gemini",
+  "is_mock": false,
+  "same_source": true,
+  "same_rubric": true,
+  "comparison": {
+    "status": "agreement",
+    "source_evaluation_id": "eval-a6db22bf45724bcf99092a588f4a462c",
+    "repeated_evaluation_id": "eval-50ca1d35f6af40329f73f5ccfe58042b",
+    "changes": [],
+    "changed_criteria": 0,
+    "original_total": 86.15,
+    "repeated_total": 86.15,
+    "total_delta": 0.0,
+    "method": "new_request_without_prior_answers; same_source_and_rubric",
+    "human_verified": false,
+    "note": "Совпадение двух автоматических оценок не доказывает их правильность. Расхождения требуют пересмотра."
+  },
+  "totals": [
+    86.15,
+    86.15
+  ],
+  "latency_ms": [
+    106356.03,
+    76995.1
+  ],
+  "code_hashes": [
+    "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+    "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70"
+  ],
+  "download_id_matches": true,
+  "source_jump_class": "turn operator highlight",
+  "keyboard_focus": "criterion influence button after Tab",
+  "mobile": {
+    "width": 375,
+    "document_scroll_width": 360,
+    "overflow": false
+  },
+  "screenshots": [
+    "evidence/quality-v3/ui-recheck.png",
+    "evidence/quality-v3/ui-mobile-375.png",
+    "evidence/quality-v3/ui-quality-card.png"
+  ],
+  "scope": "real Gemini source import/evaluation/recheck/history/source reference/export + mobile/keyboard; agreement is not human accuracy"
+}

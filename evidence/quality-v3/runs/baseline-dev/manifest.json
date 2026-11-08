@@ -1,0 +1,12 @@
+{
+  "run": "baseline-dev",
+  "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+  "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+  "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "groq",
+  "mode": "evidence",
+  "split": "development",
+  "label_source": "synthetic",
+  "human_ground_truth": false
+}

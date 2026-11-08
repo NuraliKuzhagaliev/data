@@ -1,0 +1,71 @@
+{
+  "command": "python -m cqa serve --port 8772",
+  "isolated_copy": true,
+  "private_data_copied": false,
+  "dependencies": "Python stdlib only",
+  "checks": {
+    "health": {
+      "status": 200,
+      "result": {
+        "status": "ok",
+        "service": "CQA Evidence",
+        "version": "0.1.0",
+        "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50"
+      }
+    },
+    "config": {
+      "status": 200,
+      "result": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "team_name": "THE BOYS",
+        "free_plan_confirmed": false,
+        "gemini_free_plan_confirmed": false,
+        "key_present": false,
+        "gemini_key_present": false
+      }
+    },
+    "empty_library": {
+      "status": 200,
+      "result": []
+    },
+    "provider_options": {
+      "status": 200,
+      "result": {
+        "options": [
+          {
+            "name": "groq",
+            "label": "Groq · Free Plan",
+            "available": true
+          },
+          {
+            "name": "gemini",
+            "label": "Gemini · Free Tier",
+            "available": true
+          }
+        ],
+        "local_available": false
+      }
+    },
+    "empty_input": {
+      "status": 400,
+      "result": {
+        "error": "Нужно от 1 до 1000 реплик"
+      }
+    },
+    "malformed_input": {
+      "status": 400,
+      "result": {
+        "error": "Нужно от 1 до 1000 реплик"
+      }
+    },
+    "missing_private_dev": {
+      "status": 400,
+      "result": {
+        "error": "DEV ещё не установлен. Импортируйте JSON организаторов через «Загрузить диалог»; исходные данные не входят в публичный репозиторий"
+      }
+    }
+  },
+  "status": "PASS",
+  "published_code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50"
+}

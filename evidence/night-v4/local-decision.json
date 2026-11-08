@@ -1,0 +1,30 @@
+{
+  "start": "2026-11-07T23:31:10+00:00",
+  "deadline": "2026-11-08T00:16:10+00:00",
+  "maximum_minutes": 45,
+  "model_candidate": "Qwen3.5-9B Q4_K_M",
+  "reason": "Short pilot passed, long full-source coverage failed twice; no accepted UI mode",
+  "predeclared_gates": {
+    "pilot_cases": [
+      "q3-01-a",
+      "q3-05-a",
+      "q3-09-a",
+      "q3-13-a",
+      "q3-18-b",
+      "q3-20-b"
+    ],
+    "minimum_valid_output_fraction": 1.0,
+    "minimum_selected_target_fraction": 1.0,
+    "maximum_single_warm_seconds": 90,
+    "maximum_median_warm_seconds": 60,
+    "maximum_cold_start_seconds": 120,
+    "no_oom": true,
+    "no_truncation": true,
+    "human_accuracy": "UNKNOWN without human GT"
+  },
+  "decision": "REJECTED",
+  "stopped_at": "2026-11-08T00:03:37.100094+00:00",
+  "cold_start_seconds": 13.8,
+  "peak_gpu_mib": 6006,
+  "elapsed_minutes": 32.45
+}

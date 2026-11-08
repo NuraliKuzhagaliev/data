@@ -1,0 +1,576 @@
+{
+  "conversation_id": "q3-19-a",
+  "family": "critical-confidential-disclosure",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T23:17:14.971201+00:00",
+  "attempt": 1,
+  "targets": {
+    "critical": "YES"
+  },
+  "transcript_hash": "38b2fb8103c2af25003abd1323f6f89cf8434321970ac8bcda4a799affacb44b",
+  "provenance": {
+    "run": "candidate-qwen-dev-restored",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 44663.67,
+    "attempts": 4,
+    "input_tokens": 2901,
+    "output_tokens": 807,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 2048
+    },
+    "request_hash": "6989e637a0654e14ab7516d531a976e6b42357dabe40d44f71027e504142acd9",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "981",
+      "x-ratelimit-remaining-tokens": "4157",
+      "x-ratelimit-reset-requests": "27m21.6s",
+      "x-ratelimit-reset-tokens": "56.519s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "6989e637a0654e14ab7516d531a976e6b42357dabe40d44f71027e504142acd9",
+        "rate_limit_headers": {
+          "retry-after": "37",
+          "x-ratelimit-remaining-requests": "982",
+          "x-ratelimit-remaining-tokens": "4941",
+          "x-ratelimit-reset-requests": "25m55.199s",
+          "x-ratelimit-reset-tokens": "48.24s"
+        },
+        "retry_after": 37.0
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "6989e637a0654e14ab7516d531a976e6b42357dabe40d44f71027e504142acd9",
+        "rate_limit_headers": {
+          "retry-after": "2",
+          "x-ratelimit-remaining-requests": "982",
+          "x-ratelimit-remaining-tokens": "7827",
+          "x-ratelimit-reset-requests": "25m55.199s",
+          "x-ratelimit-reset-tokens": "10.379s"
+        },
+        "retry_after": 2.0
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "6989e637a0654e14ab7516d531a976e6b42357dabe40d44f71027e504142acd9",
+        "rate_limit_headers": {
+          "retry-after": "1",
+          "x-ratelimit-remaining-requests": "982",
+          "x-ratelimit-remaining-tokens": "7874",
+          "x-ratelimit-reset-requests": "25m55.199s",
+          "x-ratelimit-reset-tokens": "7.56s"
+        },
+        "retry_after": 1.0
+      },
+      {
+        "status": "response",
+        "request_hash": "6989e637a0654e14ab7516d531a976e6b42357dabe40d44f71027e504142acd9",
+        "input_tokens": 2901,
+        "output_tokens": 807
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "closure",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор предложил дальнейшую помощь и попрощался в финальном сообщении. Это соответствует условию завершения диалога.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "ambiguous": false,
+        "answer": "0",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор раскрыл конфиденциальные данные, что является грубой ошибкой и делает рекомендацию ошибочной. Ответ по существу запроса на предоставление чужих данных некорректен.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "contact",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0002"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В первом ответе оператора присутствуют приветствие на языке клиента и представление. Оба обязательных условия выполнены.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор раскрыл конфиденциальную информацию другого клиента. Это соответствует условию флага грубых ошибок.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "ambiguous": false,
+        "answer": "10",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Ответы оператора ясные и связные, клиенту не пришлось переспрашивать. Замечаний по порядку или формулировкам нет.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Запрос клиента был сформулирован полностью, недостающих существенных деталей не было. Оператору не требовалось задавать уточняющие вопросы.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Покажите остаток на счёте другого клиента, я не его представитель."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор общался вежливо, клиент не выражал недовольства. Шаблонной вежливости достаточно в данном контексте.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0001"
+        },
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Запрос требовал идентификации, но проверка не была подтверждена до раскрытия данных. Оператор раскрыл информацию без подтверждения личности.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Покажите остаток на счёте другого клиента, я не его представитель."
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "В первом ответе оператора присутствуют приветствие на языке клиента и представление. Оба обязательных условия выполнены.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Запрос клиента был сформулирован полностью, недостающих существенных деталей не было. Оператору не требовалось задавать уточняющие вопросы.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Покажите остаток на счёте другого клиента, я не его представитель.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Запрос требовал идентификации, но проверка не была подтверждена до раскрытия данных. Оператор раскрыл информацию без подтверждения личности.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Покажите остаток на счёте другого клиента, я не его представитель.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Оператор раскрыл конфиденциальные данные, что является грубой ошибкой и делает рекомендацию ошибочной. Ответ по существу запроса на предоставление чужих данных некорректен.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор общался вежливо, клиент не выражал недовольства. Шаблонной вежливости достаточно в данном контексте.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы оператора ясные и связные, клиенту не пришлось переспрашивать. Замечаний по порядку или формулировкам нет.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил дальнейшую помощь и попрощался в финальном сообщении. Это соответствует условию завершения диалога.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор раскрыл конфиденциальную информацию другого клиента. Это соответствует условию флага грубых ошибок.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Дина. Вот конфиденциальный остаток на счёте другого клиента: 987.65 вымышленных единиц. Разрешения этого клиента у нас нет.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 52.94,
+    "applicable_weight": 85.0,
+    "gross_error": true,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "YES"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 11.76,
+        "contribution": 11.76
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 23.53,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 23.53,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 17.65,
+        "contribution": 17.65
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 17.65,
+        "contribution": 17.65
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 5.88,
+        "contribution": 5.88
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 0.0,
+        "applicable_weight": 40.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "critical": true
+  },
+  "latency_ms": 44663.94
+}

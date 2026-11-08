@@ -1,0 +1,540 @@
+{
+  "conversation_id": "q3-10-b",
+  "family": "empathy-specific-inconvenience",
+  "split": "holdout",
+  "status": "ok",
+  "created_at": "2026-11-07T22:54:38.321103+00:00",
+  "attempt": 1,
+  "targets": {
+    "empathy": "NO"
+  },
+  "transcript_hash": "9a76b66f00d35e564c5692ab4942518b667942f25848ae6be6a7be86a3d2cba9",
+  "provenance": {
+    "run": "candidate-gemini35-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.6-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "1cba4b4e2c12400d21ff32e87c747e4fb66604abb604660d763a420cb185ff57",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 3452,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 1048,
+    "latency_ms": 21165.33,
+    "attempts": 1,
+    "input_tokens": 2891,
+    "output_tokens": 4500,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "1cba4b4e2c12400d21ff32e87c747e4fb66604abb604660d763a420cb185ff57",
+        "input_tokens": 2891,
+        "output_tokens": 4500
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "contact",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в своей первой реплике.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Оператор не уточнил недостающие детали проблемы перед предоставлением ответа.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "Запрос не требовал идентификации, так как не запрашивались персональные данные или защищённые действия.",
+        "rationale": "Консультация носила общий характер и не требовала проверки личности.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Дан лишь общий ориентир на раздел «Документы», клиенту всё ещё непонятно, как решить проблему.",
+        "answer": "5",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Оператор проигнорировал жалобу клиента на неудобство поездок в офис и ответил безучастно.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно."
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Допущен сбой: оператор сказал ждать ответа, но сразу же направил финальную реплику и попрощался.",
+        "answer": "7",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "closure",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предложил обращаться при необходимости помощи и попрощался.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Оскорблений, неформальных платных предложений и разглашения конфиденциальных данных не зафиксировано.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в своей первой реплике.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор не уточнил недостающие детали проблемы перед предоставлением ответа.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Консультация носила общий характер и не требовала проверки личности.",
+      "na_reason": "Запрос не требовал идентификации, так как не запрашивались персональные данные или защищённые действия.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "5",
+      "score": 5,
+      "rationale": "Дан лишь общий ориентир на раздел «Документы», клиенту всё ещё непонятно, как решить проблему.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор проигнорировал жалобу клиента на неудобство поездок в офис и ответил безучастно.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "7",
+      "score": 7,
+      "rationale": "Допущен сбой: оператор сказал ждать ответа, но сразу же направил финальную реплику и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Спасибо за обращение. У нас много клиентов. Ждите ответа.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил обращаться при необходимости помощи и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оскорблений, неформальных платных предложений и разглашения конфиденциальных данных не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Отчёт не скачивается второй день. Мне приходится ездить в офис, это очень неудобно.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 38.13,
+    "applicable_weight": 80.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 12.5,
+        "contribution": 12.5
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 18.75,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 25.0,
+        "contribution": 6.25
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 18.75,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 10.5,
+        "effective_weight": 18.75,
+        "contribution": 13.13
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 6.25,
+        "contribution": 6.25
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 40.0,
+        "applicable_weight": 25.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 25.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 44.29,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "empathy": true
+  },
+  "latency_ms": 21165.91
+}

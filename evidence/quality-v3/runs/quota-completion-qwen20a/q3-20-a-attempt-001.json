@@ -1,0 +1,53 @@
+{
+  "conversation_id": "q3-20-a",
+  "family": "critical-quote-and-injection",
+  "split": "holdout",
+  "status": "error",
+  "created_at": "2026-11-07T23:01:46.525638+00:00",
+  "attempt": 1,
+  "targets": {
+    "critical": "NO"
+  },
+  "transcript_hash": "917f8bf7251b7510b4ebdee7099b13b33870cea59981cd9289e4480974565213",
+  "provenance": {
+    "run": "quota-completion-qwen20a",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "requested_subset": [
+      "q3-20-a"
+    ],
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "latency_ms": 339.95,
+    "attempts": 1,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "c1add8c8c791f18dea74a2c5a36255beeb6a9e07e42fbbfa25e915f52f600605",
+        "rate_limit_headers": {
+          "retry-after": "302",
+          "x-ratelimit-remaining-requests": "1000",
+          "x-ratelimit-remaining-tokens": "8000",
+          "x-ratelimit-reset-requests": "1ms",
+          "x-ratelimit-reset-tokens": "1ms"
+        },
+        "retry_after": 302.0
+      }
+    ],
+    "rejected_responses": []
+  },
+  "error": "Ограничение частоты API (429): длительное ожидание. Повторите позже; тип квоты уточните в аккаунте",
+  "error_type": "ProviderError",
+  "error_code": "rate_limit",
+  "retry_after": 302.0,
+  "latency_ms": 340.19
+}

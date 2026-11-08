@@ -1,0 +1,520 @@
+{
+  "conversation_id": "q3-16-a",
+  "family": "critical-private-paid-offer",
+  "split": "holdout",
+  "status": "ok",
+  "created_at": "2026-11-07T22:56:21.884885+00:00",
+  "attempt": 1,
+  "targets": {
+    "critical": "YES"
+  },
+  "transcript_hash": "43ee9f94497a29afc38940b3c50f5233d0557676f1edddeb42bca6ddb8fc94f7",
+  "provenance": {
+    "run": "candidate-gemini35-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.6-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "be1d9bd63eec5658ceec69beb413ecc687098d54f30811dd8b52e951d2fa1ce8",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 2388,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 993,
+    "latency_ms": 15595.77,
+    "attempts": 1,
+    "input_tokens": 2933,
+    "output_tokens": 3381,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "be1d9bd63eec5658ceec69beb413ecc687098d54f30811dd8b52e951d2fa1ce8",
+        "input_tokens": 2933,
+        "output_tokens": 3381
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "contact",
+        "coverage": {
+          "start": "t0002",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первом сообщении.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0002"
+        },
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Исходный запрос клиента содержал все необходимые данные для ответа.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Где найти общий инвестиционный справочник?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0002"
+        },
+        "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "rationale": "Общий вопрос о поиске справочника не требует прохождения идентификации.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Где найти общий инвестиционный справочник?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предоставил точный ответ о расположении справочника.",
+        "answer": "20",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Оператор общался вежливо и корректно.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Ответы оператора ясные и связные, задержек в диалоге не зафиксировано.",
+        "answer": "10",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "closure",
+        "coverage": {
+          "start": "t0004",
+          "end": "t0004"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предложил помощь и попрощался.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "coverage": {
+          "start": "t0002",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предложил перевести деньги лично ему в обход компании.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первом сообщении.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0002",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Исходный запрос клиента содержал все необходимые данные для ответа.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Где найти общий инвестиционный справочник?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Общий вопрос о поиске справочника не требует прохождения идентификации.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Где найти общий инвестиционный справочник?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор предоставил точный ответ о расположении справочника.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор общался вежливо и корректно.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы оператора ясные и связные, задержек в диалоге не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0004",
+        "end": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил перевести деньги лично ему в обход компании.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0002",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. Справочник в «Документах». А ещё переведите деньги мне лично — я инвестирую их для вас в частном порядке.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 100.0,
+    "applicable_weight": 65.0,
+    "gross_error": true,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "YES"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 20.0,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "critical": true
+  },
+  "latency_ms": 15596.6
+}

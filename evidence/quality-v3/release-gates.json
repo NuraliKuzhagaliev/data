@@ -1,0 +1,123 @@
+{
+  "checked_at": "2026-11-07T23:25:21.092642+00:00",
+  "target_revision": "86c1c3aebb76d7e01a227cbb6204b727957c25c2e2ef600b78efdf8efd4b327a",
+  "local_delivery": "PASS",
+  "contest_final_submission": "NOT_READY",
+  "gates": [
+    {
+      "id": "runtime",
+      "status": "PASS",
+      "evidence": [
+        "runtime-final.json"
+      ]
+    },
+    {
+      "id": "contracts_148",
+      "status": "PASS",
+      "evidence": [
+        "final/verification.json"
+      ]
+    },
+    {
+      "id": "official_export_semantics",
+      "status": "PASS",
+      "evidence": [
+        "export-semantics-before.json",
+        "export-semantics-after.json"
+      ]
+    },
+    {
+      "id": "forty_cases",
+      "status": "PASS",
+      "evidence": [
+        "benchmark-report.json"
+      ]
+    },
+    {
+      "id": "same_model_comparison",
+      "status": "PASS",
+      "evidence": [
+        "paired-comparison.json"
+      ]
+    },
+    {
+      "id": "real_ai_and_review",
+      "status": "PASS",
+      "evidence": [
+        "browser-restored-access.json",
+        "ui-real-disagreement-final.png"
+      ]
+    },
+    {
+      "id": "secrets",
+      "status": "PASS",
+      "evidence": [
+        "secret-scan.json"
+      ]
+    },
+    {
+      "id": "original_dev",
+      "status": "PASS",
+      "evidence": [
+        "runtime-final.json",
+        "export-semantics-after.json"
+      ]
+    },
+    {
+      "id": "presentation",
+      "status": "PASS",
+      "evidence": [
+        "presentation.json"
+      ]
+    },
+    {
+      "id": "expert_accuracy",
+      "status": "BLOCKED",
+      "evidence": []
+    },
+    {
+      "id": "archived55_rechecks",
+      "status": "NOT_RUN",
+      "evidence": [
+        "../audit-v2/legacy-evidence-review.json"
+      ]
+    },
+    {
+      "id": "real_prod10",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "complete_control_hour_and_push",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "spoken_demo",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "git_submission",
+      "status": "BLOCKED",
+      "evidence": []
+    }
+  ],
+  "results": {
+    "unique_cases_valid": 40,
+    "development_targets_before": 22,
+    "development_targets_after": 25,
+    "development_expected_targets": 25,
+    "holdout_valid_cases": 20,
+    "holdout_matched_targets": 21,
+    "holdout_expected_targets": 21
+  },
+  "unknowns": [
+    "Human Ground Truth and official error formula",
+    "Actual PROD10 and absolute stop-code",
+    "Git destination and push authorization",
+    "Final winner criteria"
+  ],
+  "publication_performed": false,
+  "accuracy_or_rank_claim": null
+}

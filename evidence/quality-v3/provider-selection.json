@@ -1,0 +1,7 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "gemini_key_present": true,
+  "gemini_free_plan_confirmed": true,
+  "authorization": "User explicitly chose Gemini3.5 Flash in response to configuration question; keys unchanged"
+}

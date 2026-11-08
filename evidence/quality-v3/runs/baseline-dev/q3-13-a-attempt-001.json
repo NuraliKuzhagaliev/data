@@ -1,0 +1,570 @@
+{
+  "conversation_id": "q3-13-a",
+  "family": "dialogue-coherence",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T22:07:47.066157+00:00",
+  "attempt": 1,
+  "targets": {
+    "dialogue": "4"
+  },
+  "transcript_hash": "7663d97250d42164534bc3220e7e7dbabc2a61b7ed8137a9cf89e0b2afa88c87",
+  "provenance": {
+    "run": "baseline-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+    "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v8-source-boundaries",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 42927.3,
+    "attempts": 2,
+    "input_tokens": 2606,
+    "output_tokens": 773,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 4096
+    },
+    "request_hash": "e74a85955bd334f03c57b199b8ff41dca86f5787038a30f0e387c86017c5a679",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "986",
+      "x-ratelimit-remaining-tokens": "4460",
+      "x-ratelimit-reset-requests": "20m9.6s",
+      "x-ratelimit-reset-tokens": "56.04s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "e74a85955bd334f03c57b199b8ff41dca86f5787038a30f0e387c86017c5a679",
+        "rate_limit_headers": {
+          "retry-after": "40",
+          "x-ratelimit-remaining-requests": "987",
+          "x-ratelimit-remaining-tokens": "5262",
+          "x-ratelimit-reset-requests": "18m43.2s",
+          "x-ratelimit-reset-tokens": "50.519s"
+        },
+        "retry_after": 40.0
+      },
+      {
+        "status": "response",
+        "request_hash": "e74a85955bd334f03c57b199b8ff41dca86f5787038a30f0e387c86017c5a679",
+        "input_tokens": 2606,
+        "output_tokens": 773
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0001"
+        },
+        "criterion_id": "contact",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первом ответе.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "discovery",
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Запрос клиента был конкретным и не требовал уточнения деталей.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "identification",
+        "limitations": [],
+        "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "rationale": "Вопрос носит общий технический характер и не требует проверки личности.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "15",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0003"
+        },
+        "criterion_id": "consultation",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Основной вопрос решен после уточнения, но первый ответ был непонятным.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Open Documents, choose the file and press Download."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0002"
+        },
+        "criterion_id": "empathy",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор вежлив и предложил помощь, клиент не выражал недовольства.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Open Documents, choose the file and press Download."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Let me know if you need help. Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "7",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0002"
+        },
+        "criterion_id": "dialogue",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Первый ответ был непонятным, что потребовало от клиента переспроса.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0005"
+        },
+        "criterion_id": "closure",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор предложил помощь и попрощался.",
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Let me know if you need help. Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "critical",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Грубых нарушений, оскорблений или раскрытия конфиденциальной информации не выявлено.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "How do I save a public document?"
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Open Documents, choose the file and press Download."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Let me know if you need help. Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Запрос клиента был конкретным и не требовал уточнения деталей.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Вопрос носит общий технический характер и не требует проверки личности.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "15",
+      "score": 15,
+      "rationale": "Основной вопрос решен после уточнения, но первый ответ был непонятным.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Open Documents, choose the file and press Download.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор вежлив и предложил помощь, клиент не выражал недовольства.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Open Documents, choose the file and press Download.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Let me know if you need help. Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "7",
+      "score": 7,
+      "rationale": "Первый ответ был непонятным, что потребовало от клиента переспроса.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Let me know if you need help. Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений, оскорблений или раскрытия конфиденциальной информации не выявлено.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "How do I save a public document?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Sam. Save the previous one before the next one from that place; it is that button.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "I cannot understand these references. Which section and button do you mean? Please rephrase.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Open Documents, choose the file and press Download.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Let me know if you need help. Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 85.38,
+    "applicable_weight": 65.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 30.77,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 10.5,
+        "effective_weight": 23.08,
+        "contribution": 16.15
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 75.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 87.14,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "dialogue": false
+  },
+  "latency_ms": 42927.57
+}

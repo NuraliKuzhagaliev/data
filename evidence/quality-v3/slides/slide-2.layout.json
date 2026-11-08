@@ -1,0 +1,10 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/ddlgy4","index":1,"layout":{"id":"ly/zy5o7yhk","name":"Blank"},"backgroundColor":"rgba(245,248,246,1)","position":{"left":0,"top":0,"width":1280,"height":720}},
+"elements":[
+{"id":"sh/tw3el036","kind":"textbox","position":{"left":72,"top":60,"width":1120,"height":75},"text":"Как применяется рубрика","style":{"fontSize":44,"typeface":"Arial","color":"#162C31","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/svuxcv2l","kind":"textbox","position":{"left":76,"top":190,"width":640,"height":60},"text":"8 критериев","style":{"fontSize":32,"typeface":"Arial","color":"#087E63","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/rulwjql0","kind":"textbox","position":{"left":76,"top":275,"width":650,"height":180},"text":"Дискретные шкалы и заданные веса.\nN/A исключает вес из знаменателя.\nГрубая ошибка отмечается отдельно.","style":{"fontSize":27,"typeface":"Arial","color":"#162C31","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/6tcfalkf","kind":"textbox","position":{"left":800,"top":215,"width":390,"height":120},"text":"85,38","style":{"fontSize":82,"typeface":"Arial","color":"#087E63","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/5s3ehg3u","kind":"textbox","position":{"left":790,"top":365,"width":400,"height":65},"text":"Пример из приложения к гайду","style":{"fontSize":23,"typeface":"Arial","color":"#73858A","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/4rax8v29","kind":"textbox","position":{"left":800,"top":450,"width":390,"height":65},"text":"55,5 / 65 × 100","style":{"fontSize":29,"typeface":"Arial","color":"#162C31","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/ux8vih07","kind":"textbox","position":{"left":76,"top":610,"width":1120,"height":60},"text":"Итог рассчитывает код. Пример иллюстрирует формулу и не является оценкой DEV.","style":{"fontSize":19,"typeface":"Arial","color":"#73858A","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

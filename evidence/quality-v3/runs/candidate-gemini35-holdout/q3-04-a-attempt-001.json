@@ -1,0 +1,530 @@
+{
+  "conversation_id": "q3-04-a",
+  "family": "discovery-missing-context",
+  "split": "holdout",
+  "status": "ok",
+  "created_at": "2026-11-07T22:52:10.810062+00:00",
+  "attempt": 1,
+  "targets": {
+    "discovery": "YES"
+  },
+  "transcript_hash": "44d8e20842addaa308062b8d838738dee5dbce45b965693c55638b6f321b1128",
+  "provenance": {
+    "run": "candidate-gemini35-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.6-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "cbc8f7b980ae785b41e951586c99fe4c22cfc8352bd612a87dbd4b082b7444ad",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 1916,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 990,
+    "latency_ms": 14670.38,
+    "attempts": 1,
+    "input_tokens": 2961,
+    "output_tokens": 2906,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "cbc8f7b980ae785b41e951586c99fe4c22cfc8352bd612a87dbd4b082b7444ad",
+        "input_tokens": 2961,
+        "output_tokens": 2906
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "criterion_id": "contact",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0002"
+        },
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первом сообщении.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "discovery",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0003"
+        },
+        "na_reason": "",
+        "rationale": "Запрос был неполным, оператор корректно уточнил детали ошибки до ответа.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "identification",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "Запрос не требовал проведения идентификации.",
+        "rationale": "Общий вопрос по ошибке входа не требует идентификации личности.",
+        "answer": "N/A",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "У меня ошибка, не могу продолжить."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "consultation",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор дал верную и понятную инструкцию для решения проблемы клиента.",
+        "answer": "20",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "empathy",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор вежливо общался с клиентом на протяжении всего диалога.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?"
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "dialogue",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Диалог велся последовательно, ответы были ясными и быстрыми.",
+        "answer": "10",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?"
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "closure",
+        "coverage": {
+          "start": "t0004",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Оператор предложил дальнейшую помощь и попрощался с клиентом.",
+        "answer": "YES",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "criterion_id": "critical",
+        "coverage": {
+          "start": "t0001",
+          "end": "t0005"
+        },
+        "na_reason": "",
+        "rationale": "Грубых нарушений со стороны оператора не выявлено.",
+        "answer": "NO",
+        "ambiguous": false,
+        "limitations": [],
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "У меня ошибка, не могу продолжить."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первом сообщении.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Запрос был неполным, оператор корректно уточнил детали ошибки до ответа.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Общий вопрос по ошибке входа не требует идентификации личности.",
+      "na_reason": "Запрос не требовал проведения идентификации.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "У меня ошибка, не могу продолжить.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор дал верную и понятную инструкцию для решения проблемы клиента.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор вежливо общался с клиентом на протяжении всего диалога.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Диалог велся последовательно, ответы были ясными и быстрыми.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте, я Лев. В каком разделе и что написано в ошибке?",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Нажмите «Забыли пароль» на странице входа и следуйте инструкции.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил дальнейшую помощь и попрощался с клиентом.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0004",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений со стороны оператора не выявлено.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0005"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "У меня ошибка, не могу продолжить.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Итак, общая инструкция находится в «Документах». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 100.0,
+    "applicable_weight": 80.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 12.5,
+        "contribution": 12.5
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 18.75,
+        "contribution": 18.75
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 20.0,
+        "effective_weight": 25.0,
+        "contribution": 25.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 18.75,
+        "contribution": 18.75
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 18.75,
+        "contribution": 18.75
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 6.25,
+        "contribution": 6.25
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100.0,
+        "applicable_weight": 25.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "discovery": true
+  },
+  "latency_ms": 14670.87
+}

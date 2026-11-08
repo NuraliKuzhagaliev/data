@@ -1,0 +1,65 @@
+{
+  "conversation_id": "q3-13-a",
+  "family": "dialogue-coherence",
+  "split": "development",
+  "status": "error",
+  "created_at": "2026-11-07T22:51:46.542833+00:00",
+  "attempt": 1,
+  "targets": {
+    "dialogue": "4"
+  },
+  "transcript_hash": "7663d97250d42164534bc3220e7e7dbabc2a61b7ed8137a9cf89e0b2afa88c87",
+  "provenance": {
+    "run": "gemini37-pilot",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "44cff1736cb905fd98a6b5267b8924c304db984308997e0ac8aafde8e726cbe5",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.7-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "requested_subset": [
+      "q3-09-a",
+      "q3-13-a"
+    ],
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "daily_quota": true,
+    "quotas": [
+      {
+        "quota_id": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+        "limit": "20"
+      }
+    ],
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "attempts": 1,
+    "latency_ms": 623.18,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "ab54a16f8addbea3eb62ec286041ef7516319f7e9e4a85d56f8e77c5f1051ba2",
+        "retry_after": 32890.0,
+        "daily_quota": true,
+        "quotas": [
+          {
+            "quota_id": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+            "limit": "20"
+          }
+        ]
+      }
+    ],
+    "rejected_responses": []
+  },
+  "error": "Gemini: исчерпана дневная квота; успешная оценка не создана",
+  "error_type": "ProviderError",
+  "error_code": "quota",
+  "retry_after": 32890.0,
+  "latency_ms": 623.51
+}

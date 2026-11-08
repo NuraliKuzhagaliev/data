@@ -1,0 +1,59 @@
+{
+  "conversation_id": "q3-02-b",
+  "family": "contact-language",
+  "split": "holdout",
+  "status": "error",
+  "created_at": "2026-11-07T22:46:42.125461+00:00",
+  "attempt": 1,
+  "targets": {
+    "contact": "NO"
+  },
+  "transcript_hash": "cfea1cc8f514930c47a89267fe5c4e1f5686c1d1f60f67b83292e6a9244bf721",
+  "provenance": {
+    "run": "candidate-gemini-holdout",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "gemini-3.8-flash",
+    "provider": "gemini",
+    "mode": "evidence",
+    "split": "holdout",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "attempts": 3,
+    "latency_ms": 17915.6,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 503,
+        "request_hash": "e69b063053129d520ee18dc0574fccf139cb6bd20ed1d6b43b233a2dadb36d4d",
+        "retry_after": 2.0
+      },
+      {
+        "status": "http_error",
+        "http_status": 503,
+        "request_hash": "e69b063053129d520ee18dc0574fccf139cb6bd20ed1d6b43b233a2dadb36d4d",
+        "retry_after": 2.0
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "e69b063053129d520ee18dc0574fccf139cb6bd20ed1d6b43b233a2dadb36d4d",
+        "retry_after": 2.0
+      }
+    ],
+    "rejected_responses": []
+  },
+  "error": "Gemini: HTTP 429; успешная оценка не создана",
+  "error_type": "ProviderError",
+  "error_code": "quota",
+  "retry_after": 2.0,
+  "latency_ms": 17916.07
+}

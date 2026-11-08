@@ -1,0 +1,14 @@
+{
+  "scope": "Changed-rule fixture plus all65 original organizer audits, no new AI requests",
+  "changed_instruction_rejected": true,
+  "original_dev_records": 65,
+  "all_original_records_exactly_preserved": true,
+  "new_model_metadata": {
+    "mode": "external_api",
+    "name": "openai/gpt-oss-120b; openai/gpt-oss-20b; qwen/qwen3.8-27b"
+  },
+  "old_model_metadata": {
+    "mode": "external_api",
+    "name": "openai/gpt-oss-120b; openai/gpt-oss-20b; qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,560 @@
+{
+  "conversation_id": "q3-09-b",
+  "family": "consultation-secondary-vs-vague",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T22:05:28.885262+00:00",
+  "attempt": 1,
+  "targets": {
+    "consultation": "5"
+  },
+  "transcript_hash": "369e6af319fa60063291c6094a6a4358d53b1850add2b338c391b74ef03534df",
+  "provenance": {
+    "run": "baseline-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+    "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v8-source-boundaries",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 43015.66,
+    "attempts": 2,
+    "input_tokens": 2603,
+    "output_tokens": 772,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 4096
+    },
+    "request_hash": "26c2b4efb6293f5bcb593cf7bd4d2a427d26a7dbca3d0df102afb361c1d061af",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "989",
+      "x-ratelimit-remaining-tokens": "5162",
+      "x-ratelimit-reset-requests": "15m50.4s",
+      "x-ratelimit-reset-tokens": "22.311s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "26c2b4efb6293f5bcb593cf7bd4d2a427d26a7dbca3d0df102afb361c1d061af",
+        "rate_limit_headers": {
+          "retry-after": "40",
+          "x-ratelimit-remaining-requests": "990",
+          "x-ratelimit-remaining-tokens": "5208",
+          "x-ratelimit-reset-requests": "14m24s",
+          "x-ratelimit-reset-tokens": "50.64s"
+        },
+        "retry_after": 40.0
+      },
+      {
+        "status": "response",
+        "request_hash": "26c2b4efb6293f5bcb593cf7bd4d2a427d26a7dbca3d0df102afb361c1d061af",
+        "input_tokens": 2603,
+        "output_tokens": 772
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0002",
+          "start": "t0001"
+        },
+        "criterion_id": "contact",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор поздоровался и представился в первом ответе.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. You can probably find something on the website."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "discovery",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Клиент не знал, что делать, но оператор не уточнил детали, а дал общий совет.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "Which section and what should I press? I still do not know what to do."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "identification",
+        "limitations": [],
+        "na_reason": "Запрос не требовал идентификации, так как касался общих инструкций по сайту.",
+        "rationale": "Клиент спрашивал, как скачать отчет, что является общим вопросом.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "0",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "consultation",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор не дал ответа по существу, предложив просто посмотреть на сайте.",
+        "evidence": [
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. You can probably find something on the website."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Look around on the website."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "empathy",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор не отреагировал на недовольство клиента, ответив сухо.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Look around on the website."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "0",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "dialogue",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Ответы бессвязны и не помогают клиенту, диалог заходит в тупик.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Look around on the website."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "closure",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор попрощался, но не подвел итог и не предложил помощь.",
+        "evidence": [
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0005",
+          "start": "t0001"
+        },
+        "criterion_id": "critical",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Грубых нарушений, оскорблений или раскрытия данных не выявлено.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important."
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "operator",
+            "quote": "Hello, I am Emma. You can probably find something on the website."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "client",
+            "quote": "Which section and what should I press? I still do not know what to do."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Look around on the website."
+          },
+          {
+            "turn_id": "t0005",
+            "speaker": "operator",
+            "quote": "Goodbye."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0002",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. You can probably find something on the website.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Клиент не знал, что делать, но оператор не уточнил детали, а дал общий совет.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Which section and what should I press? I still do not know what to do.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент спрашивал, как скачать отчет, что является общим вопросом.",
+      "na_reason": "Запрос не требовал идентификации, так как касался общих инструкций по сайту.",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Оператор не дал ответа по существу, предложив просто посмотреть на сайте.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. You can probably find something on the website.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Look around on the website.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор не отреагировал на недовольство клиента, ответив сухо.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Look around on the website.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "0",
+      "score": 0,
+      "rationale": "Ответы бессвязны и не помогают клиенту, диалог заходит в тупик.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Look around on the website.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Оператор попрощался, но не подвел итог и не предложил помощь.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0005",
+          "quote": "Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений, оскорблений или раскрытия данных не выявлено.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0005",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "The main thing is how to download a report. If convenient, also tell me the button colour; that detail is not important.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Hello, I am Emma. You can probably find something on the website.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Which section and what should I press? I still do not know what to do.",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Look around on the website.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0005",
+          "quote": "Goodbye.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 12.5,
+    "applicable_weight": 80.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 10.0,
+        "effective_weight": 12.5,
+        "contribution": 12.5
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 18.75,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 25.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 18.75,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 18.75,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 6.25,
+        "contribution": 0.0
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 40.0,
+        "applicable_weight": 25.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 0.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 0.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "consultation": false
+  },
+  "latency_ms": 43015.93
+}

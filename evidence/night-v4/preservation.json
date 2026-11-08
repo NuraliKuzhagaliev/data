@@ -1,0 +1,10 @@
+{
+  "AGENTS_sha256_unchanged": "d90ae34df3af6f92521eea272ff51c02345c82cab9f2f48eb9a37fe42b4d8988",
+  "DEV_sha256_unchanged": "fe1848473732a952bd4fd787989de1c4a7b549a64b34dc95401fa120fb32b30a",
+  "DEV_records": 65,
+  "DEV_ok": 65,
+  "DEV_error": 0,
+  "user_provider": "gemini",
+  "user_requested_model": "gemini-3.5-flash",
+  "publication_override": ".bootstrap/authorization-2026-11-08.md"
+}

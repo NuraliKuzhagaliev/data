@@ -1,0 +1,550 @@
+{
+  "conversation_id": "q3-03-b",
+  "family": "contact-bot-attribution",
+  "split": "development",
+  "status": "ok",
+  "created_at": "2026-11-07T22:01:27.442336+00:00",
+  "attempt": 1,
+  "targets": {
+    "contact": "NO"
+  },
+  "transcript_hash": "390a1298f659da07fb4219134bd509a3060ec46f06c9e6f9edc4a734003c07bb",
+  "provenance": {
+    "run": "baseline-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "333173f0bf1be9da31aaa24c414631dd31e4cc9a52575a88992aae37e3734b0c",
+    "prompt_hash": "5e02b636c523b357d46c4ddfc5b278c5cbb560c5bc0bf1ee201d70099c4c630a",
+    "model": "qwen/qwen3.8-27b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v8-source-boundaries",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "latency_ms": 5101.6,
+    "attempts": 2,
+    "input_tokens": 2590,
+    "output_tokens": 811,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "parameters": {
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 4096
+    },
+    "request_hash": "54fe4cc5ed0ab7d1e0e189d12f21fdbb675f4713f1ebb5514339a714792285cf",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "1920",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "45.6s"
+    },
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "54fe4cc5ed0ab7d1e0e189d12f21fdbb675f4713f1ebb5514339a714792285cf",
+        "rate_limit_headers": {
+          "retry-after": "2",
+          "x-ratelimit-remaining-requests": "996",
+          "x-ratelimit-remaining-tokens": "4298",
+          "x-ratelimit-reset-requests": "5m45.6s",
+          "x-ratelimit-reset-tokens": "27.765s"
+        },
+        "retry_after": 2.0
+      },
+      {
+        "status": "response",
+        "request_hash": "54fe4cc5ed0ab7d1e0e189d12f21fdbb675f4713f1ebb5514339a714792285cf",
+        "input_tokens": 2590,
+        "output_tokens": 811
+      }
+    ],
+    "rejected_responses": [],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s"
+  },
+  "raw_response": {
+    "criteria": [
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "criterion_id": "contact",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В первой реплике оператора (t0003) отсутствует приветствие и представление, что нарушает требование критерия.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "discovery",
+        "limitations": [],
+        "na_reason": "Данных для ответа хватало с самого начала.",
+        "rationale": "Клиент задал общий вопрос о месте нахождения документов, уточняющих деталей не требовалось.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "N/A",
+        "coverage": {
+          "end": "t0001",
+          "start": "t0001"
+        },
+        "criterion_id": "identification",
+        "limitations": [],
+        "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "rationale": "Вопрос носит информационный характер и не связан с доступом к личным данным или защищенным действиям.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "20",
+        "coverage": {
+          "end": "t0003",
+          "start": "t0001"
+        },
+        "criterion_id": "consultation",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор дал прямой и точный ответ на вопрос клиента о месте нахождения документов.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде."
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0003"
+        },
+        "criterion_id": "empathy",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор проявил вежливость, предложив дополнительную помощь и попрощавшись.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "10",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0003"
+        },
+        "criterion_id": "dialogue",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Ответы ясные, связные и логичные, задержек или сбоя в коммуникации не выявлено.",
+        "evidence": [
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "YES",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0004"
+        },
+        "criterion_id": "closure",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "Оператор предложил дальнейшую помощь и попрощался, корректно завершив диалог.",
+        "evidence": [
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      },
+      {
+        "ambiguous": false,
+        "answer": "NO",
+        "coverage": {
+          "end": "t0004",
+          "start": "t0001"
+        },
+        "criterion_id": "critical",
+        "limitations": [],
+        "na_reason": "",
+        "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг в обход компании или раскрытие конфиденциальной информации.",
+        "evidence": [
+          {
+            "turn_id": "t0001",
+            "speaker": "client",
+            "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?"
+          },
+          {
+            "turn_id": "t0002",
+            "speaker": "bot",
+            "quote": "Сәлеметсіз бе, мен көмекші Аянмын."
+          },
+          {
+            "turn_id": "t0003",
+            "speaker": "operator",
+            "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде."
+          },
+          {
+            "turn_id": "t0004",
+            "speaker": "operator",
+            "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!"
+          }
+        ],
+        "evidence_origin": "SOURCE_TURN_LOOKUP"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "В первой реплике оператора (t0003) отсутствует приветствие и представление, что нарушает требование критерия.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Клиент задал общий вопрос о месте нахождения документов, уточняющих деталей не требовалось.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Вопрос носит информационный характер и не связан с доступом к личным данным или защищенным действиям.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "end": "t0001",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор дал прямой и точный ответ на вопрос клиента о месте нахождения документов.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0003",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде.",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор проявил вежливость, предложив дополнительную помощь и попрощавшись.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы ясные, связные и логичные, задержек или сбоя в коммуникации не выявлено.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор предложил дальнейшую помощь и попрощался, корректно завершив диалог.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0004"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0004",
+          "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "В диалоге отсутствуют оскорбления, предложения платных услуг в обход компании или раскрытие конфиденциальной информации.",
+      "na_reason": "",
+      "coverage": {
+        "end": "t0004",
+        "start": "t0001"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Сәлеметсіз бе! Жалпы құжаттарды қайдан табамын?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0002",
+          "quote": "Сәлеметсіз бе, мен көмекші Аянмын.",
+          "speaker": "bot"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Құжаттар сайттағы «Құжаттар» бөлімінде.",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0004",
+          "quote": "Қосымша көмек керек болса, хабарласыңыз. Сау болыңыз!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 84.62,
+    "applicable_weight": 65.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 15.38,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 20.0,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 0.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "target_checks": {
+    "contact": true
+  },
+  "latency_ms": 5101.88
+}

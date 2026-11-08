@@ -1,0 +1,70 @@
+{
+  "conversation_id": "q3-05-a",
+  "family": "discovery-unnecessary-question",
+  "split": "development",
+  "status": "error",
+  "created_at": "2026-11-07T22:44:15.927283+00:00",
+  "attempt": 1,
+  "targets": {
+    "discovery": "N/A",
+    "identification": "N/A"
+  },
+  "transcript_hash": "f26d34ed6ef8078a4ac647830d533402fccd8c6a643b861e3dbb5dfff1845a22",
+  "provenance": {
+    "run": "candidate-20b-dev",
+    "protocol_hash": "037fd45ade10e8557f719e56a7c2abbb6bc7661ea53901db58c542dc29cbf1c8",
+    "code_hash": "07336e54c84f836413d08c2d752b253b46f0e049822a341a4e7521ba8841de70",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "model": "openai/gpt-oss-20b",
+    "provider": "groq",
+    "mode": "evidence",
+    "split": "development",
+    "label_source": "synthetic",
+    "human_ground_truth": false,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "is_mock": false,
+    "latency_ms": 22228.48,
+    "attempts": 3,
+    "attempt_trace": [
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "b6f7f38c5f6cdefc8b0d7e1112a10a3a9669c482084c99fd43c51043cf0d7011",
+        "rate_limit_headers": {
+          "retry-after": "20",
+          "x-ratelimit-remaining-requests": "992",
+          "x-ratelimit-remaining-tokens": "804",
+          "x-ratelimit-reset-requests": "11m31.2s",
+          "x-ratelimit-reset-tokens": "53.97s"
+        },
+        "retry_after": 20.0
+      },
+      {
+        "status": "response",
+        "request_hash": "b6f7f38c5f6cdefc8b0d7e1112a10a3a9669c482084c99fd43c51043cf0d7011",
+        "input_tokens": 2829,
+        "output_tokens": 612
+      },
+      {
+        "status": "http_error",
+        "http_status": 429,
+        "request_hash": "327cf5d14a09dab1913b308c9e1cca258ab2540b1cee10e3ad84be96f038a7f8",
+        "rate_limit_headers": {
+          "retry-after": "1001",
+          "x-ratelimit-remaining-requests": "991",
+          "x-ratelimit-remaining-tokens": "799",
+          "x-ratelimit-reset-requests": "12m57.599s",
+          "x-ratelimit-reset-tokens": "54.007s"
+        },
+        "retry_after": 1001.0
+      }
+    ],
+    "rejected_responses": []
+  },
+  "error": "Ограничение частоты API (429): длительное ожидание. Повторите позже; тип квоты уточните в аккаунте",
+  "error_type": "ProviderError",
+  "error_code": "rate_limit",
+  "retry_after": 1001.0,
+  "latency_ms": 22228.68
+}

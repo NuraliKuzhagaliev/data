@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-08T03:59:37.788001+00:00",
+  "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50",
+  "target": "Public source in NuraliKuzhagaliev/data; locally run app, no hosted deployment",
+  "software_demonstration": "PASS",
+  "contest_submission": "BLOCKED",
+  "publication": "NOT_RUN",
+  "gates": [
+    {
+      "name": "158 unit/HTTP/configuration/resume tests and JS syntax",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/final/verification.json"
+    },
+    {
+      "name": "Real cloud new inputs, mutated inputs, custom rule, independent repeat",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/metamorphic-report.json;gui-workflow.json"
+    },
+    {
+      "name": "Browser desktop/mobile/keyboard/errors/export",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/browser-verification.json"
+    },
+    {
+      "name": "Clean README launch no private data or credentials",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/clean-launch.json"
+    },
+    {
+      "name": "Published synthetic records reproduce metrics without new AI calls",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/metric-replay.json"
+    },
+    {
+      "name": "Curated publication secret/privacy preflight",
+      "status": "PASS",
+      "evidence": "evidence/night-v4/publication-preflight.json"
+    },
+    {
+      "name": "Local inference candidate acceptance",
+      "status": "FAIL",
+      "evidence": "evidence/night-v4/local-long.json",
+      "decision": "REJECTED; omitted from product selection; user explicitly permits this branch of the task"
+    },
+    {
+      "name": "Normal push and remote/CI verification",
+      "status": "NOT_RUN"
+    },
+    {
+      "name": "Independent human-GT accuracy and real PROD10",
+      "status": "BLOCKED",
+      "reason": "Not supplied; no fabricated labels or PROD result file"
+    },
+    {
+      "name": "Full spoken five-minute rehearsal",
+      "status": "NOT_RUN"
+    }
+  ],
+  "dependency_scope": "Python stdlib only at runtime; no added packages, accounts or billing. Optional PDF-fetch helper is not required to run app.",
+  "operating_scope": "single-user loopback workstation; not a public hosted security certification",
+  "migration": "No schema migration in v4",
+  "recovery": "Preserve .local backup; revert commit or checkout known source; do not replace existing DB/config with test data",
+  "remaining": [
+    "55 historical DEV critical=NO coverage audits require review",
+    "External Free Tier quotas/model versions can change",
+    "No official winner formula, absolute control deadline or expert labels"
+  ]
+}
