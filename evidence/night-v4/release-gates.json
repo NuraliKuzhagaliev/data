@@ -4,7 +4,7 @@
   "target": "Public source in NuraliKuzhagaliev/data; locally run app, no hosted deployment",
   "software_demonstration": "PASS",
   "contest_submission": "BLOCKED",
-  "publication": "NOT_RUN",
+  "publication": "PASS",
   "gates": [
     {
       "name": "158 unit/HTTP/configuration/resume tests and JS syntax",
@@ -44,7 +44,8 @@
     },
     {
       "name": "Normal push and remote/CI verification",
-      "status": "NOT_RUN"
+      "status": "PASS",
+      "evidence": "evidence/night-v4/remote-verification.json"
     },
     {
       "name": "Independent human-GT accuracy and real PROD10",
@@ -64,5 +65,7 @@
     "55 historical DEV critical=NO coverage audits require review",
     "External Free Tier quotas/model versions can change",
     "No official winner formula, absolute control deadline or expert labels"
-  ]
+  ],
+  "published_source_commit": "871c92c22c8f133b286ad105facbe399de0af740",
+  "ci": "PASS:4/4 Windows/Ubuntu x Python3.11/3.13"
 }

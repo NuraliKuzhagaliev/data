@@ -1,6 +1,6 @@
 # Единый реестр требований
 
-Статус означает указанную проверку; функциональные PASS не означают экспертную точность. Обязательные внешние предпосылки и устная репетиция не подменены тестами.
+Статус относится к указанной проверке; PASS не означает экспертную точность. Внешние предпосылки и устная репетиция не подменены тестами.
 
 | ID | Источник | Требование | Приоритет | Реализация | Проверка | Свидетельство | Статус |
 |---|---|---|---|---|---|---|---|
@@ -22,7 +22,7 @@
 | R16 | Guide p2 | Appeal/comment/review without deleting original | P0 | store.py;server.py;UI | Real UI appeal + immutable-source test | evidence/night-v4/gui-workflow.json | PASS |
 | R17 | Appendix p1–3 | Official DEV65/PROD10 exact set andresults paths | P0 | exporting.py;CLI | 65DEV check; PROD count fixture | docs/submission.md; docs/evaluation.md; evidence/night-v4/preservation.json | BLOCKED |
 | R18 | Appendix p3 | Error is explicit status,error,emptycriteria,nullscore | P0 | providers;server;CLI | Unavailable/invalid/truncation tests | evidence/night-v4/final/verification.json; tests/test_core.py; tests/test_http.py; tests/test_audit_v2.py; tests/test_quality_v3.py; tests/test_night_v4.py | PASS |
-| R19 | User §5 | Reproducible metrics preserve missing/error denominators | P0 | evaluate.py;quality_report.py | Harness regression and versioned reports | evidence/quality-v3/benchmark-report.json; evidence/quality-v3/paired-comparison.json | PASS |
+| R19 | User §5 | Reproducible metrics preserve missing/error denominators | P0 | evaluate.py;quality_report.py | Harness regression and versioned reports | evidence/quality-v3/benchmark-report.json; evidence/quality-v3/paired-comparison.json; evidence/night-v4/metric-replay.json | PASS |
 | R20 | User §5 | No leakage between related cases; no tuning on holdout | P0 | frozen protocols andsource snapshots | Manifest/source/hash verification | evidence/quality-v3/protocol.json; evidence/quality-v3/candidate-freeze.json | PASS |
 | R21 | User §5 | Human accuracy only on independent expert labels | P0 | diagnostics.human checks | Human GT unavailable | docs/submission.md; docs/evaluation.md; evidence/night-v4/preservation.json | BLOCKED |
 | R22 | User history | At least30 own examples actually processed | P0 | quality-v3 protocol40 | v3 inventory40/40; new metamorphic cases | evidence/quality-v3/benchmark-report.json | PASS |
@@ -35,8 +35,8 @@
 | R29 | User §10 | New/changed/paraphrased transcripts affect only intended rules | P0 | night metamorphic cases | Real model outputs andfrozen targets | evidence/night-v4/metamorphic-report.json; evidence/night-v4/gui-workflow.json | PASS |
 | R30 | User §10 | Invalid/empty/longinputs andprovider failures | P0 | domain.py;server.py;tests | Negative contract tests andUIerrors | evidence/night-v4/clean-launch.json; evidence/night-v4/browser-verification.json | PASS |
 | R31 | User §11 | Clean launch +.env.example withoutsecrets | P0 | configuration;README;isolatedclone | Fresh-data startup andHTTPhealth | evidence/night-v4/clean-launch.json; .env.example | PASS |
-| R32 | User §12 | Ordinarypush toauthorizedrepo; noforce/historyrewrite | P0 | origin=NuraliKuzhagaliev/data | RemoteSHA/readback/CI | evidence/night-v4/publication-preflight.json | NOT_RUN |
-| R33 | User §12 | Exclude credentials/rawtranscripts/signedURLs/weights | P0 | gitignore andexplicit publication manifest | Content/privacy/secret scan + stagedtree | evidence/night-v4/publication-preflight.json | PASS |
+| R32 | User §12 | Ordinarypush toauthorizedrepo; noforce/historyrewrite | P0 | origin=NuraliKuzhagaliev/data | RemoteSHA/readback/CI | evidence/night-v4/remote-verification.json | PASS |
+| R33 | User §12 | Exclude credentials/rawtranscripts/signedURLs/weights | P0 | gitignore andexplicit publication manifest | Content/privacy/secret scan + stagedtree | evidence/night-v4/publication-preflight.json; evidence/night-v4/index-scan.json | PASS |
 | R34 | Guide p4 | Demo max5min; separate spoken vs technical verification | P0 | demo guide andexisting5slides | Technical UI trace; spoken rehearsal unavailable | docs/demo.md; evidence/night-v4/browser-verification.json | NOT_RUN |
 | R35 | Guide p4/Appendix p1 | Control last hour includesprocessing andpush | P0 | submission instructions | RealPROD unavailable; static readinessonly | docs/submission.md; docs/evaluation.md; evidence/night-v4/preservation.json | BLOCKED |
 | R36 | User §1/9 | Preserve userchanges,settings,failures andcurrentcontext | P0 | baseline andstate.json;AGENTS preserved | SHA andimmutable histories | evidence/night-v4/preservation.json | PASS |

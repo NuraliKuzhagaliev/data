@@ -250,7 +250,8 @@
     "verification": "Harness regression and versioned reports",
     "evidence": [
       "evidence/quality-v3/benchmark-report.json",
-      "evidence/quality-v3/paired-comparison.json"
+      "evidence/quality-v3/paired-comparison.json",
+      "evidence/night-v4/metric-replay.json"
     ],
     "status": "PASS"
   },
@@ -419,10 +420,9 @@
     "implementation": "origin=NuraliKuzhagaliev/data",
     "verification": "RemoteSHA/readback/CI",
     "evidence": [
-      "evidence/night-v4/publication-preflight.json"
+      "evidence/night-v4/remote-verification.json"
     ],
-    "status": "NOT_RUN",
-    "remaining": "Await normal push, remote readback and CI"
+    "status": "PASS"
   },
   {
     "id": "R33",
@@ -432,7 +432,8 @@
     "implementation": "gitignore andexplicit publication manifest",
     "verification": "Content/privacy/secret scan + stagedtree",
     "evidence": [
-      "evidence/night-v4/publication-preflight.json"
+      "evidence/night-v4/publication-preflight.json",
+      "evidence/night-v4/index-scan.json"
     ],
     "status": "PASS"
   },

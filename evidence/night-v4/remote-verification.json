@@ -1,0 +1,66 @@
+{
+  "repository": "https://github.com/NuraliKuzhagaliev/data",
+  "branch": "main",
+  "local_sha": "871c92c22c8f133b286ad105facbe399de0af740",
+  "remote_sha": "871c92c22c8f133b286ad105facbe399de0af740",
+  "ordinary_push": true,
+  "history_rewritten": false,
+  "workflow_runs": [
+    {
+      "id": 42445158400,
+      "head_sha": "871c92c22c8f133b286ad105facbe399de0af740",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400"
+    }
+  ],
+  "verified_at": "2026-11-08T04:04:34.038695+00:00",
+  "status": "PASS",
+  "code_hash": "3a95f463785d5719e6dfe437f73edeaf6fcecb19017eeddf3d8aa698d5796e50",
+  "ci": {
+    "id": 42445158400,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "871c92c22c8f133b286ad105facbe399de0af740",
+    "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400",
+    "jobs": [
+      {
+        "id": 128622427008,
+        "name": "contracts (windows-latest, 3.13)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400/job/128622427008"
+      },
+      {
+        "id": 128622427029,
+        "name": "contracts (ubuntu-latest, 3.11)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400/job/128622427029"
+      },
+      {
+        "id": 128622427034,
+        "name": "contracts (ubuntu-latest, 3.13)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400/job/128622427034"
+      },
+      {
+        "id": 128622427092,
+        "name": "contracts (windows-latest, 3.11)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42445158400/job/128622427092"
+      }
+    ]
+  },
+  "fresh_public_clone": {
+    "commit": "871c92c22c8f133b286ad105facbe399de0af740",
+    "unit_http_tests": 158,
+    "unit_http_status": "PASS",
+    "javascript_syntax": "PASS",
+    "working_tree_clean": true
+  },
+  "scope": "Verified first published source commit. Subsequent evidence-only commit adds this report; application source code hash remains unchanged."
+}

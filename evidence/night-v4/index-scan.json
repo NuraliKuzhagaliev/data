@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "staged_files": 279,
+  "staged_files": 280,
   "current_secret_values_checked": 2,
   "issues": [],
   "scope": "Actual Git index bytes: current keys, credential shapes, signed URLs, excluded paths. Own synthetic responses included; organizer raw inputs excluded."
