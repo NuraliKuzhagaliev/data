@@ -25,3 +25,5 @@ evidence/night-v4/bank-reference.png
 *.exe
 *.dll
 *.zip
+
+!evidence/deployment/

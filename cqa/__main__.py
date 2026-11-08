@@ -11,6 +11,7 @@ def main():
     serve.add_argument("--port", type=int, default=8765)
     serve.add_argument("--db")
     serve.add_argument("--data-dir")
+    commands.add_parser("host", help="Защищённое облачное демо; требует CQA_DEMO_ACCESS_HASH и HTTPS origin")
     check = commands.add_parser("check-submission")
     check.add_argument("--file", required=True)
     check.add_argument("--dataset", required=True)
@@ -27,6 +28,7 @@ def main():
     build.add_argument("--output")
     batch = commands.add_parser("batch")
     batch.add_argument("--dataset", required=True)
+    batch.add_argument("--config", help="Отдельный локальный JSON подключения; значения ключей не выводятся")
     batch.add_argument("--provider", choices=("groq", "gemini", "llamacpp", "ollama"), default="groq")
     batch.add_argument("--model")
     batch.add_argument("--mode", choices=("baseline", "evidence"), default="evidence")
@@ -35,6 +37,9 @@ def main():
     batch.add_argument("--repeat", type=int, default=1)
     batch.add_argument("--resume", action="store_true")
     args = parser.parse_args()
+    if args.command == "host":
+        from .hosting import serve_hosted
+        return serve_hosted()
     if args.command == "serve":
         from .server import Application, create_server
         app = Application(args.db, data_dir=args.data_dir)
@@ -85,7 +90,7 @@ def main():
     if args.command == "batch":
         from .domain import records_from_payload
         from .server import Application, ROOT
-        app = Application(data_dir=ROOT / ".local/batch-state", config_path=ROOT / ".local/provider.json")
+        app = Application(data_dir=ROOT / ".local/batch-state", config_path=Path(args.config) if args.config else ROOT / ".local/provider.json")
         records = records_from_payload(json.loads(Path(args.dataset).read_text(encoding="utf-8-sig")))
         if args.limit is not None and not 1 <= args.limit <= 500:
             parser.error("limit: 1–500")

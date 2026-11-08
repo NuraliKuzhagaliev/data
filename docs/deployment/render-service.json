@@ -1,0 +1,22 @@
+{
+  "runtime": "python",
+  "plan": "free",
+  "region": "frankfurt",
+  "repo": "https://github.com/NuraliKuzhagaliev/data",
+  "branch": "main",
+  "autoDeploy": "no",
+  "buildCommand": "python -m compileall -q cqa",
+  "startCommand": "python -u -m cqa host",
+  "env_names": [
+    "CQA_DEMO_ACCESS_HASH",
+    "CQA_PROVIDER",
+    "CQA_MODEL",
+    "CQA_TEAM_NAME",
+    "CQA_DEMO_DAILY_LIMIT",
+    "GEMINI_API_KEY",
+    "GROQ_API_KEY",
+    "CQA_GEMINI_FREE_TIER_CONFIRMED",
+    "CQA_GROQ_FREE_PLAN_CONFIRMED"
+  ],
+  "secrets_in_repo": false
+}

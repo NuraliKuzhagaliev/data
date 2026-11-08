@@ -19,7 +19,7 @@ def source_hash():
     from .domain import digest
     root = Path(__file__).resolve().parent.parent
     paths = sorted([*root.glob("cqa/*.py"), *root.glob("web/*")])
-    return digest({str(p.relative_to(root)): p.read_text(encoding="utf-8") for p in paths if p.is_file()})
+    return digest({p.relative_to(root).as_posix(): p.read_text(encoding="utf-8") for p in paths if p.is_file()})
 
 
 class Store:

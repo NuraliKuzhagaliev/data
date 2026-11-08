@@ -1,0 +1,7 @@
+{
+  "finding": "Authenticated oversized upload could reset TCP before client received 413",
+  "reproduction": "test_hosting.HostingTests.test_auth_and_upload_size_are_bounded; failed preflight retained",
+  "fix": "Drain bounded ordinary upload body in 64KiB chunks before sending 413; cap browser upload at2MB in hosted mode",
+  "verification": "170 tests PASS in final-code/verification.json",
+  "source_code_hash": "90e5986aab91b1728e55087684f7dc019873f2ce362bc9d0cf6f33ae080fdf7e"
+}

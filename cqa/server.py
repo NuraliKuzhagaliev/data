@@ -105,6 +105,9 @@ class Application:
                  {'name':'gemini','label':'Gemini · Free Tier','available':True}]
         return {'options':options,'local_available':False}
 
+    def models(self, kind):
+        return self.provider(kind, "").models()
+
     def resume_job(self, key, raw):
         parent = self.job(key)
         if parent["status"] == "running":
@@ -239,7 +242,15 @@ class Application:
         return submission(team, outcomes, dataset, [x["conversation_id"] for x in job["outcomes"]])
 
 
-def create_server(app, host="127.0.0.1", port=8765):
+def validate_http_origin(headers, port, public_origin=None):
+    origins = {public_origin} if public_origin else {f"http://127.0.0.1:{port}", f"http://localhost:{port}"}
+    if headers.get("Host") not in {urlsplit(origin).netloc for origin in origins}:
+        raise PermissionError("Недопустимый Host")
+    if headers.get("Origin") and headers.get("Origin") not in origins:
+        raise PermissionError("Запрос с другого сайта запрещён")
+
+
+def create_server(app, host="127.0.0.1", port=8765, *, public_origin=None):
     class Handler(BaseHTTPRequestHandler):
         server_version = "CQA/0.1"
 
@@ -264,12 +275,7 @@ def create_server(app, host="127.0.0.1", port=8765):
             self.wfile.write(data)
 
         def guard(self, mutation=False):
-            allowed = {f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}"}
-            if self.headers.get("Host") not in allowed:
-                raise PermissionError("Недопустимый Host")
-            origin = self.headers.get("Origin")
-            if origin and origin not in {"http://" + x for x in allowed}:
-                raise PermissionError("Запрос с другого сайта запрещён")
+            validate_http_origin(self.headers, self.server.server_port, public_origin)
             if mutation and self.headers.get("X-CQA-Token") != app.csrf:
                 raise PermissionError("Неверный токен локального приложения; обновите страницу")
 
@@ -289,7 +295,7 @@ def create_server(app, host="127.0.0.1", port=8765):
                     return self.send(app.latest_job())
                 if path == "/api/models":
                     kind = query.get("provider", [app.config["provider"]])[0]
-                    return self.send({"provider": kind, "models": app.provider(kind, "").models()})
+                    return self.send({"provider": kind, "models": app.models(kind)})
                 if path == "/api/rubrics":
                     return self.send(app.store.rubrics())
                 if path == "/api/conversations":

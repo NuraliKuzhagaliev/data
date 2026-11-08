@@ -88,6 +88,10 @@ function renderConnection() {
   $("connection").textContent = ["groq","gemini"].includes(state.config.provider) ? (ready ? (state.config.provider === "gemini" ? "Gemini · Free Tier" : "Groq · Free Plan") : "AI · нужен ключ и Free Tier") : (ready ? "Локальная9B · работает на ноутбуке" : "Локальная модель не запущена");
   $("connection").className = "status-pill" + (ready ? " ready" : "");
   $("settings").textContent = ready ? "Настройки AI" : "Подключить AI";
+  $("hosted-banner").hidden = !state.config.hosted && !state.config.deployment_setup;
+  $("hosted-banner").textContent = state.config.deployment_setup ? "Новые ключи для Render: сохраните Gemini и Groq по очереди в «Настройках AI», подтвердив бесплатный тариф. Текущее подключение ноутбука не меняется." : "Демо-сеанс хранит данные временно. Скачайте результаты перед выходом; анализ передаёт текст выбранному внешнему API.";
+  $("logout").hidden = !state.config.hosted;
+  $("dev").hidden = !!state.config.hosted || !!state.config.deployment_setup;
 }
 async function selectConversation(id) {
   state.selected = id; state.conversation = await api("/api/conversations/" + encodeURIComponent(id)); state.evaluation = null;
@@ -258,7 +262,8 @@ async function settings() {
   openDialog("settings-dialog"); await models(false);
 }
 async function models(change = true) {
-  const provider = $("provider").value; $("groq-settings").hidden = !["groq","gemini"].includes(provider);
+  const provider = $("provider").value; $("groq-settings").hidden = !!state.config.hosted || !["groq","gemini"].includes(provider);
+  $("managed-ai-note").hidden = !state.config.hosted;
   const gemini = provider === "gemini";
   $("key-label").textContent = gemini ? "Ключ Gemini" : "Ключ Groq";
   $("api-key").placeholder = gemini ? "AIza…" : "gsk_…";
@@ -326,14 +331,15 @@ $("resume-job").addEventListener("click", action(async () => {
   finally { setBusy(false); }
 }));
 $("provider").addEventListener("change", action(() => models(true)));
+$("api-key").addEventListener("input", () => { if ($("api-key").value.trim()) $("free-plan").checked = false; });
 $("dev").addEventListener("click", action(async () => { const result = await api("/api/import-dev", {}); await openImported(result); toast(`DEV загружен: ${result.imported} записей`); }));
-$("upload-file").addEventListener("change", action(async () => { const file = $("upload-file").files[0]; if (!file) return; if (file.size > 8_000_000) throw new Error("Максимальный размер файла — 8 МБ"); $("transcript-input").value = (await file.text()).replace(/^\uFEFF/, ""); }));
+$("upload-file").addEventListener("change", action(async () => { const file = $("upload-file").files[0]; if (!file) return; const maximum = state.config.hosted ? 2_000_000 : 8_000_000; if (file.size > maximum) throw new Error(`Максимальный размер файла — ${state.config.hosted ? 2 : 8} МБ`); $("transcript-input").value = (await file.text()).replace(/^\uFEFF/, ""); }));
 $("import-form").addEventListener("submit", action(async event => { event.preventDefault(); let payload = $("transcript-input").value.trim(); if (!payload) throw new Error("Добавьте транскрипт"); if (/^[\[{]/.test(payload) && !/^\[\d\d:/.test(payload)) { try { payload = JSON.parse(payload); } catch { throw new Error("Повреждённый JSON. Проверьте скобки и запятые"); } } const result = await api("/api/import", payload); closeDialog("import-dialog"); await openImported(result); toast(`Импортировано диалогов: ${result.imported}`); }));
 $("settings-form").addEventListener("submit", action(async event => {
   event.preventDefault(); const provider = $("provider").value;
   const payload = {provider, model: $("model").value.trim(), team_name: $("team-name").value.trim()};
-  if (provider === "gemini") Object.assign(payload, {gemini_key: $("api-key").value.trim(), gemini_free_plan_confirmed: $("free-plan").checked});
-  if (provider === "groq") Object.assign(payload, {key: $("api-key").value.trim(), free_plan_confirmed: $("free-plan").checked});
+  if (!state.config.hosted && provider === "gemini") Object.assign(payload, {gemini_key: $("api-key").value.trim(), gemini_free_plan_confirmed: $("free-plan").checked});
+  if (!state.config.hosted && provider === "groq") Object.assign(payload, {key: $("api-key").value.trim(), free_plan_confirmed: $("free-plan").checked});
   state.config = await api("/api/config", payload); $("api-key").value = ""; closeDialog("settings-dialog"); renderConnection(); toast("Подключение сохранено. Доступ будет проверен при оценке");
 }));
 $("rubric-form").addEventListener("submit", action(async event => { event.preventDefault(); collectEditor(); editorRubric.name = $("rubric-name").value.trim(); const saved = await api("/api/rubrics", editorRubric); await loadData(); $("rubric-select").value = saved.id; state.evaluation = null; renderHistory(); renderEvaluation(); closeDialog("rubric-dialog"); toast("Новая версия сохранена и выбрана для следующей оценки"); }));
@@ -344,4 +350,8 @@ $("export-csv").addEventListener("click", action(() => download(`/api/evaluation
 $("submission").addEventListener("click", () => openDialog("submission-dialog"));
 $("submission-form").addEventListener("submit", action(async event => { event.preventDefault(); if (!state.config.team_name) throw new Error("Укажите название команды в настройках AI"); await download(`/api/jobs/${state.job.id}/submission?dataset=${$("submission-dataset").value}&team=${encodeURIComponent(state.config.team_name)}`, "results.json"); closeDialog("submission-dialog"); toast("Формат проверен; файл скачан. Commit и push выполняются отдельно"); }));
 $("sample").addEventListener("click", action(async () => { const raw = {conversation_id: "synthetic-demo-001", source: "synthetic", language: "RU", transcript: [{timestamp: "00:00", speaker: "client", text: "Здравствуйте! Где посмотреть общий список тарифов? Я не нахожу его на сайте, это неудобно."}, {timestamp: "00:05", speaker: "operator", text: "Здравствуйте! Меня зовут Анна. Понимаю, что искать неудобно. Общий список доступен в разделе «Документы», пункт «Тарифы». Личные данные для общего списка не нужны."}, {timestamp: "00:30", speaker: "client", text: "Спасибо, нашёл."}, {timestamp: "00:35", speaker: "operator", text: "Рада помочь! Итак, общий список находится в разделе «Документы» → «Тарифы». Если потребуется ещё помощь, обращайтесь. До свидания!"}]}; const result = await api("/api/import", raw); await openImported(result); toast("Учебный синтетический диалог. Это не Ground Truth"); }));
-loadData().then(restoreLatestJob).catch(error => toast(error.message, true));
+$("logout").addEventListener("click", action(async () => {
+  await fetch("/auth/logout", {method:"POST", headers:{"X-CQA-Token":token}});
+  location.href = "/login";
+}));
+loadData().then(async () => { await restoreLatestJob(); if (state.config.hosted && !state.selected && state.conversations.length) await selectConversation(state.conversations[0].id); if (state.config.deployment_setup && (!state.config.key_present || !state.config.gemini_key_present)) await settings(); }).catch(error => toast(error.message, true));
