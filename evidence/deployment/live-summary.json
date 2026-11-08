@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "expected_cases": 2,
+  "valid_cases": 2,
+  "expected_targets": 6,
+  "matched_targets": 6,
+  "label_origin": "AUTHOR_SELECTED_TARGETS_NOT_EXPERT_GT",
+  "human_accuracy": null,
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "deployed_source_commit": "f799916d778f04f5658b7c9b69c8b1401e8bbab6",
+  "providers": [
+    "groq",
+    "gemini"
+  ],
+  "new_key_source": ".local/deployment/new-keys/provider.json",
+  "old_main_keys_transferred": false,
+  "raw_API_keys_in_evidence": false,
+  "scope": "Two different authored cases, not a paired model-quality comparison. No claim of expert accuracy."
+}

@@ -1,0 +1,157 @@
+{
+  "id": "deployed-gemini-new-guide",
+  "status": "ok",
+  "source": "Real public browser upload and Gemini request; full audit opened as visible authenticated JSON",
+  "label_origin": "AUTHOR_SELECTED_TARGETS_NOT_EXPERT_GT",
+  "evaluation_id": "eval-5d424cd69dea4fe699233858e551a8c5",
+  "answers": {
+    "contact": "YES",
+    "discovery": "N/A",
+    "identification": "N/A",
+    "consultation": "20",
+    "empathy": "YES",
+    "dialogue": "10",
+    "closure": "YES",
+    "critical": "NO"
+  },
+  "expected_targets": {
+    "contact": "YES",
+    "critical": "NO",
+    "closure": "YES"
+  },
+  "target_checks": {
+    "contact": true,
+    "critical": true,
+    "closure": true
+  },
+  "summary": {
+    "total": 100,
+    "applicable_weight": 65,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10,
+        "applicable": true,
+        "raw_points": 10,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20,
+        "applicable": true,
+        "raw_points": 20,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5,
+        "applicable": true,
+        "raw_points": 5,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100,
+        "applicable_weight": 10
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100,
+        "applicable_weight": 20
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100,
+        "applicable_weight": 35
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "provenance": {
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "requested_model": "gemini-3.5-flash",
+    "is_mock": false,
+    "mode": "evidence",
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "1cc1994a39b63ba35a1802efa6ccfc158a3bc89ef8b42dc22baa92f0b201955a",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 1679,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 995,
+    "latency_ms": 9192.85,
+    "attempts": 1,
+    "input_tokens": 2893,
+    "output_tokens": 2674,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "1cc1994a39b63ba35a1802efa6ccfc158a3bc89ef8b42dc22baa92f0b201955a",
+        "input_tokens": 2893,
+        "output_tokens": 2674
+      }
+    ],
+    "token_usage_complete": true,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+  },
+  "audit_json_reopened": true,
+  "source_evidence_checked": 11,
+  "deploy_revision": "f799916d778f04f5658b7c9b69c8b1401e8bbab6"
+}

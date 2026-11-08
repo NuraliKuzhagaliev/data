@@ -1,0 +1,19 @@
+{
+  "prepared_at": "2026-11-08T04:43:05.512627+00:00",
+  "team": "THE BOYS",
+  "demo": "https://cqa-evidence-the-boys.onrender.com",
+  "source": "https://github.com/NuraliKuzhagaliev/data",
+  "public_files": [
+    "submission/APPLICATION.md",
+    "submission/README.md",
+    "results/dev/results.json",
+    "examples/judge-demo.json"
+  ],
+  "private_pack": ".local/submission-pack",
+  "private_access_code_in_git": false,
+  "API_keys_in_pack": false,
+  "DEV_records": 65,
+  "PROD_present": false,
+  "actual_submission_sent": false,
+  "reason_not_submitted": "Task is preparation; official submission form/deadline/PROD not supplied"
+}

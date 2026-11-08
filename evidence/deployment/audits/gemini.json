@@ -1,0 +1,995 @@
+{
+  "id": "eval-5d424cd69dea4fe699233858e551a8c5",
+  "conversation_id": "conv-9f588a018a24b349290a",
+  "input_source": "synthetic",
+  "dataset_group_id": null,
+  "external_conversation_id": "deployed-gemini-new-guide",
+  "transcript_hash": "a6ba56b77ff4a8255c186836520290f733f739d1d3d8c578ef45c1d998bcaac4",
+  "rubric": {
+    "name": "Freedom Broker · официальный чек-лист чатов",
+    "criteria": [
+      {
+        "id": "contact",
+        "name": "Установление контакта",
+        "section": "Начало и понимание запроса",
+        "kind": "binary",
+        "weight": 10,
+        "instruction": "Да — оператор поздоровался на языке клиента и представился в первом ответе. Проверь именно первую реплику operator: оба условия обязательны. Если в ней нет приветствия ИЛИ представления, ответ Нет, даже если далее дан полезный ответ. Приветствие и имя бота не засчитываются оператору.",
+        "na_allowed": false,
+        "na_rule": "",
+        "positive_evidence_roles": [
+          "operator"
+        ]
+      },
+      {
+        "id": "discovery",
+        "name": "Выявление потребности",
+        "section": "Начало и понимание запроса",
+        "kind": "binary",
+        "weight": 15,
+        "instruction": "Сначала определи, были ли в исходном запросе действительно недостающие существенные детали. Если данных хватало с самого начала, обязательно N/A, даже если оператор учёл детали и успешно ответил. Да — недостающие данные были нужны, оператор учёл уже известное и задал нужное уточнение до ответа. Нет — нужное уточнение пропущено или заменено неуместным вопросом. Один лишь учёт известных деталей без нужного уточнения не означает Да. Не поощряйте лишние вопросы.",
+        "na_allowed": true,
+        "na_rule": "Данных для ответа хватало с самого начала.",
+        "positive_evidence_roles": [
+          "operator"
+        ]
+      },
+      {
+        "id": "identification",
+        "name": "Идентификация",
+        "section": "Безопасность и решение",
+        "kind": "binary",
+        "weight": 20,
+        "instruction": "Да — проверка личности подтверждена до раскрытия данных или защищённого действия. Если проверка требовалась, но не подтверждена в чате, Нет. Нельзя считать отсутствие свидетельств проверкой. Системное сообщение может подтверждать идентификацию, но только до защищённого действия.",
+        "na_allowed": true,
+        "na_rule": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+        "positive_evidence_roles": [
+          "operator",
+          "system"
+        ]
+      },
+      {
+        "id": "consultation",
+        "name": "Корректная и полная консультация",
+        "section": "Безопасность и решение",
+        "kind": "numeric",
+        "weight": 20,
+        "instruction": "Оцените ответ или следующий шаг по ступеням. Не путайте полноту решения и ясность речи. Не выдумывайте тарифы или внутренние регламенты. Если без базы знаний нельзя проверить фактическую корректность, укажите ограничение и неоднозначность; это само по себе не разрешает N/A.",
+        "na_allowed": true,
+        "na_rule": "Чат закончился до того, как клиент сформулировал запрос.",
+        "positive_evidence_roles": [
+          "operator"
+        ],
+        "levels": [
+          {
+            "score": 0,
+            "description": "Ответа по существу нет или ключевая рекомендация ошибочна."
+          },
+          {
+            "score": 5,
+            "description": "Есть общая подсказка, но клиенту всё ещё непонятно, как действовать."
+          },
+          {
+            "score": 10,
+            "description": "Часть запроса закрыта, существенный вопрос остался открытым."
+          },
+          {
+            "score": 15,
+            "description": "Основной вопрос решён, пропущена второстепенная деталь."
+          },
+          {
+            "score": 20,
+            "description": "Все существенные вопросы закрыты или дан корректный следующий шаг."
+          }
+        ]
+      },
+      {
+        "id": "empathy",
+        "name": "Эмпатия и клиентоориентированность",
+        "section": "Ведение и завершение диалога",
+        "kind": "binary",
+        "weight": 15,
+        "instruction": "Да — оператор вежлив и, если клиент выразил недовольство или описал неудобство, отреагировал на конкретную проблему. При отсутствии недовольства достаточно вежливого общения, извинение не обязательно. Отсутствие приветствия само по себе не доказывает невежливость или отсутствие эмпатии. Шаблонная вежливость не заменяет реакцию на конкретное неудобство.",
+        "na_allowed": false,
+        "na_rule": "",
+        "positive_evidence_roles": [
+          "operator"
+        ]
+      },
+      {
+        "id": "dialogue",
+        "name": "Управление диалогом, скорость и грамотность",
+        "section": "Ведение и завершение диалога",
+        "kind": "numeric",
+        "weight": 15,
+        "instruction": "Оцените ясность, порядок ответов и предупреждение об ожидании по ступеням. Порог первой реакции в 3 минуты, теги и вложения в оценку НЕ входят. Не вводите произвольный порог ожидания.",
+        "na_allowed": false,
+        "na_rule": "",
+        "positive_evidence_roles": [
+          "operator"
+        ],
+        "levels": [
+          {
+            "score": 0,
+            "description": "Из-за бессвязных или противоречивых реплик ход диалога непонятен."
+          },
+          {
+            "score": 4,
+            "description": "Клиенту приходится переспрашивать из-за формулировок или порядка ответов."
+          },
+          {
+            "score": 7,
+            "description": "Один заметный сбой, но клиент может понять ответ и продолжить."
+          },
+          {
+            "score": 10,
+            "description": "Ответы ясные и связные. Если было явное ожидание, оператор предупредил."
+          }
+        ]
+      },
+      {
+        "id": "closure",
+        "name": "Завершение",
+        "section": "Ведение и завершение диалога",
+        "kind": "binary",
+        "weight": 5,
+        "instruction": "Да — оператор подвёл итог ИЛИ предложил дальнейшую помощь, И попрощался. Одного прощания без итога или предложения помощи недостаточно. Если оператор закрыл чат без прощания при возможности завершить, Нет.",
+        "na_allowed": true,
+        "na_rule": "Чат оборвался до возможности его завершить.",
+        "positive_evidence_roles": [
+          "operator"
+        ]
+      },
+      {
+        "id": "critical",
+        "name": "Грубые ошибки",
+        "section": "Грубые нарушения",
+        "kind": "flag",
+        "weight": 0,
+        "instruction": "Да — выявлено оскорбление клиента, предложение платной услуги в обход компании или раскрытие конфиденциальной информации. Нет — ни одно из трёх не выявлено. Самого предложения перевести деньги лично оператору для инвестирования или дать личный номер для частной платной консультации достаточно, согласие и перевод не нужны. Флаг отмечается отдельно и НЕ обнуляет общий балл.",
+        "na_allowed": false,
+        "na_rule": "",
+        "positive_evidence_roles": [
+          "operator"
+        ]
+      }
+    ],
+    "id": "rubric-7b590d9829cd69da",
+    "hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32",
+    "created_at": "2026-11-08T04:58:53.229994+00:00"
+  },
+  "criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в своем первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0002",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Исходный запрос клиента содержал все необходимые данные для ответа.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Обращение клиента касалось общей информации и не требовало проверки личности.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор дал полный и точный ответ по интересующему вопросу.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Общение оператора было вежливым и доброжелательным.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы оператора сформулированы ясно и связно, без задержек.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор подвёл итог, предложил помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0003",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений со стороны оператора не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "original_summary": {
+    "total": 100,
+    "applicable_weight": 65,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10,
+        "applicable": true,
+        "raw_points": 10,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20,
+        "applicable": true,
+        "raw_points": 20,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5,
+        "applicable": true,
+        "raw_points": 5,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100,
+        "applicable_weight": 10
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100,
+        "applicable_weight": 20
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100,
+        "applicable_weight": 35
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "created_at": "2026-11-08T04:59:17.282918+00:00",
+  "provenance": {
+    "provider": "gemini",
+    "model": "gemini-3.6-flash",
+    "requested_model": "gemini-3.5-flash",
+    "is_mock": false,
+    "mode": "evidence",
+    "api_cost_usd": 0,
+    "cost_note": "Gemini Free Tier подтверждён пользователем; фактический тариф через API не проверяется",
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "data_note": "На Free Tier Google может использовать содержимое для улучшения продуктов",
+    "request_hash": "1cc1994a39b63ba35a1802efa6ccfc158a3bc89ef8b42dc22baa92f0b201955a",
+    "parameters": {
+      "temperature": 0,
+      "maxOutputTokens": 8192,
+      "thinkingConfig": {
+        "thinkingLevel": "MEDIUM"
+      }
+    },
+    "reasoning_tokens": 1679,
+    "cached_input_tokens": null,
+    "visible_output_tokens": 995,
+    "latency_ms": 9192.85,
+    "attempts": 1,
+    "input_tokens": 2893,
+    "output_tokens": 2674,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "1cc1994a39b63ba35a1802efa6ccfc158a3bc89ef8b42dc22baa92f0b201955a",
+        "input_tokens": 2893,
+        "output_tokens": 2674
+      }
+    ],
+    "token_usage_complete": true,
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+  },
+  "warnings": [],
+  "appeals": [],
+  "final_criteria": [
+    {
+      "criterion_id": "contact",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор поздоровался и представился в своем первом ответе.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0002",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "discovery",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Исходный запрос клиента содержал все необходимые данные для ответа.",
+      "na_reason": "Данных для ответа хватало с самого начала.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "identification",
+      "answer": "N/A",
+      "score": null,
+      "rationale": "Обращение клиента касалось общей информации и не требовало проверки личности.",
+      "na_reason": "Запрос не требовал идентификации, например общий вопрос о тарифах.",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0002"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "consultation",
+      "answer": "20",
+      "score": 20,
+      "rationale": "Оператор дал полный и точный ответ по интересующему вопросу.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "empathy",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Общение оператора было вежливым и доброжелательным.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "dialogue",
+      "answer": "10",
+      "score": 10,
+      "rationale": "Ответы оператора сформулированы ясно и связно, без задержек.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0002",
+          "quote": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления».",
+          "speaker": "operator"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "closure",
+      "answer": "YES",
+      "score": 1,
+      "rationale": "Оператор подвёл итог, предложил помощь и попрощался.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0003",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    },
+    {
+      "criterion_id": "critical",
+      "answer": "NO",
+      "score": 0,
+      "rationale": "Грубых нарушений со стороны оператора не зафиксировано.",
+      "na_reason": "",
+      "coverage": {
+        "start": "t0001",
+        "end": "t0003"
+      },
+      "evidence": [
+        {
+          "turn_id": "t0001",
+          "quote": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?",
+          "speaker": "client"
+        },
+        {
+          "turn_id": "t0003",
+          "quote": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!",
+          "speaker": "operator"
+        }
+      ],
+      "ambiguous": false,
+      "limitations": [],
+      "evidence_origin": "SOURCE_TURN_LOOKUP",
+      "evidence_check": "EXACT_TEXT_AND_SPEAKER"
+    }
+  ],
+  "final_summary": {
+    "total": 100,
+    "applicable_weight": 65,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10,
+        "applicable": true,
+        "raw_points": 10,
+        "effective_weight": 15.38,
+        "contribution": 15.38
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20,
+        "applicable": false,
+        "raw_points": 0,
+        "effective_weight": 0,
+        "contribution": 0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20,
+        "applicable": true,
+        "raw_points": 20,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15,
+        "applicable": true,
+        "raw_points": 15,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5,
+        "applicable": true,
+        "raw_points": 5,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 100,
+        "applicable_weight": 10
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100,
+        "applicable_weight": 20
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100,
+        "applicable_weight": 35
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "quality": {
+    "current_total": 100,
+    "review_count": 0,
+    "items": [
+      {
+        "criterion_id": "consultation",
+        "name": "Корректная и полная консультация",
+        "answer": "20",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 30.77,
+        "alternatives": [
+          {
+            "answer": "0",
+            "total": 69.23,
+            "delta": -30.77
+          },
+          {
+            "answer": "5",
+            "total": 76.92,
+            "delta": -23.08
+          },
+          {
+            "answer": "10",
+            "total": 84.62,
+            "delta": -15.38
+          },
+          {
+            "answer": "15",
+            "total": 92.31,
+            "delta": -7.69
+          },
+          {
+            "answer": "20",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "N/A",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      },
+      {
+        "criterion_id": "identification",
+        "name": "Идентификация",
+        "answer": "N/A",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 23.53,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 76.47,
+            "delta": -23.53
+          },
+          {
+            "answer": "N/A",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      },
+      {
+        "criterion_id": "empathy",
+        "name": "Эмпатия и клиентоориентированность",
+        "answer": "YES",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 23.08,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 76.92,
+            "delta": -23.08
+          }
+        ]
+      },
+      {
+        "criterion_id": "dialogue",
+        "name": "Управление диалогом, скорость и грамотность",
+        "answer": "10",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 23.08,
+        "alternatives": [
+          {
+            "answer": "0",
+            "total": 76.92,
+            "delta": -23.08
+          },
+          {
+            "answer": "4",
+            "total": 86.15,
+            "delta": -13.85
+          },
+          {
+            "answer": "7",
+            "total": 93.08,
+            "delta": -6.92
+          },
+          {
+            "answer": "10",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      },
+      {
+        "criterion_id": "discovery",
+        "name": "Выявление потребности",
+        "answer": "N/A",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 18.75,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 81.25,
+            "delta": -18.75
+          },
+          {
+            "answer": "N/A",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      },
+      {
+        "criterion_id": "contact",
+        "name": "Установление контакта",
+        "answer": "YES",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 15.38,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 84.62,
+            "delta": -15.38
+          }
+        ]
+      },
+      {
+        "criterion_id": "closure",
+        "name": "Завершение",
+        "answer": "YES",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 7.69,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 92.31,
+            "delta": -7.69
+          },
+          {
+            "answer": "N/A",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      },
+      {
+        "criterion_id": "critical",
+        "name": "Грубые ошибки",
+        "answer": "NO",
+        "needs_review": false,
+        "reasons": [],
+        "boundary_issue": false,
+        "gross_error": false,
+        "max_score_change": 0,
+        "alternatives": [
+          {
+            "answer": "YES",
+            "total": 100,
+            "delta": 0
+          },
+          {
+            "answer": "NO",
+            "total": 100,
+            "delta": 0
+          }
+        ]
+      }
+    ],
+    "method": "one_criterion_counterfactual; other_answers_fixed; exact_official_weights_and_NA",
+    "calibrated_confidence": null,
+    "is_accuracy_estimate": false,
+    "note": "Влияние на итог рассчитано при неизменных остальных ответах. Это не вероятность ошибки и не экспертная оценка."
+  }
+}

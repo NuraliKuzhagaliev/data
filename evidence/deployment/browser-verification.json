@@ -1,0 +1,96 @@
+{
+  "status": "PASS for observed flows",
+  "public_url": "https://cqa-evidence-the-boys.onrender.com",
+  "source_commit": "f799916d778f04f5658b7c9b69c8b1401e8bbab6",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "real_login_after_origin_fix": "PASS",
+  "new_transcript_upload": "PASS",
+  "Gemini_real_result": "PASS",
+  "selected_source": "deployed-gemini-new-guide",
+  "evaluation_id": "eval-5d424cd69dea4fe699233858e551a8c5",
+  "score": "100",
+  "evidence_jump": "turn-t0002 highlighted",
+  "critical_NO_coverage": "1..3, full source",
+  "managed_key_input_hidden_and_empty": true,
+  "provider_options": [
+    "groq",
+    "gemini"
+  ],
+  "Gemini_model_options": [
+    "gemini-3.5-flash"
+  ],
+  "JSON_export_enabled": true,
+  "Groq_export_download_and_reopen": "PASS via actual HTTPS export endpoint",
+  "Gemini_audit_read_and_reopen": "PASS via authenticated JSON view; browser download not repeated",
+  "actual_workspace_viewport": {
+    "width": 455,
+    "document_width": 440,
+    "horizontal_overflow": false
+  },
+  "login_viewport_375": {
+    "document_width": 375,
+    "card_width": 343.33,
+    "status": "PASS"
+  },
+  "workspace_exact_375_and_1440": "NOT_RUN: viewport override did not change observed455px pane; no false width pass recorded",
+  "screenshots": [
+    {
+      "file": "browser-session-before-ai.jpg",
+      "size": [
+        440,
+        890
+      ]
+    },
+    {
+      "file": "hosted-ai-loading.jpg",
+      "size": [
+        440,
+        890
+      ]
+    },
+    {
+      "file": "hosted-result-observed-455.jpg",
+      "size": [
+        440,
+        890
+      ]
+    },
+    {
+      "file": "hosted-result-full.jpg",
+      "size": [
+        440,
+        4034
+      ]
+    },
+    {
+      "file": "hosted-result-observed-455-full.jpg",
+      "size": [
+        440,
+        4034
+      ]
+    },
+    {
+      "file": "login-desktop.jpg",
+      "size": [
+        1265,
+        712
+      ]
+    },
+    {
+      "file": "login-mobile-375.jpg",
+      "size": [
+        375,
+        811
+      ]
+    },
+    {
+      "file": "login-origin-before.jpg",
+      "size": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "scope": "New hosted browser checks only; prior local desktop/mobile checks retained in night-v4",
+  "saved_result_screenshot": "hosted-live-result.jpg"
+}

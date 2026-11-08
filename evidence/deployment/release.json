@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-08T05:13:03.287456+00:00",
+  "status": "DEPLOYED_AND_FUNCTIONALLY_VERIFIED",
+  "url": "https://cqa-evidence-the-boys.onrender.com",
+  "service_id": "srv-dbnvpudg1s2s73dqt1qg",
+  "workspace_id": "tea-d3pt0sbipnbc73a5v810",
+  "plan": "free",
+  "region": "frankfurt",
+  "autoDeploy": "no",
+  "live_deploy_id": "dep-dbo01nh5efls73cgv4mg",
+  "deployed_commit": "f799916d778f04f5658b7c9b69c8b1401e8bbab6",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "tests": 171,
+  "source_CI": "PASS on Windows/Ubuntu x Python3.11/3.13",
+  "live_AI": "2/2 valid;6/6 selected author targets, not expert accuracy",
+  "credentials_source": "New keys entered by user in separate local form; old main keys not transferred",
+  "DEV_records": 65,
+  "DEV_status": "65ok/0error; unchanged historical output;55coverage audits still need review",
+  "PROD_status": "BLOCKED: organizer control set not supplied",
+  "actual_submission_sent": false,
+  "artifacts": [
+    "final-code/verification.json",
+    "external-boundary.json",
+    "ci-source.json",
+    "live-summary.json",
+    "gemini-live.json",
+    "groq-live.json",
+    "browser-verification.json",
+    "submission-manifest.json"
+  ],
+  "known_limits": [
+    "Free host sleep/ephemeral workspaces",
+    "External API quota and model changes",
+    "No independent human GT or official final score formula",
+    "Exact hosted workspace375/1440 override unavailable; actual455 checked"
+  ]
+}

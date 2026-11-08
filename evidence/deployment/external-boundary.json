@@ -1,0 +1,37 @@
+{
+  "url": "https://cqa-evidence-the-boys.onrender.com",
+  "checked_at": "2026-11-08T05:16:08.846942+00:00",
+  "checks": {
+    "unauthenticated_data": "401",
+    "cookie": "Secure; HttpOnly; SameSite=Lax",
+    "seed_inputs_only": 3,
+    "precomputed_model_outputs": 0,
+    "csrf": "403",
+    "cross_origin": "403",
+    "private_dev_absent": "400",
+    "second_session_cannot_read_first": "404",
+    "logout_revokes_previous_cookie": "401"
+  },
+  "health": {
+    "status": "ok",
+    "service": "CQA Evidence",
+    "hosted": true,
+    "revision": "f799916d778f04f5658b7c9b69c8b1401e8bbab6",
+    "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc"
+  },
+  "config": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "team_name": "THE BOYS",
+    "free_plan_confirmed": true,
+    "gemini_free_plan_confirmed": true,
+    "key_present": true,
+    "gemini_key_present": true,
+    "hosted": true,
+    "credentials_managed": true,
+    "ephemeral_storage": true
+  },
+  "status": "PASS",
+  "AI_calls": 0,
+  "credential_values_logged": false
+}

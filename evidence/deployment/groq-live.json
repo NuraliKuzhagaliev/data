@@ -1,0 +1,204 @@
+{
+  "id": "deployed-groq-new-no-name",
+  "job_id": "job-99684e1803f8407094a0ab6720badc21",
+  "provider": "groq",
+  "requested_model": "openai/gpt-oss-120b",
+  "expected_targets": {
+    "contact": "NO",
+    "critical": "NO",
+    "closure": "YES"
+  },
+  "job_status": "completed",
+  "seconds": 3.95,
+  "label_origin": "AUTHOR_SELECTED_TARGETS_NOT_EXPERT_GT",
+  "deploy_revision": "f799916d778f04f5658b7c9b69c8b1401e8bbab6",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "status": "ok",
+  "evaluation_id": "eval-3734e374b71447cfa50cb290a74f4585",
+  "answers": {
+    "contact": "NO",
+    "discovery": "N/A",
+    "identification": "N/A",
+    "consultation": "20",
+    "empathy": "YES",
+    "dialogue": "10",
+    "closure": "YES",
+    "critical": "NO"
+  },
+  "target_checks": {
+    "contact": true,
+    "critical": true,
+    "closure": true
+  },
+  "summary": {
+    "total": 84.62,
+    "applicable_weight": 65.0,
+    "gross_error": false,
+    "flags": [
+      {
+        "criterion_id": "critical",
+        "answer": "NO"
+      }
+    ],
+    "contributions": [
+      {
+        "criterion_id": "contact",
+        "weight": 10.0,
+        "applicable": true,
+        "raw_points": 0.0,
+        "effective_weight": 15.38,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "discovery",
+        "weight": 15.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "identification",
+        "weight": 20.0,
+        "applicable": false,
+        "raw_points": 0.0,
+        "effective_weight": 0.0,
+        "contribution": 0.0
+      },
+      {
+        "criterion_id": "consultation",
+        "weight": 20.0,
+        "applicable": true,
+        "raw_points": 20.0,
+        "effective_weight": 30.77,
+        "contribution": 30.77
+      },
+      {
+        "criterion_id": "empathy",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "dialogue",
+        "weight": 15.0,
+        "applicable": true,
+        "raw_points": 15.0,
+        "effective_weight": 23.08,
+        "contribution": 23.08
+      },
+      {
+        "criterion_id": "closure",
+        "weight": 5.0,
+        "applicable": true,
+        "raw_points": 5.0,
+        "effective_weight": 7.69,
+        "contribution": 7.69
+      }
+    ],
+    "sections": [
+      {
+        "name": "Начало и понимание запроса",
+        "score": 0.0,
+        "applicable_weight": 10.0
+      },
+      {
+        "name": "Безопасность и решение",
+        "score": 100.0,
+        "applicable_weight": 20.0
+      },
+      {
+        "name": "Ведение и завершение диалога",
+        "score": 100.0,
+        "applicable_weight": 35.0
+      }
+    ],
+    "rounding": "ROUND_HALF_UP, final total only; displayed contributions may sum differently"
+  },
+  "provenance": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "requested_model": "openai/gpt-oss-120b",
+    "model_digest": null,
+    "evidence_mode": "SOURCE_TURN_LOOKUP",
+    "is_mock": false,
+    "latency_ms": 3631.25,
+    "attempts": 2,
+    "input_tokens": 5526,
+    "output_tokens": 1322,
+    "cached_input_tokens": null,
+    "reasoning_tokens": 497,
+    "api_cost_usd": 0,
+    "cost_note": "Free Plan подтверждён пользователем; фактический тариф аккаунта через API не проверяется",
+    "mode": "evidence",
+    "parameters": {
+      "model": "openai/gpt-oss-120b",
+      "temperature": 0,
+      "seed": 42,
+      "stream": false,
+      "max_completion_tokens": 2048,
+      "reasoning_effort": "low"
+    },
+    "request_hash": "4551e516bf219e7be098c366e52492ae6c88d6464256a93372a95163fba8eac1",
+    "rate_limit_headers": {
+      "retry-after": null,
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "1701",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "47.242s"
+    },
+    "criterion_batches": [
+      {
+        "criterion_ids": [
+          "contact",
+          "discovery",
+          "identification",
+          "consultation"
+        ],
+        "request_hash": "92c13cfce9dd47e1986db0813dbd97ee83f3687179715e9c3b077ea0c810cbab",
+        "input_tokens": 2800,
+        "output_tokens": 698,
+        "latency_ms": 1989.47
+      },
+      {
+        "criterion_ids": [
+          "empathy",
+          "dialogue",
+          "closure",
+          "critical"
+        ],
+        "request_hash": "ad74de2e8e2bad3cd67392ffd0a050d8fa15b156c3f93ed7c259321055b479f0",
+        "input_tokens": 2726,
+        "output_tokens": 624,
+        "latency_ms": 1639.62
+      }
+    ],
+    "full_transcript_each_batch": true,
+    "validation_repairs": 0,
+    "attempt_trace": [
+      {
+        "status": "response",
+        "request_hash": "92c13cfce9dd47e1986db0813dbd97ee83f3687179715e9c3b077ea0c810cbab",
+        "input_tokens": 2800,
+        "output_tokens": 698
+      },
+      {
+        "status": "response",
+        "request_hash": "ad74de2e8e2bad3cd67392ffd0a050d8fa15b156c3f93ed7c259321055b479f0",
+        "input_tokens": 2726,
+        "output_tokens": 624
+      }
+    ],
+    "token_usage_complete": true,
+    "retry_policy": "one_validator_repair; max_6_http; shared_deadline; reset_margin_0.5s",
+    "prompt_version": "cqa-evidence-v9-criterion-contract",
+    "prompt_hash": "b01906f659e9e8b364477cefc0d01c4a8ccd01ba11bcbed4694b1c46330cb4ff",
+    "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+    "rubric_hash": "7b590d9829cd69da9af6bd42f218e2223e3cd6d5828c2eefbb41701446a2ec32"
+  },
+  "export_json_reopened": true,
+  "source_evidence_checked": 11,
+  "download_header": "attachment; filename=\"cqa-evaluation.json\""
+}

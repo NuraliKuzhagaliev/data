@@ -1,0 +1,128 @@
+[
+  {
+    "id": "D01",
+    "source": "User deployment request + explicit workspace reply",
+    "requirement": "Use confirmed Render workspace and Free plan only",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "docs/deployment/render-service.json"
+    ]
+  },
+  {
+    "id": "D02",
+    "source": "User correction: new keys",
+    "requirement": "Use only new Gemini/Groq keys from separate form; preserve main connection",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      ".bootstrap/authorization-deploy.md",
+      "evidence/deployment/live-summary.json"
+    ]
+  },
+  {
+    "id": "D03",
+    "source": "Deployment boundary",
+    "requirement": "Access code, isolated workspaces, CSRF/Origin, credential protection",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "tests/test_hosting.py",
+      "evidence/deployment/external-boundary.json"
+    ]
+  },
+  {
+    "id": "D04",
+    "source": "User: deploy",
+    "requirement": "Live HTTPS service matches published application source",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "evidence/deployment/release.json"
+    ]
+  },
+  {
+    "id": "D05",
+    "source": "User: working AI demo",
+    "requirement": "Real new Gemini/Groq calls; no prepared successful outputs",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "evidence/deployment/live-protocol.json",
+      "evidence/deployment/live-summary.json"
+    ]
+  },
+  {
+    "id": "D06",
+    "source": "Original correctness requirements",
+    "requirement": "Exact source links and deterministic score; real export/audit reopened",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "evidence/deployment/groq-live.json",
+      "evidence/deployment/gemini-live.json"
+    ]
+  },
+  {
+    "id": "D07",
+    "source": "Original browser requirements",
+    "requirement": "Observed browser workflow and managed-key UI",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "evidence/deployment/browser-verification.json"
+    ]
+  },
+  {
+    "id": "D08",
+    "source": "Additional precise hosted viewport check",
+    "requirement": "Hosted workspace375/1440 override actually applied",
+    "priority": "P2",
+    "status": "NOT_RUN",
+    "evidence": [
+      "evidence/deployment/browser-verification.json"
+    ]
+  },
+  {
+    "id": "D09",
+    "source": "User authorization for normal Git push",
+    "requirement": "Application source published, source CI all four environments",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "evidence/deployment/ci-source.json"
+    ]
+  },
+  {
+    "id": "D10",
+    "source": "User: prepare for submission",
+    "requirement": "Application text, judge guide, DEV and private access pack",
+    "priority": "P0",
+    "status": "PASS",
+    "evidence": [
+      "submission/APPLICATION.md",
+      "submission/README.md",
+      "evidence/deployment/submission-manifest.json"
+    ]
+  },
+  {
+    "id": "D11",
+    "source": "Organizer appendix",
+    "requirement": "Actual PROD10 and push before absolute stop code",
+    "priority": "P0",
+    "status": "BLOCKED",
+    "evidence": [
+      "docs/submission.md"
+    ]
+  },
+  {
+    "id": "D12",
+    "source": "Original accuracy requirements",
+    "requirement": "Accuracy against independent human GT",
+    "priority": "P0",
+    "status": "BLOCKED",
+    "evidence": [
+      "docs/evaluation.md"
+    ]
+  }
+]

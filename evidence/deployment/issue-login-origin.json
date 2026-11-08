@@ -5,6 +5,7 @@
   "primary_reference": "https://fetch.spec.whatwg.org/#append-a-request-origin-header",
   "fix": "Hosted responses use same-origin referrer policy; Origin:null and foreign Origin remain rejected; local mode retains no-referrer",
   "regression": "test_html_login_policy_preserves_origin_and_null_origin_is_still_rejected",
-  "browser_retest": "NOT_RUN awaiting patched deploy",
-  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc"
+  "browser_retest": "PASS: real HTML form entered hosted workspace at / after patched deployment; three synthetic inputs visible",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "deployed_commit": "f799916d778f04f5658b7c9b69c8b1401e8bbab6"
 }

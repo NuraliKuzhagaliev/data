@@ -1,0 +1,73 @@
+{
+  "frozen_at": "2026-11-08T04:58:09.779666+00:00",
+  "label_origin": "AUTHOR_SELECTED_TARGETS_NOT_EXPERT_GT",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc",
+  "cases": [
+    {
+      "id": "deployed-groq-new-no-name",
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "targets": {
+        "contact": "NO",
+        "critical": "NO",
+        "closure": "YES"
+      },
+      "input": {
+        "conversation_id": "deployed-groq-new-no-name",
+        "source": "synthetic",
+        "language": "EN",
+        "transcript": [
+          {
+            "speaker": "client",
+            "timestamp": "00:00",
+            "text": "Where can I find the general instruction for notification settings?"
+          },
+          {
+            "speaker": "operator",
+            "timestamp": "00:05",
+            "text": "Hello. The general instruction is in Help, then Notifications."
+          },
+          {
+            "speaker": "operator",
+            "timestamp": "00:20",
+            "text": "To summarize: open Help, then Notifications. If you need further help, please ask. Goodbye!"
+          }
+        ]
+      }
+    },
+    {
+      "id": "deployed-gemini-new-guide",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash",
+      "targets": {
+        "contact": "YES",
+        "critical": "NO",
+        "closure": "YES"
+      },
+      "input": {
+        "conversation_id": "deployed-gemini-new-guide",
+        "source": "synthetic",
+        "language": "RU",
+        "transcript": [
+          {
+            "speaker": "client",
+            "timestamp": "00:00",
+            "text": "Здравствуйте! Где открыть общую инструкцию по уведомлениям?"
+          },
+          {
+            "speaker": "operator",
+            "timestamp": "00:06",
+            "text": "Здравствуйте! Меня зовут Лаура. Общая инструкция находится в разделе «Помощь» → «Уведомления»."
+          },
+          {
+            "speaker": "operator",
+            "timestamp": "00:19",
+            "text": "Итак, инструкция в разделе «Помощь» → «Уведомления». Если нужна помощь, обращайтесь. До свидания!"
+          }
+        ]
+      }
+    }
+  ],
+  "expected_cases": 2,
+  "expected_targets": 6
+}
