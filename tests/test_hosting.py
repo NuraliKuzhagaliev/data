@@ -91,6 +91,11 @@ class HostingTests(unittest.TestCase):
         self.assertEqual(self.request('/api/health',headers={'Host':'evil.test'})[0],403)
         self.assertEqual(self.request('/auth/login',{'access_code':self.secret},form=True,headers={'Origin':'https://evil.test'})[0],403)
 
+    def test_html_login_policy_preserves_origin_and_null_origin_is_still_rejected(self):
+        status,_,headers=self.request('/')
+        self.assertEqual(status,200);self.assertEqual(headers['Referrer-Policy'],'same-origin')
+        self.assertEqual(self.request('/auth/login',{'access_code':self.secret},form=True,headers={'Origin':'null'})[0],403)
+
     def test_wrong_password_does_not_create_session(self):
         before=len(self.server.registry.sessions)
         status,_,headers=self.request('/auth/login',{'access_code':'wrong'},form=True)

@@ -267,7 +267,9 @@ def create_server(app, host="127.0.0.1", port=8765, *, public_origin=None):
             self.send_header("Content-Length", str(len(data)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header("Referrer-Policy", "no-referrer")
+            # HTML form POSTs can send Origin:null under no-referrer. Hosted
+            # pages retain their same-origin Origin without leaking referrers off-site.
+            self.send_header("Referrer-Policy", "same-origin" if public_origin else "no-referrer")
             self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; media-src https:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'")
             if filename:
                 self.send_header("Content-Disposition", f'attachment; filename="{filename}"')

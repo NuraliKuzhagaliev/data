@@ -1,0 +1,10 @@
+{
+  "finding": "Real browser HTML login POST rejected by strict Origin guard despite valid access code",
+  "before_commit": "6e78be1d008d239c11959d71d91c5c3097557f49",
+  "cause": "Referrer-Policy:no-referrer may serialize Origin as null for non-CORS HTML form POST",
+  "primary_reference": "https://fetch.spec.whatwg.org/#append-a-request-origin-header",
+  "fix": "Hosted responses use same-origin referrer policy; Origin:null and foreign Origin remain rejected; local mode retains no-referrer",
+  "regression": "test_html_login_policy_preserves_origin_and_null_origin_is_still_rejected",
+  "browser_retest": "NOT_RUN awaiting patched deploy",
+  "code_hash": "e8879f886c22e3f32975780540babc6840c233c57fead1c5fdd06178ba423adc"
+}

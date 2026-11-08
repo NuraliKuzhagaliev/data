@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-08T04:37:48.958486+00:00",
+  "checked_at": "2026-11-08T04:45:43.912675+00:00",
   "checks": [
     {
       "name": "python_compile",
@@ -69,11 +69,11 @@
     "cqa\\providers.py": "6596879d6782ba84edcca035fc6e4becfecc25dbae9e1804636d6a8aec581a64",
     "cqa\\quality.py": "eff8d170b872ba5fb2ffc27504a5e1a6d8d38817331c93e6ae6e87088584ce71",
     "cqa\\rubric.py": "ba2aeb3b25c0843ea2b66b2f6988fa26818a87a60b784c0f73eb220cba27452c",
-    "cqa\\server.py": "bbc4d1cd65eb90fdc94eeb831d6292901c6971d9dfcd308c3667b3f74a9f05b5",
+    "cqa\\server.py": "25ed30e00ec4ee6b9ca815b4eaec6e8ee0317db77de7893488e659bc01e6bce5",
     "cqa\\store.py": "87f5e8ac4ae6a8e440f20e6e7662814ec8b83e2f2f09ce6f3630cd3d4d19880e",
     "tests\\test_audit_v2.py": "c4c572be6877847d53a9324476ea3a219d5334857590074e103a5fdbbc99b1b4",
     "tests\\test_core.py": "04da922447a8ff885d645280aba862be0816a4810dd3f50e20c1595877b31826",
-    "tests\\test_hosting.py": "34f632dab5e61a9a367f63d320ce534a7b1684abb45d9311ae41c84bb23f8a1c",
+    "tests\\test_hosting.py": "c863c62b98e2fb84656bcd587b6c93ca65615378a8a7ab6ad1d0608a51376b5f",
     "tests\\test_http.py": "199104117e24568030f0d7a5e370c8d1a728888a6d15ed0f93ecef079ff64754",
     "tests\\test_night_v4.py": "caf3636d229df17686dd481bf2015a33f46903f555e7ca7eaa7df0512e0e0b20",
     "tests\\test_quality_v3.py": "e6e86bf4ebde33b96f35e806175261e4e545fa71d4fd9703d618b2bb515eb9ff",

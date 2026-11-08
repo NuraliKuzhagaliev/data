@@ -21,4 +21,4 @@ python -m cqa build-submission --predictions .local/prod-predictions.json --data
 python -m cqa check-submission --file results/prod/results.json --dataset .local/prod.json --group prod
 ```
 
-Затемобычныйcommit/pushдо стоп-кода,см.docs/submission.md. До выдачи реальногоPROD файлне создаётся. Экспертнаяaccuracyнеизвестна; авторские тесты неявляютсяGT. Презентацияv3историческая; текущиесвидетельствахостингаи170тестовдобавленывREADME.
+Затемобычныйcommit/pushдо стоп-кода,см.docs/submission.md. До выдачи реальногоPROD файлне создаётся. Экспертнаяaccuracyнеизвестна; авторские тесты неявляютсяGT. Презентацияv3историческая; текущиесвидетельствахостингаи171тестдобавленывREADME.
