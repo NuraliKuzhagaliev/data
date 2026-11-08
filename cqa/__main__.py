@@ -11,7 +11,7 @@ def main():
     serve.add_argument("--port", type=int, default=8765)
     serve.add_argument("--db")
     serve.add_argument("--data-dir")
-    commands.add_parser("host", help="Защищённое облачное демо; требует CQA_DEMO_ACCESS_HASH и HTTPS origin")
+    commands.add_parser("host", help="Облачное демо; HTTPS origin, код доступа либо CQA_DEMO_PUBLIC_ACCESS=true")
     check = commands.add_parser("check-submission")
     check.add_argument("--file", required=True)
     check.add_argument("--dataset", required=True)

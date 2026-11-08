@@ -91,6 +91,7 @@ function renderConnection() {
   $("hosted-banner").hidden = !state.config.hosted && !state.config.deployment_setup;
   $("hosted-banner").textContent = state.config.deployment_setup ? "Новые ключи для Render: сохраните Gemini и Groq по очереди в «Настройках AI», подтвердив бесплатный тариф. Текущее подключение ноутбука не меняется." : "Демо-сеанс хранит данные временно. Скачайте результаты перед выходом; анализ передаёт текст выбранному внешнему API.";
   $("logout").hidden = !state.config.hosted;
+  $("logout").textContent = state.config.public_access ? "Новый сеанс" : "Выйти";
   $("dev").hidden = !!state.config.hosted || !!state.config.deployment_setup;
 }
 async function selectConversation(id) {

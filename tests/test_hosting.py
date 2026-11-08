@@ -184,3 +184,61 @@ class HostingTests(unittest.TestCase):
             if first.job(job['id'])['status']!='running':break
             time.sleep(.01)
         self.assertEqual(first.job(job['id'])['status'],'completed')
+
+
+class PublicHostingTests(unittest.TestCase):
+    request = HostingTests.request
+    remove_session = HostingTests.remove_session
+
+    @classmethod
+    def setUpClass(cls):
+        parent = Path('.local/test-runs'); parent.mkdir(parents=True, exist_ok=True)
+        cls.tmp = tempfile.TemporaryDirectory(dir=parent)
+        cls.server = create_hosted_server(cls.tmp.name, '', origin='https://demo.test', public_access=True, daily_limit=200)
+        cls.base = 'http://127.0.0.1:' + str(cls.server.server_port)
+        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True); cls.thread.start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.server.shutdown(); cls.server.server_close(); cls.thread.join(); cls.server.registry.close(); cls.tmp.cleanup()
+
+    def open_session(self):
+        status, _, headers = self.request('/')
+        self.assertEqual(status, 303); self.assertEqual(headers['Location'], '/')
+        cookie = headers['Set-Cookie'].split(';')[0]
+        self.addCleanup(self.remove_session, cookie.split('=', 1)[1])
+        for attribute in ['Secure', 'HttpOnly', 'SameSite=Lax']:
+            self.assertIn(attribute, headers['Set-Cookie'])
+        status, body, _ = self.request('/', cookie=cookie)
+        self.assertEqual(status, 200); self.assertNotIn('Код доступа команды'.encode(), body)
+        csrf = re.search(r'name="cqa-token" content="([^"]+)"', body.decode()).group(1)
+        return cookie, csrf
+
+    def test_no_code_entry_and_existing_session_is_reused(self):
+        cookie, _ = self.open_session(); count = len(self.server.registry.sessions)
+        self.assertNotIn('Set-Cookie', self.request('/', cookie=cookie)[2])
+        self.assertEqual(self.request('/login', cookie=cookie)[2]['Location'], '/')
+        self.assertEqual(len(self.server.registry.sessions), count)
+        status, body, _ = self.request('/api/config', cookie=cookie)
+        cfg = json.loads(body); self.assertTrue(cfg['public_access']); self.assertTrue(cfg['credentials_managed'])
+        self.assertNotIn('key', cfg); self.assertNotIn('gemini_key', cfg)
+        self.assertEqual(self.server.registry.daily_limit, 200)
+
+    def test_public_visitors_still_have_isolated_data_and_csrf(self):
+        cookie1, csrf1 = self.open_session(); cookie2, csrf2 = self.open_session()
+        status, body, _ = self.request('/api/import', conversation(), cookie=cookie1, csrf=csrf1)
+        self.assertEqual(status, 201); cid = json.loads(body)['ids'][0]
+        self.assertEqual(self.request('/api/conversations/' + cid, cookie=cookie2)[0], 404)
+        self.assertEqual(self.request('/api/import', conversation(), cookie=cookie2, csrf=csrf1)[0], 403)
+        self.assertNotEqual(csrf1, csrf2)
+        self.assertEqual(self.request('/api/config', {'key':'replacement'}, cookie=cookie1, csrf=csrf1)[0], 400)
+
+    def test_public_mode_still_checks_origin_and_capacity(self):
+        self.assertEqual(self.request('/', headers={'Origin':'https://evil.test'})[0], 403)
+        self.assertEqual(self.request('/api/config')[0], 401)
+        self.assertEqual(self.request('/api/health')[0], 200)
+        self.server.registry.maximum = 0
+        try:
+            self.assertEqual(self.request('/')[0], 503)
+        finally:
+            self.server.registry.maximum = 16

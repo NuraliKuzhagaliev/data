@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-08T06:42:41.064648+00:00",
+  "status": "PASS",
+  "tests": 174,
+  "command": "python -m unittest discover -s tests -v",
+  "javascript_syntax": "node --check web/app.js: PASS",
+  "public_mode_checks": [
+    "automatic session without access code",
+    "session reuse",
+    "Secure HttpOnly SameSite=Lax cookie",
+    "cross-session data and CSRF isolation",
+    "managed API keys cannot be replaced or returned",
+    "origin checks and capacity bound",
+    "daily_limit200 preserved"
+  ],
+  "cloud_AI_calls": 0,
+  "code_hash": "614826b1001de70b5412c4ef743c92575f92df303a27e5050c3909c95ae2eee1"
+}

@@ -1,4 +1,4 @@
-"""Access-controlled, isolated, ephemeral judging workspaces for a single free host.
+"""Isolated, ephemeral judging workspaces with optional access-code entry for a single free host.
 
 No organizer input or local credentials are copied into a hosted workspace.
 Provider secrets come from host environment; visitors cannot change them.
@@ -39,7 +39,7 @@ class HostedApplication(Application):
 
     def public_config(self):
         return super().public_config() | {"hosted": True, "credentials_managed": True,
-                                          "ephemeral_storage": True}
+                                          "ephemeral_storage": True, "public_access": self.registry.public_access}
 
     def save_config(self, raw):
         if raw.get("key") or raw.get("gemini_key"):
@@ -81,10 +81,11 @@ class HostedApplication(Application):
 
 
 class SessionRegistry:
-    def __init__(self, directory, *, ttl=4*3600, maximum=16, daily_limit=20, seed=True):
+    def __init__(self, directory, *, ttl=4*3600, maximum=16, daily_limit=20, seed=True, public_access=False):
         self.directory = Path(directory)
         self.directory.mkdir(parents=True, exist_ok=True)
         self.ttl, self.maximum, self.daily_limit, self.seed = ttl, maximum, daily_limit, seed
+        self.public_access = public_access
         self.lock = threading.RLock()
         self.running = threading.BoundedSemaphore(1)
         self.sessions = {}
@@ -158,16 +159,16 @@ class RequestApplication:
         return getattr(self.current.app, name)
 
 
-def create_hosted_server(directory, access_hash, *, origin, host="127.0.0.1", port=0, seed=True, daily_limit=20):
+def create_hosted_server(directory, access_hash, *, origin, host="127.0.0.1", port=0, seed=True, daily_limit=20, public_access=False):
     parsed = urlsplit(origin)
-    if not re.fullmatch(r"[0-9a-f]{64}", access_hash or ""):
+    if not public_access and not re.fullmatch(r"[0-9a-f]{64}", access_hash or ""):
         raise ValidationError("Для облачного демо нужен SHA256 кода доступа CQA_DEMO_ACCESS_HASH")
     if parsed.path not in ("", "/") or parsed.query or parsed.fragment or parsed.username or not parsed.hostname:
         raise ValidationError("CQA_PUBLIC_ORIGIN должен содержать только HTTPS origin")
     if parsed.scheme != "https" and not (parsed.scheme == "http" and parsed.hostname in ("127.0.0.1", "localhost")):
         raise ValidationError("Публичный origin должен использовать HTTPS")
     origin = origin.rstrip("/")
-    registry = SessionRegistry(directory, seed=seed, daily_limit=daily_limit)
+    registry = SessionRegistry(directory, seed=seed, daily_limit=daily_limit, public_access=public_access)
     proxy = RequestApplication()
     server = create_server(proxy, host=host, port=port, public_origin=origin)
     base = server.RequestHandlerClass
@@ -213,10 +214,18 @@ def create_hosted_server(directory, access_hash, *, origin, host="127.0.0.1", po
                 path = urlsplit(self.path).path
                 if path == "/api/health":
                     return self.send({"status": "ok", "service": "CQA Evidence", "hosted": True,
+                                      "public_access": public_access,
                                       "revision": os.environ.get("RENDER_GIT_COMMIT", "local-test"), "code_hash": source_hash()})
                 if path == "/styles.css":
                     return self.send((ROOT / "web/styles.css").read_text(encoding="utf-8"), content_type="text/css; charset=utf-8")
                 app = registry.get(self.token())
+                if public_access and path in ("/", "/login"):
+                    if not app:
+                        token, _ = registry.create()
+                        value = f"{COOKIE}={token}; HttpOnly; SameSite=Lax; Path=/; Max-Age={registry.ttl}"
+                        return self.redirect("/", value + ("; Secure" if secure else ""))
+                    if path == "/login":
+                        return self.redirect("/")
                 if path == "/login" or (path == "/" and not app):
                     message = "Неверный код доступа" if parse_qs(urlsplit(self.path).query).get("error") else ""
                     page = (ROOT / "web/login.html").read_text(encoding="utf-8").replace("__LOGIN_ERROR__", html.escape(message))
@@ -227,6 +236,8 @@ def create_hosted_server(directory, access_hash, *, origin, host="127.0.0.1", po
                     return super().do_GET()
             except PermissionError as exc:
                 self.send({"error": str(exc)}, 403)
+            except ValidationError as exc:
+                self.send({"error": str(exc)}, 503)
 
         def do_POST(self):
             try:
@@ -250,7 +261,7 @@ def create_hosted_server(directory, access_hash, *, origin, host="127.0.0.1", po
                     return self.redirect("/", value + ("; Secure" if secure else ""))
                 app = registry.get(self.token())
                 if not app:
-                    return self.send({"error": "Для работы с демо нужен код доступа команды"}, 401)
+                    return self.send({"error": "Откройте главную страницу для нового сеанса" if public_access else "Для работы с демо нужен код доступа команды"}, 401)
                 if size > 2_000_000:
                     return self.reject_large_body(size, "Демо принимает до 2 МБ за загрузку")
                 if path == "/api/import-dev":
@@ -279,7 +290,8 @@ def serve_hosted():
     server = create_hosted_server(os.environ.get("CQA_HOSTED_DATA_DIR", str(ROOT / ".local/cloud-sessions")),
                                   os.environ.get("CQA_DEMO_ACCESS_HASH", ""), origin=origin,
                                   host="0.0.0.0", port=int(os.environ.get("PORT", "10000")),
-                                  daily_limit=int(os.environ.get("CQA_DEMO_DAILY_LIMIT", "20")))
+                                  daily_limit=int(os.environ.get("CQA_DEMO_DAILY_LIMIT", "20")),
+                                  public_access=os.environ.get("CQA_DEMO_PUBLIC_ACCESS", "false").lower() == "true")
     def stop_on_signal(*_):
         raise KeyboardInterrupt
     signal.signal(signal.SIGTERM, stop_on_signal)
