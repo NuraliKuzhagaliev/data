@@ -1,0 +1,59 @@
+{
+  "verified_at": "2026-11-08T05:56:17.515616+00:00",
+  "validation": {
+    "status": "PASS",
+    "records": 10,
+    "ok": 10,
+    "errors": 0
+  },
+  "result_sha256": "d200ccbd93330a198b0cce532cf284c67084d404ec7b0a3cb97f9144a0d21595",
+  "team": "THE BOYS",
+  "model": {
+    "mode": "external_api",
+    "name": "gemini-3.6-flash"
+  },
+  "evidence_links_verified": 129,
+  "full_coverage_critical_NO": 9,
+  "SWAP_assessed": false,
+  "SWAP_in_PROD": false,
+  "DEV_unchanged": true,
+  "independent_human_accuracy": null,
+  "published_commit": "ab531bf90589f30da76fa0ba733b18212e69ad9d",
+  "push_readback_at": "2026-11-08T05:57:29.889562+00:00",
+  "fetch_to_verified_push_seconds": 296.25,
+  "prod_remote_readback": {
+    "records": 10,
+    "status": "PASS",
+    "url": "https://github.com/NuraliKuzhagaliev/data/blob/ab531bf90589f30da76fa0ba733b18212e69ad9d/results/prod/results.json"
+  },
+  "dev_remote_readback": {
+    "records": 65,
+    "status": "PASS",
+    "url": "https://github.com/NuraliKuzhagaliev/data/blob/ab531bf90589f30da76fa0ba733b18212e69ad9d/results/dev/results.json"
+  },
+  "CI": {
+    "status": "success",
+    "url": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42452742110"
+  },
+  "SWAP": {
+    "saved_records": 3,
+    "evaluated": false,
+    "raw_source_published": false
+  },
+  "judge_demo_after_PROD": {
+    "checked_at": "2026-11-08T05:58:56.966741+00:00",
+    "providers": [
+      {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "status": "ok"
+      },
+      {
+        "provider": "groq",
+        "model": "openai/gpt-oss-120b",
+        "status": "ok"
+      }
+    ],
+    "remaining_quota_guaranteed": false
+  }
+}
