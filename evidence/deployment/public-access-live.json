@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-08T06:44:19.712778+00:00",
+  "status": "PASS",
+  "health": {
+    "status": "ok",
+    "service": "CQA Evidence",
+    "hosted": true,
+    "public_access": true,
+    "revision": "4edff7ca9301901b88324f9ed31c1b2d4056ebb8",
+    "code_hash": "614826b1001de70b5412c4ef743c92575f92df303a27e5050c3909c95ae2eee1"
+  },
+  "checks": {
+    "no_access_code_required": true,
+    "managed_keys_present_and_not_exposed": true,
+    "seed_inputs": 3,
+    "two_visitor_isolation": "PASS",
+    "CSRF": "PASS",
+    "foreign_origin": "403"
+  },
+  "AI_calls": 0,
+  "deploy_id": "dep-dbo1jtrrjlhs73a624jg",
+  "deploy_status": "live",
+  "CI": "https://github.com/NuraliKuzhagaliev/data/actions/runs/42455862871",
+  "CI_status": "success",
+  "browser": "PASS: directly opened application without a code;3 seed inputs; Gemini ready; no model request"
+}
